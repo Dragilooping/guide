@@ -1,0 +1,3837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>P&amp;GT Technologies - Android App Guide</title>
+    <link rel="icon" type="image/png" href="../images/P_GT.png" />
+	<!-- Prism.js styles -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+	<!-- Prism.js library -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+	<!-- Prism.js library -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+	<!-- Add INI language support -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ini.min.js"></script>
+	<!-- Font Awesome for copy icon -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+    /* ===== BASE STYLES ===== */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #16181A;
+        margin: 0;
+        padding: 0;
+        color: #e0e0e0;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .main-content {
+        background-color: #222429;
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 960px;
+        flex-grow: 1;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    }
+    
+    /* ===== TYPOGRAPHY ===== */
+    .main-content h1 {
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 30px;
+    }
+    .main-content h2 {
+        color: #ffffff;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    .main-content p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #ccc;
+    }
+    
+    /* ===== MEDIA ELEMENTS ===== */
+    .header-image, .kivymd-bottom-img, .demo-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+        max-width: 100%;
+    }
+    .header-image {
+        margin-bottom: 30px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .video-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    iframe {
+        border: none;
+    }
+    
+    /* ===== LAYOUT COMPONENTS ===== */
+    .title-with-logo, .title-with-logo-h1 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .title-with-logo-h1 {
+        justify-content: center;
+    }
+    .title-with-logo h2, .title-with-logo-h1 h1 {
+        margin: 0;
+        color: #ffffff;
+    }
+    .title-with-logo h2 { text-align: left; }
+    .title-with-logo-h1 h1 { text-align: center; }
+    
+    .logo {
+        height: 50px;
+        width: auto;
+    }
+    
+    /* ===== CARD STYLES ===== */
+    .section-container, .framework-section, .testing-method, .testing-strategy, .playstore-method {
+        background: #2a2d35;
+        padding: 30px;
+        border-radius: 12px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .framework-section, .testing-method, .playstore-method {
+        background: #333842;
+        border-radius: 8px;
+    }
+    .testing-method {
+        border-left: 4px solid #2196F3;
+    }
+	
+	.playstore-method {
+        border-left: 4px solid #FBBC05;
+    }
+		
+    /* The feature item background stays the same */
+	.author-card, .info-card, .tip-card, .feature-item, .feature-item-yellow {
+	    background: #333842; /* Keep the dark background */
+	    padding: 25px;
+	    border-radius: 8px;
+	    text-align: center;
+	}
+    .author-card {
+        border-left: 4px solid #4CAF50;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+    
+    .info-box, .advanced-section, .warning-note {
+        background-color: #2a2d35;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
+    .info-box { border-left: 4px solid #4CAF50; }
+    .warning-note {
+        background-color: #ff980020;
+        border-left: 4px solid #ff9800;
+    }
+    
+    /* ===== HEADER STYLES ===== */
+    .author-header, .framework-header, .method-header, .channel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .author-header { margin-bottom: 15px; }
+    .method-header { margin-bottom: 25px; }
+    
+    .hero-section {
+        text-align: center;
+        padding: 30px 0;
+        border-bottom: 1px solid #444;
+        margin-bottom: 40px;
+    }
+    .hero-subtitle {
+        font-size: 1.3em;
+        color: #ccc;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+    
+    .showcase-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .showcase-header h2 {
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    
+    /* ===== BADGE STYLES ===== */
+    .company-badge, .framework-badge, .method-badge, .playstore-badge {
+        background: #4CAF50;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+    .framework-badge { background: #2196F3; }
+    .playstore-badge {
+        background: #FBBC05;
+        color: #000000; /* Black text for better contrast on yellow */
+    }
+    
+    /* ===== LINK STYLES ===== */
+    .website-link, .method-link, .channel-link, .cta-button, .playstore-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        color: white !important;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+    .website-link {
+        color: #4CAF50 !important;
+        padding: 0;
+        background: none;
+        margin-top: 10px;
+    }
+    .website-link:hover { text-decoration: underline; }
+    
+    .method-link, .channel-link, .cta-button {
+        background: #2196F3;
+    }
+    .method-link:hover, .channel-link:hover, .cta-button:hover {
+        background: #1976D2;
+    }
+
+    .playstore-link {
+        background: #FBBC05;
+        color: #000000 !important; /* Black text for better contrast */
+    }
+
+    .playstore-link:hover {
+        background: #E6A800; /* Darker yellow on hover */
+    }
+    
+    .doc-link, .resource-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 15px;
+        background: #444;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background 0.3s;
+    }
+    .doc-link { padding: 10px 15px; background-color: #3d3d3d; }
+    .doc-link:hover, .resource-link:hover { background: #555; }
+    
+    .doc-links, .resource-links {
+        display: flex;
+        gap: 15px;
+        margin: 15px 0;
+        flex-wrap: wrap;
+    }
+    .resource-links { margin: 20px 0; }
+    
+    /* ===== GRID LAYOUTS ===== */
+    .info-grid, .feature-grid, .tips-grid, .checklist-grid {
+        display: grid;
+		grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
+        gap: 20px;
+        margin: 25px 0;
+    }
+    .info-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .feature-grid, .tips-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } /* Reduced from 250px */
+    .checklist-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    
+    .app-showcase {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .demo-images {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+    }
+    
+    /* ===== ICON STYLES ===== */
+    .info-icon, .strategy-icon {
+        font-size: 2.5em;
+        color: #4CAF50;
+        margin-bottom: 15px;
+    }
+    .strategy-icon { color: #2196F3; }
+    
+    .feature-item i {
+        font-size: 2.5em;
+        color: #2196F3;
+        margin-bottom: 15px;
+    }
+
+	.feature-item-yellow i {
+        font-size: 2.5em;
+        color: #EEB211;
+        margin-bottom: 15px;
+    }
+    
+    .tip-card i {
+        font-size: 2em;
+        color: #4CAF50;
+        margin-bottom: 15px;
+    }
+    
+    /* ===== APP CARD STYLES ===== */
+    .app-card {
+        background-color: #1d1f22;
+        border: 1px solid #444853;
+        border-radius: 12px;
+        padding: 25px;
+        width: 300px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .app-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+    
+    .app-logo {
+        max-width: 300px;
+        max-height: 60px;
+        object-fit: contain;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .app-card-header {
+        margin-bottom: 20px;
+    }
+    .app-card-header h4 {
+        color: #fff;
+        margin: 15px 0 10px 0;
+        font-size: 1.3em;
+    }
+    
+    .app-card-body p {
+        color: #ccc;
+        margin-bottom: 20px;
+        min-height: 40px;
+    }
+    
+    .play-badge-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 60px;
+        background-color: transparent;
+        margin: 0 auto;
+    }
+    .play-badge-link img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+    
+    /* ===== STEP AND PATH STYLES ===== */
+    .learning-path, .step-by-step {
+        margin: 20px 0;
+    }
+    .step-by-step { margin: 25px 0; }
+    
+    .learning-step, .step {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 10px 0;
+        padding: 10px;
+        background: #2a2d35;
+        border-radius: 6px;
+    }
+    .step {
+        gap: 20px;
+        margin: 25px 0;
+        padding: 20px;
+        align-items: flex-start;
+    }
+    
+    .step-number, .step-icon, .step-icon-playstore {
+        background: #4CAF50;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    .step-icon {
+        background: #2196F3;
+        width: 40px;
+        height: 40px;
+    }
+	.step-icon-playstore {
+        background: #FBBC05;
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Fix step content to contain code blocks */
+	.step-content {
+	    flex: 1;
+	    min-width: 0; /* This is crucial for flex children to respect overflow */
+	    overflow: hidden; /* Contain the code blocks */
+	}
+	
+	.step-content h5 {
+	    color: #fff;
+	    margin: 0 0 10px 0;
+	}
+	.step-content p {
+	    color: #ccc;
+	    margin: 0 0 10px 0;
+	}
+	.step-content ul {
+	    color: #ccc;
+	    margin: 10px 0;
+	    padding-left: 20px;
+	}
+    
+    /* ===== LIST STYLES ===== */
+    .benefits-list ul, .key-points {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 20px 0;
+    }
+    .benefits-list li {
+        padding: 5px 0;
+        position: relative;
+        padding-left: 25px;
+    }
+    .benefits-list li:before {
+        content: "✓";
+        color: #4CAF50;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+    
+    .key-point {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+    }
+
+    .key-point i {
+        font-size: 1.2em;
+    }
+
+    .key-point span {
+        font-weight: 500;
+    }
+    
+    .checklist-column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .checklist-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .checklist-item i {
+        color: #4CAF50;
+    }
+    .checklist-item span {
+        color: #ccc;
+    }
+    
+    /* ===== CODE BLOCKS ===== */
+    .examples-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+    .example-box {
+        background-color: #222;
+        padding: 15px;
+        border-radius: 8px;
+        width: 45%;
+        color: #eee;
+        font-family: monospace;
+        text-align: left;
+        display: block;
+    }
+    
+    .code-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #3d3d3d;
+        padding: 8px 12px;
+        border-radius: 6px 6px 0 0;
+        margin-bottom: 0;
+    }
+    .code-filename {
+        font-weight: bold;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+    }
+    
+    .copy-btn {
+        background: #555;
+        border: none;
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 12px;
+        transition: background 0.3s;
+    }
+    .copy-btn:hover { background: #666; }
+    .copy-btn.copied { background: #4CAF50; }
+    
+    /* FIXED: Horizontal scroll for code blocks */
+    .code-scroll-container {
+        white-space: nowrap; /* Changed from pre-wrap to nowrap */
+        overflow-x: auto;    /* Changed from hidden to auto */
+        overflow-y: hidden;  /* Added to prevent vertical scroll */
+        text-align: left;
+        padding: 10px;
+        max-height: none;    /* Removed max-height constraint */
+        background-color: #2d2d2d;
+        border-radius: 0 0 6px 6px;
+        margin-top: 0;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+    .code-scroll-container pre {
+        margin: 0;
+        padding: 0;
+        display: block;
+        text-align: left;
+        white-space: pre;    /* Changed from pre-wrap to pre */
+        word-wrap: normal;   /* Changed from break-word to normal */
+        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    }
+    
+    /* Override any Prism.js padding */
+    .code-scroll-container pre[class*="language-"],
+    .code-scroll-container code[class*="language-"] {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Code syntax highlighting */
+    .code-scroll-container .token.comment {
+        color: #6a9955 !important;
+        opacity: 0.85;
+    }
+    .code-scroll-container .token.keyword {
+        color: #569cd6 !important;
+    }
+    .code-scroll-container .token.string {
+        color: #ce9178 !important;
+    }
+    .code-scroll-container .token.number {
+        color: #b5cea8 !important;
+    }
+    
+    /* ===== STRATEGY FLOW ===== */
+    .strategy-flow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 30px 0;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .strategy-step {
+        text-align: center;
+        flex: 1;
+        min-width: 150px;
+    }
+    .strategy-step h5 {
+        color: #fff;
+        margin-bottom: 10px;
+    }
+    .strategy-step p {
+        color: #ccc;
+        margin: 0;
+    }
+    .strategy-arrow {
+        color: #2196F3;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    /* Steps flow for next steps */
+    .steps-flow {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 25px 0;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .step-item {
+        text-align: center;
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .step-item .step-number {
+        background: #FBBC05;
+        color: #000000;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin: 0 auto 10px auto;
+    }
+
+    .step-item h5 {
+        margin-bottom: 5px;
+        font-size: 0.9em;
+    }
+
+    .step-item p {
+        /* color: #000000; */
+        font-size: 0.8em;
+        margin: 0;
+    }
+
+    .step-arrow {
+        color: #000000;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    
+    /* ===== UTILITY CLASSES ===== */
+    .note {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px;
+        /* background: #1e3a5f; */
+        border-radius: 4px;
+        margin-top: 10px;
+    }
+    .note i {
+        /* color: #2196F3; */
+        margin-top: 2px;
+    }
+    
+    .demo-item {
+        text-align: center;
+    }
+    .demo-caption {
+        color: #ccc;
+        margin-top: 10px;
+        font-style: italic;
+    }
+    
+    .author-content {
+        margin-top: 15px;
+    }
+    
+    .appetize-demo, .debugging-tips, .testing-checklist {
+        margin-top: 30px;
+    }
+
+    /* Adjust for yellow background in playstore-method */
+    .playstore-method .code-scroll-container {
+        background-color: #1a1a1a;
+    }
+
+    .playstore-method .code-header {
+        background-color: #333333;
+    }
+
+    .playstore-method .warning-note {
+        background-color: rgba(255, 0, 0, 0.1);
+        border-left: 4px solid #ff0000;
+    }
+
+    .playstore-method .info-box {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-left: 4px solid #000000;
+    }
+
+	/* AdMob Method Styling */
+	.admob-method {
+	    background: #2a2d35;
+	    padding: 30px;
+	    border-radius: 12px;
+	    margin-bottom: 40px;
+	    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+	    border-left: 4px solid #EA4335; /* Google AdMob Red */
+	}
+	
+	.admob-badge {
+	    background: #EA4335;
+	    color: white;
+	    padding: 4px 12px;
+	    border-radius: 20px;
+	    font-size: 0.9em;
+	    font-weight: bold;
+	}
+	
+	.admob-link {
+	    display: inline-flex;
+	    align-items: center;
+	    gap: 8px;
+	    padding: 8px 16px;
+	    background: #EA4335;
+	    color: white !important;
+	    text-decoration: none;
+	    border-radius: 6px;
+	    font-weight: bold;
+	    transition: background 0.3s;
+	}
+	
+	.admob-link:hover {
+	    background: #D33426; /* Darker red on hover */
+	}
+	
+	/* AdMob feature items */
+	.feature-item-admob i {
+	    font-size: 2.5em;
+	    color: #EA4335; /* AdMob red icons */
+	    margin-bottom: 15px;
+	}
+	
+	/* Ads comparison table */
+	.ads-table-container {
+	    overflow-x: auto;
+	    margin: 25px 0;
+	    border-radius: 8px;
+	    background: #2a2d35;
+	}
+	
+	.ads-comparison-table {
+	    width: 100%;
+	    border-collapse: collapse;
+	    background: #333842;
+	    border-radius: 8px;
+	    overflow: hidden;
+	}
+	
+	.ads-comparison-table th {
+	    background: #EA4335;
+	    color: white;
+	    padding: 15px 12px;
+	    text-align: left;
+	    font-weight: bold;
+	    border: none;
+	}
+	
+	.ads-comparison-table td {
+	    padding: 12px;
+	    border-bottom: 1px solid #444;
+	    color: #e0e0e0;
+	    vertical-align: top;
+	}
+	
+	.ads-comparison-table tr:hover {
+	    background: #3a3d45;
+	}
+	
+	.ads-comparison-table .positive {
+	    color: #4CAF50;
+	    font-weight: 500;
+	}
+	
+	.ads-comparison-table .neutral {
+	    color: #FF9800;
+	    font-weight: 500;
+	}
+	
+	.ads-comparison-table .negative {
+	    color: #F44336;
+	    font-weight: 500;
+	}
+	
+	.ads-comparison-table em {
+	    color: #aaa;
+	    font-size: 0.9em;
+	}
+
+	/* Compatibility status styles */
+	.ads-comparison-table .compatible {
+	    color: #4CAF50;
+	    font-weight: 500;
+	    text-align: center;
+	}
+	
+	.ads-comparison-table .compatible i {
+	    color: #4CAF50;
+	    margin-right: 5px;
+	}
+	
+	.ads-comparison-table .not-compatible {
+	    color: #F44336;
+	    font-weight: 500;
+	    text-align: center;
+	}
+	
+	.ads-comparison-table .not-compatible i {
+	    color: #F44336;
+	    margin-right: 5px;
+	}
+	
+	/* Adjust table header for new column */
+	.ads-comparison-table th {
+	    background: #EA4335;
+	    color: white;
+	    padding: 15px 12px;
+	    text-align: left;
+	    font-weight: bold;
+	    border: none;
+	}
+	
+	.ads-comparison-table th:nth-child(5) {
+	    text-align: center; /* Center the KivMob Compatibility header */
+	}
+	
+	/* Center align the compatibility column content */
+	.ads-comparison-table td:nth-child(5) {
+	    text-align: center;
+	    vertical-align: middle;
+	}
+	
+	/* Responsive adjustments */
+	@media (max-width: 768px) {
+	    .ads-comparison-table {
+	        font-size: 0.9em;
+	    }
+	    
+	    .ads-comparison-table th,
+	    .ads-comparison-table td {
+	        padding: 8px 6px;
+	    }
+	    
+	    .ads-comparison-table .compatible,
+	    .ads-comparison-table .not-compatible {
+	        font-size: 0.85em;
+	    }
+	}
+	
+	@media (max-width: 480px) {
+	    .ads-comparison-table {
+	        font-size: 0.8em;
+	    }
+	    
+	    .ads-comparison-table .compatible i,
+	    .ads-comparison-table .not-compatible i {
+	        display: block;
+	        margin: 0 auto 2px auto;
+	        font-size: 1.2em;
+	    }
+	    
+	    .ads-comparison-table .compatible,
+	    .ads-comparison-table .not-compatible {
+	        font-size: 0;
+	    }
+	    
+	    .ads-comparison-table .compatible:after {
+	        content: "Supported";
+	        font-size: 0.7em;
+	        color: #4CAF50;
+	    }
+	    
+	    .ads-comparison-table .not-compatible:after {
+	        content: "Not Supported";
+	        font-size: 0.7em;
+	        color: #F44336;
+	    }
+	}
+	/* Responsive table */
+	@media (max-width: 768px) {
+	    .ads-comparison-table {
+	        font-size: 0.9em;
+	    }
+	    
+	    .ads-comparison-table th,
+	    .ads-comparison-table td {
+	        padding: 8px 6px;
+	    }
+	}
+	
+	@media (max-width: 480px) {
+	    .ads-comparison-table {
+	        font-size: 0.8em;
+	    }
+	}
+
+	/* AdMob step icons */
+	.step-icon-admob {
+	    background: #EA4335; /* AdMob red */
+	    color: white;
+	    width: 40px;
+	    height: 40px;
+	    border-radius: 50%;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    font-weight: bold;
+	    flex-shrink: 0;
+	}
+	
+	/* Java syntax highlighting for code blocks */
+	.code-scroll-container .token.keyword {
+	    color: #569cd6 !important;
+	}
+	
+	.code-scroll-container .token.string {
+	    color: #ce9178 !important;
+	}
+	
+	.code-scroll-container .token.comment {
+	    color: #6a9955 !important;
+	}
+	
+	.code-scroll-container .token.class-name {
+	    color: #4ec9b0 !important;
+	}
+	
+	.code-scroll-container .token.function {
+	    color: #dcdcaa !important;
+	}
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 768px) {
+        .info-grid,
+        .feature-grid,
+        .tips-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .resource-links {
+            flex-direction: column;
+        }
+        
+        .framework-header,
+        .author-header,
+        .method-header {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .examples-container {
+            flex-direction: column;
+        }
+        .example-box {
+            width: 100%;
+        }
+        
+        .strategy-flow,
+        .steps-flow {
+            flex-direction: column;
+        }
+        .strategy-arrow,
+        .step-arrow {
+            transform: rotate(90deg);
+        }
+        
+        .step {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .code-scroll-container {
+            font-size: 0.9em; /* Slightly smaller text on mobile */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .main-content {
+            padding: 15px;
+        }
+        
+        .section-container, .framework-section, .testing-method, .playstore-method {
+            padding: 20px;
+        }
+        
+        .main-content h1 {
+            font-size: 1.6em;
+        }
+        
+        .main-content h2 {
+            font-size: 1.4em;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1em;
+        }
+
+        .code-scroll-container {
+            font-size: 0.85em; /* Even smaller text on very small screens */
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+		<img src="../images/Python_Android_PlayStore.jpg" alt="Python Android Play Store" class="header-image" />
+	    
+	    <!-- Hero Section -->
+		<div class="hero-section">
+		    <h1>Build Android Apps with Python</h1>
+		    <p class="hero-subtitle">From concept to Google Play Store: Follow this comprehensive step-by-step guide to create and publish your own Android apps using Python with Kivy and KivyMD.</p>
+		</div>
+		
+		<!-- Introduction Section -->
+		<div class="section-container">
+		    <h1>Introduction</h1>
+		    
+		    <div class="author-card">
+		        <div class="author-header">
+		            <h2>About the Author</h2>
+		        </div>
+		        <div class="author-content">
+		            <p>Hello! I'm <strong>Clément</strong>, founder and lead developer at <strong>P&amp;GT Technologies</strong>. Our expertise lies in crafting Android applications using Python frameworks <strong>Kivy</strong> and <strong>KivyMD</strong>. This guide will walk you through the entire journey—from initial idea to deploying your app on the Google Play Store.</p>
+		            <a href="https://www.pgt-technologies.com" target="_blank" class="website-link">
+		                <i class="fas fa-external-link-alt"></i> Visit our website: www.pgt-technologies.com
+		            </a>
+		        </div>
+		    </div>
+		
+		    <div class="info-grid">
+		        <div class="info-card">
+		            <div class="info-icon">
+		                <i class="fas fa-lightbulb"></i>
+		            </div>
+		            <h3>Why Python for Mobile Apps?</h3>
+		            <p>Python has become an accessible option for mobile development, especially for developers new to the field. Many experienced programmers also leverage Python's capabilities for rapid prototyping and development.</p>
+		        </div>
+		        
+		        <div class="info-card">
+		            <div class="info-icon">
+		                <i class="fas fa-mobile-alt"></i>
+		            </div>
+		            <h3>Frontend & Backend</h3>
+		            <p>Python offers robust libraries covering both graphical user interfaces (GUI/frontend) and application logic (backend), making it a complete solution for app development.</p>
+		        </div>
+		        
+		        <div class="info-card">
+		            <div class="info-icon">
+		                <i class="fas fa-tools"></i>
+		            </div>
+		            <h3>Why Kivy?</h3>
+		            <p>Among Python GUI frameworks like PyQt and Tkinter, Kivy stands out for mobile development with its cross-platform capabilities and powerful packaging tools.</p>
+		        </div>
+		    </div>
+		</div>
+		
+		<!-- Our Apps Showcase -->
+		<div class="section-container">
+		    <div class="showcase-header">
+		        <h2>Our Published Apps</h2>
+		        <p>We have successfully released two Android apps on the Google Play Store, both developed with Kivy and KivyMD. Explore them to see what these libraries can achieve.</p>
+		    </div>
+		    
+		    <div class="app-showcase">
+		        <div class="app-card">
+		            <div class="app-card-header">
+		                <img src="../images/logo_betpuck_guide.png" alt="Betpuck Logo" class="app-logo" />
+		            </div>
+		            <div class="app-card-body">
+		                <a href="https://play.google.com/store/apps/details?id=com.betpuck.betpuck" target="_blank" rel="noopener noreferrer" class="play-badge-link">
+		                    <img src="../images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" />
+		                </a>
+		            </div>
+		        </div>
+		
+		        <div class="app-card">
+		            <div class="app-card-header">
+		                <img src="../images/Logo_Astraeus_small.png" alt="Astraeus Logo" class="app-logo" />
+		            </div>
+		            <div class="app-card-body">
+		                <a href="https://play.google.com/store/apps/details?id=com.astroevent.astroevent" target="_blank" rel="noopener noreferrer" class="play-badge-link">
+		                    <img src="../images/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play" />
+		                </a>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		
+		<!-- Frameworks Overview -->
+		<div class="section-container">
+		    <h1>Overview of Kivy and KivyMD</h1>
+		    
+		    <div class="framework-section">
+		        <div class="framework-header">
+		            <div class="title-with-logo">
+		                <h2>Kivy</h2>
+		                <img src="../images/kivy_logo.png" alt="Kivy logo" class="logo" />
+		            </div>
+		            <div class="framework-badge">Foundation Framework</div>
+		        </div>
+		        
+		        <div class="framework-content">
+		            <p>Kivy is a free and open-source Python framework for developing mobile apps and multitouch applications with a natural user interface (NUI). It is beginner-friendly but does require basic Python knowledge.</p>
+		            
+		            <div class="resource-links">
+		                <a href="https://kivy.org/" target="_blank" class="resource-link">
+		                    <i class="fas fa-globe"></i> Official Website
+		                </a>
+		                <a href="https://kivy.org/doc/stable/gettingstarted/intro.html" target="_blank" class="resource-link">
+		                    <i class="fas fa-book"></i> Get Started Guide
+		                </a>
+		            </div>
+		            
+		            <h4>Recommended Learning Path:</h4>
+		            <div class="learning-path">
+		                <div class="learning-step">
+		                    <span class="step-number">1</span>
+		                    <span>Start with official documentation</span>
+		                </div>
+		                <div class="learning-step">
+		                    <span class="step-number">2</span>
+		                    <span>Follow Jonathan Roux's freeCodeCamp tutorial</span>
+		                </div>
+		                <div class="learning-step">
+		                    <span class="step-number">3</span>
+		                    <span>Explore advanced topics with <a href="https://www.youtube.com/@SCOBAS" target="_blank" style="color:#ffffff;"> @SCOBAS</a></span>
+		                </div>
+		            </div>
+		            
+		            <div class="video-container">
+		                <iframe width="560" height="315" src="https://www.youtube.com/embed/l8Imtec4ReQ?si=sEQfQvR8utmrDczQ" 
+		                        title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+		                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+		                </iframe>
+		            </div>
+
+					<div class="video-container">
+		                <iframe width="560" height="315" src="https://www.youtube.com/embed/3RPjnC0ZALg?si=k214DmegbVuTrJ5k" 
+								title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+								referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+						</iframe>
+		            </div>
+					<p>
+					While Kivy provides the foundation for app development, its default graphics can feel limited in terms of user experience. That’s where KivyMD comes into play.
+					</p>
+		        </div>
+		    </div>
+		
+		    <div class="framework-section">
+		        <div class="framework-header">
+		            <div class="title-with-logo">
+		                <h2>KivyMD</h2>
+		                <img src="../images/kivymd_logo.png" alt="KivyMD logo" class="logo" />
+		            </div>
+		            <div class="framework-badge">Material Design</div>
+		        </div>
+		        
+		        <div class="framework-content">
+		            <p><strong>KivyMD</strong> is a community-driven project that extends Kivy with Google's Material Design components, creating modern, user-friendly, and visually appealing interfaces.</p>
+		            
+		            <div class="key-points">
+		                <div class="key-point">
+		                    <i class="fas fa-check-circle"></i>
+		                    <span>Follows Material Design principles</span>
+		                </div>
+		                <div class="key-point">
+		                    <i class="fas fa-check-circle"></i>
+		                    <span>Community-maintained project</span>
+		                </div>
+		                <div class="key-point">
+		                    <i class="fas fa-check-circle"></i>
+		                    <span>Requires Kivy foundation knowledge</span>
+		                </div>
+		            </div>
+		            
+		            <div class="resource-links">
+		                <a href="https://kivymd.readthedocs.io/en/latest/" target="_blank" class="resource-link">
+		                    <i class="fas fa-book-open"></i> Documentation
+		                </a>
+		                <a href="https://m2.material.io/design/introduction" target="_blank" class="resource-link">
+		                    <i class="fas fa-palette"></i> Material Design Guide
+		                </a>
+		            </div>
+		            
+		            <img src="../images/kivymd_img.png" alt="KivyMD showcase image" class="kivymd-bottom-img" />
+		        </div>
+		    </div>
+		</div>
+
+		<!-- Code Examples Section -->
+		<div class="section-container">
+			<div class="title-with-logo-h1">
+			  <h1>Goal: Convert Your Python Code into an APK</h1>
+			  <img src="../images/android-apk.png" alt="Android APK" class="logo" />
+			</div>
+			<p>As you will learn when going through either Kivy or KivyMD, there are two ways to develop with those libraries: the declarative KV style, where the frontend is handled by a <code>.kv</code> file and the backend by <code>main.py</code>, or the declarative Python style where everything is handled in <code>main.py</code>.</p>
+			
+			<div class="examples-container">
+			  <div class="example-box">
+			    <h3>Kivy/KivyMD: Declarative kv Style</h3>
+			    
+			    <div class="code-header">
+			      <span class="code-filename">main.py</span>
+			      <button class="copy-btn" onclick="copyCode(this)">
+			        <i class="fas fa-copy"></i> Copy
+			      </button>
+			    </div>
+			    <div class="code-scroll-container">
+			      <pre class="line-numbers"><code class="language-python">from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+
+class RootWidget(BoxLayout):
+    pass
+
+class MyApp(App):
+    def build(self):
+        return RootWidget()
+
+if __name__ == '__main__':
+    MyApp().run()</code></pre>
+			    </div>
+			    
+			    <p style="margin-top: 15px;">The corresponding <code>.kv</code> file defining the UI:</p>
+			    
+			    <div class="code-header">
+			      <span class="code-filename">myapp.kv</span>
+			      <button class="copy-btn" onclick="copyCode(this)">
+			        <i class="fas fa-copy"></i> Copy
+			      </button>
+			    </div>
+			    <div class="code-scroll-container">
+			      <pre class="line-numbers"><code class="language-python">&lt;RootWidget&gt;:
+    ScrollView:
+        GridLayout:
+            cols: 1
+            size_hint_y: None
+            height: self.minimum_height
+            Label:
+                text: "Item 1"
+                size_hint_y: None
+                height: 40
+            Label:
+                text: "Item 2"
+                size_hint_y: None
+                height: 40
+            Label:
+                text: "Item 3"
+                size_hint_y: None
+                height: 40</code></pre>
+			    </div>
+			  </div>
+			
+			  <div class="example-box">
+			    <h3>Kivy/KivyMD: Declarative Python Style</h3>
+			    
+			    <div class="code-header">
+			      <span class="code-filename">main.py</span>
+			      <button class="copy-btn" onclick="copyCode(this)">
+			        <i class="fas fa-copy"></i> Copy
+			      </button>
+			    </div>
+			    <div class="code-scroll-container">
+			      <pre class="line-numbers"><code class="language-python">from kivy.app import App
+from kivy.uix.scrollview import ScrollView
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.label import Label
+
+class MyApp(App):
+    def build(self):
+        scroll = ScrollView()
+        layout = GridLayout(cols=1, size_hint_y=None)
+        layout.bind(minimum_height=layout.setter('height'))
+
+        for i in range(1, 4):
+            lbl = Label(text=f"Item {i}", size_hint_y=None, height=40)
+            layout.add_widget(lbl)
+
+        scroll.add_widget(layout)
+        return scroll
+
+if __name__ == '__main__':
+    MyApp().run()</code></pre>
+			    </div>
+			  </div>
+			</div>
+
+			<p>Once you've developed your Kivy/KivyMD application, the next crucial step is packaging it into an Android APK file using <strong>Buildozer</strong> - the primary tool for converting Python applications into Android packages.It supports both declarative KV style and declarative python style.</p>
+			
+			<div class="info-box">
+				<h3>What is Buildozer?</h3>
+				<p>Buildozer is a tool that automates the entire build process for mobile applications. It handles:</p>
+				<ul>
+					<li>Dependency management</li>
+					<li>Android SDK and NDK setup</li>
+					<li>APK compilation</li>
+					<li>Platform-specific configurations</li>
+				</ul>
+			</div>
+		
+			<h2>Getting Started with Buildozer</h2>
+			
+			<p>Follow the official Buildozer documentation for installation and setup:</p>
+			<div class="doc-links">
+				<a href="https://buildozer.readthedocs.io/en/latest/" target="_blank" class="doc-link">
+					<i class="fas fa-book"></i> Official Documentation
+				</a>
+				<a href="https://pypi.org/project/buildozer/" target="_blank" class="doc-link">
+					<i class="fas fa-box"></i> PyPI Package
+				</a>
+			</div>
+		
+			<h2>Recommended Tutorials</h2>
+			
+			<div class="tutorial-section">
+				<h3>Beginner-Friendly Video Guide</h3>
+				<p>For a visual walkthrough, I recommend Dennis-Immanuel Czogalla's comprehensive tutorial:</p>
+				<div class="video-container">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/pzsvN3fuBA0?si=qPvBZEROq5tLCeXc" 
+							title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+							referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+					</iframe>
+				</div>
+				<p></p>
+				<div class="warning-note">
+					<strong>Important:</strong> This video was created in 2022. Be sure to check the comments section for updates and changes, as the Buildozer ecosystem evolves rapidly.
+				</div>
+			</div>
+		
+			<h2>Advanced: GitHub Actions for Building</h2>
+			<div class="advanced-section">
+				<p>For better debugging, consider using GitHub Actions:</p>
+				
+				<div class="benefits-list">
+					<h4>Advantages of GitHub Actions:</h4>
+					<ul>
+						<li><strong>Clean build environment</strong> every time</li>
+						<li><strong>Detailed build logs</strong> for easier debugging</li>
+						<li><strong>No local resource consumption</strong></li>
+						<li><strong>Better error identification</strong> compared to local Linux logs</li>
+					</ul>
+				</div>
+		
+				<p>We frequently use this approach at P&amp;GT Technologies, especially when troubleshooting build issues.</p>
+			
+				<h3>GitHub Actions Tutorial</h3>
+				<div class="video-container">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/wbJxJ2Zjy_o?si=2ZFS3G38bYS3nNTi" 
+							title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+							referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+					</iframe>
+				</div>
+				<p></p>
+				<p>Here's an advance <code>build_apk.yml</code> file, to put into the .github/workflows/ repository: </p>
+	
+				<div class="code-header">
+				    <span class="code-filename">build_apk.yml</span>
+				    <button class="copy-btn" onclick="copyCode(this)">
+				        <i class="fas fa-copy"></i> Copy
+				    </button>
+				</div>
+				<div class="code-scroll-container">
+			    <pre class="line-numbers"><code class="language-ini">name: Build Kivy APK
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install system dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y git zip unzip openjdk-17-jdk python3-pip python3-virtualenv \
+          autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo6 cmake \
+          libffi-dev libssl-dev automake autopoint gettext
+
+          # Optional: Set Java alternatives if multiple JDKs installed
+          sudo update-alternatives --set java /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+          sudo update-alternatives --set javac /usr/lib/jvm/java-17-openjdk-amd64/bin/javac
+
+      - name: Setup Python environment and Buildozer
+        run: |
+          python3 -m pip install --upgrade pip setuptools cython==0.29.34 buildozer
+
+      - name: Build APK
+        uses: digreatbrian/buildozer-action@v2
+        with:
+          python-version: 3.8
+          buildozer-cmd: buildozer -v android debug --warning-mode all
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: ./bin/*.apk
+				</code></pre>
+	        	</div>
+			</div>
+			<h2>Complete Buildozer Configuration</h2>
+
+			<p>Here's a comprehensive <code>buildozer.spec</code> file: </p>
+			
+			<div class="code-header">
+			    <span class="code-filename">buildozer.spec</span>
+			    <button class="copy-btn" onclick="copyCode(this)">
+			        <i class="fas fa-copy"></i> Copy
+			    </button>
+			</div>
+			<div class="code-scroll-container">
+			    <pre class="line-numbers"><code class="language-ini">[app]
+
+# (str) Title of your application
+title = Apptitle
+
+# (str) Package name (usually app title)
+package.name = apptitle
+
+# (str) Package domain (needed for android/ios packaging) / Your complete package name after compilation would then be com.apptitle.apptitle
+package.domain = com.apptitle
+
+# (str) Source code where the main.py live
+source.dir = .
+
+# (list) Source files to include (let empty to include all the files)
+source.include_exts = py,png,jpg,jpeg,kv,ttf,txt,json
+
+# (list) List of inclusions using pattern matching
+#source.include_patterns = 
+
+# (list) Source files to exclude (let empty to not exclude anything)
+#source.exclude_exts = spec
+
+# (list) List of directory to exclude (let empty to not exclude anything)
+#source.exclude_dirs = tests, bin, venv
+
+# (list) List of exclusions using pattern matching
+# Do not prefix with './'
+#source.exclude_patterns = license,images/*/*.jpg
+
+# (str) Application versioning (method 1) - Would have to get higher for each new release
+version = 0.1
+
+# (str) Application versioning (method 2)
+# version.regex = __version__ = ['"](.*)['"]
+# version.filename = %(source.dir)s/main.py
+
+# (list) Application requirements
+# comma separated e.g. requirements = sqlite3,kivy
+# At P&GT, we suggest using the following ones for KivyMD apps
+requirements = python3, android, kivy==2.3.0, requests, urllib3, chardet, idna, certifi, materialyoucolor, exceptiongroup, asyncgui, asynckivy, pillow, cachetools, python-dateutil, scramp, asn1crypto, cryptography, bcrypt, https://github.com/kivymd/KivyMD/archive/master.zip
+
+# (str) Custom source folders for requirements
+# Sets custom source for any requirements with recipes
+# requirements.source.kivy = ../../kivy
+
+# (str) Presplash of the application - Image displayed at loading - Must be .png ! - We suggest having images 512*512
+presplash.filename = %(source.dir)s/image/img.png
+
+# (str) Icon of the application - Icon of the app - Must be .png ! - We suggest having images 512*512
+icon.filename = %(source.dir)s/image/icon.png
+
+# (list) Supported orientations
+# Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
+orientation = portrait
+
+# (list) List of service to declare
+#services = NAME:ENTRYPOINT_TO_PY,NAME2:ENTRYPOINT2_TO_PY
+
+#
+# OSX Specific
+#
+
+#
+# author = © Copyright Info
+
+# change the major version of python used by the app
+osx.python_version = 3
+
+# Kivy version to use
+osx.kivy_version = 2.3.0
+
+#
+# Android specific
+#
+
+# (bool) Indicate if the application should be fullscreen or not
+fullscreen = 0
+
+# (string) Presplash background color (for android toolchain)
+# Supported formats are: #RRGGBB #AARRGGBB or one of the following names:
+# red, blue, green, black, white, gray, cyan, magenta, yellow, lightgray,
+# darkgray, grey, lightgrey, darkgrey, aqua, fuchsia, lime, maroon, navy,
+# olive, purple, silver, teal.
+#android.presplash_color = #FFFFFF
+
+# (string) Presplash animation using Lottie format.
+# see https://lottiefiles.com/ for examples and https://airbnb.design/lottie/
+# for general documentation.
+# Lottie files can be created using various tools, like Adobe After Effect or Synfig.
+#android.presplash_lottie = "path/to/lottie/file.json"
+
+# (str) Adaptive icon of the application (used if Android API level is 26+ at runtime)
+#icon.adaptive_foreground.filename = %(source.dir)s/data/icon_fg.png
+#icon.adaptive_background.filename = %(source.dir)s/data/icon_bg.png
+
+# (list) Permissions
+# (See https://python-for-android.readthedocs.io/en/latest/buildoptions/#build-options-1 for all the supported syntaxes and properties)
+# Needed for some app
+#android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE
+
+# (list) features (adds uses-feature -tags to manifest)
+#android.features = android.hardware.usb.host
+
+# (int) Target Android API, should be as high as possible - 35 is Android 15
+android.api = 35
+
+# (int) Minimum API your APK / AAB will support - 24 is the one we chose. Do not set it lower for new releases, or version of app would be lower than before
+android.minapi = 24
+
+# (int) Android SDK version to use. 
+android.sdk = 20
+
+# (str) Android NDK version to use
+android.ndk = 25b
+
+# (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
+android.ndk_api = 24
+
+# (bool) Use --private data storage (True) or --dir public storage (False)
+#android.private_storage = True
+
+# (str) Android NDK directory (if empty, it will be automatically downloaded.)
+#android.ndk_path =
+
+# (str) Android SDK directory (if empty, it will be automatically downloaded.)
+#android.sdk_path =
+
+# (str) ANT directory (if empty, it will be automatically downloaded.)
+#android.ant_path =
+
+# (bool) If True, then skip trying to update the Android sdk
+# This can be useful to avoid excess Internet downloads or save time
+# when an update is due and you just want to test/build your package
+# android.skip_update = False
+
+# (bool) If True, then automatically accept SDK license
+# agreements. This is intended for automation only. If set to False,
+# the default, you will be shown the license when first running
+# buildozer.
+# Usually needed to support external SDK. Leave it commented. If you get Aidl error when compiling, uncomment
+#android.accept_sdk_license = True
+
+# (str) Android entry point, default is ok for Kivy-based app
+#android.entrypoint = org.kivy.android.PythonActivity
+
+# (str) Full name including package path of the Java class that implements Android Activity
+# use that parameter together with android.entrypoint to set custom Java class instead of PythonActivity
+#android.activity_class_name = org.kivy.android.PythonActivity
+
+# (str) Extra xml to write directly inside the "<manifest>" element of AndroidManifest.xml
+# use that parameter to provide a filename from where to load your custom XML code
+#android.extra_manifest_xml = %(source.dir)s/extramanifest.xml
+
+# (str) Extra xml to write directly inside the "<manifest><application>" tag of AndroidManifest.xml
+# use that parameter to provide a filename from where to load your custom XML arguments:
+#android.extra_manifest_application_arguments = ./src/android/extra_manifest_application_arguments.xml
+
+# (str) Full name including package path of the Java class that implements Python Service
+# use that parameter to set custom Java class which extends PythonService
+#android.service_class_name = org.kivy.android.PythonService
+
+# (str) Android app theme, default is ok for Kivy-based app
+# android.apptheme = "@android:style/Theme.NoTitleBar"
+
+# (list) Pattern to whitelist for the whole project
+#android.whitelist =
+
+# (str) Path to a custom whitelist file
+#android.whitelist_src =
+
+# (str) Path to a custom blacklist file
+#android.blacklist_src =
+
+# (list) List of Java .jar files to add to the libs so that pyjnius can access
+# their classes. Don't add jars that you do not need, since extra jars can slow
+# down the build process. Allows wildcards matching, for example:
+# OUYA-ODK/libs/*.jar
+#android.add_jars = foo.jar,bar.jar,path/to/more/*.jar
+
+# (list) List of Java files to add to the android project (can be java or a
+# directory containing the files)
+#android.add_src = %(source.dir)s/src/android
+
+# (list) Android AAR archives to add
+#android.add_aars =
+
+# (list) Put these files or directories in the apk assets directory.
+# Either form may be used, and assets need not be in 'source.include_exts'.
+# 1) android.add_assets = source_asset_relative_path
+# 2) android.add_assets = source_asset_path:destination_asset_relative_path
+#android.add_assets =
+
+# (list) Put these files or directories in the apk res directory.
+# The option may be used in three ways, the value may contain one or zero ':'
+# Some examples:
+# 1) A file to add to resources, legal resource names contain ['a-z','0-9','_']
+# android.add_resources = my_icons/all-inclusive.png:drawable/all_inclusive.png
+# 2) A directory, here  'legal_icons' must contain resources of one kind
+# android.add_resources = legal_icons:drawable
+# 3) A directory, here 'legal_resources' must contain one or more directories, 
+# each of a resource kind:  drawable, xml, etc...
+# android.add_resources = legal_resources
+#android.add_resources =
+
+# (list) Gradle dependencies to add
+#android.gradle_dependencies =
+
+# (bool) Enable AndroidX support. Enable when 'android.gradle_dependencies'
+# contains an 'androidx' package, or any package from Kotlin source.
+# android.enable_androidx requires android.api >= 28
+#android.enable_androidx = True
+
+# (list) add java compile options
+# this can for example be necessary when importing certain java libraries using the 'android.gradle_dependencies' option
+# see https://developer.android.com/studio/write/java8-support for further information
+# android.add_compile_options = "sourceCompatibility = 1.8", "targetCompatibility = 1.8"
+
+# (list) Gradle repositories to add {can be necessary for some android.gradle_dependencies}
+# please enclose in double quotes 
+# e.g. android.gradle_repositories = "maven { url 'https://kotlin.bintray.com/ktor' }"
+#android.add_gradle_repositories =
+
+# (list) packaging options to add 
+# see https://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.PackagingOptions.html
+# can be necessary to solve conflicts in gradle_dependencies
+# please enclose in double quotes 
+# e.g. android.add_packaging_options = "exclude 'META-INF/common.kotlin_module'", "exclude 'META-INF/*.kotlin_module'"
+#android.add_packaging_options =
+
+# (list) Java classes to add as activities to the manifest.
+#android.add_activities = com.example.ExampleActivity
+
+# (str) OUYA Console category. Should be one of GAME or APP
+# If you leave this blank, OUYA support will not be enabled
+#android.ouya.category = GAME
+
+# (str) Filename of OUYA Console icon. It must be a 732x412 png image.
+#android.ouya.icon.filename = %(source.dir)s/data/ouya_icon.png
+
+# (str) XML file to include as an intent filters in "<activity>" tag
+#android.manifest.intent_filters = %(source.dir)s/intent_filter.xml
+
+# (list) Copy these files to src/main/res/xml/ (used for example with intent-filters)
+#android.res_xml = PATH_TO_FILE,
+
+# (str) launchMode to set for the main activity
+#android.manifest.launch_mode = standard
+
+# (str) screenOrientation to set for the main activity.
+# Valid values can be found at https://developer.android.com/guide/topics/manifest/activity-element
+#android.manifest.orientation = fullSensor
+
+# (list) Android additional libraries to copy into libs/armeabi
+#android.add_libs_armeabi = libs/android/*.so
+#android.add_libs_armeabi_v7a = libs/android-v7/*.so
+#android.add_libs_arm64_v8a = libs/android-v8/*.so
+#android.add_libs_x86 = libs/android-x86/*.so
+#android.add_libs_mips = libs/android-mips/*.so
+
+# (bool) Indicate whether the screen should stay on
+# Don't forget to add the WAKE_LOCK permission if you set this to True
+#android.wakelock = False
+
+# (list) Android application meta-data to set (key=value format)
+#android.meta_data =
+
+# (list) Android library project to add (will be added in the
+# project.properties automatically.)
+#android.library_references =
+
+# (list) Android shared libraries which will be added to AndroidManifest.xml using "<uses-library>" tag
+#android.uses_library =
+
+# (str) Android logcat filters to use
+#android.logcat_filters = *:S python:D
+
+# (bool) Android logcat only display log for activity's pid
+#android.logcat_pid_only = False
+
+# (str) Android additional adb arguments
+#android.adb_args = -H host.docker.internal
+
+# (bool) Copy library instead of making a libpymodules.so
+#android.copy_libs = 1
+
+# (list) The Android archs to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
+# In past, was `android.arch` as we weren't supporting builds for multiple archs at the same time.
+android.archs = arm64-v8a, armeabi-v7a
+
+# (int) overrides automatic versionCode computation (used in build.gradle)
+# this is not the same as app version and should only be edited if you know what you're doing
+# android.numeric_version = 1
+
+# (bool) enables Android auto backup feature (Android API >=23)
+android.allow_backup = True
+
+# (str) XML file for custom backup rules (see official auto backup documentation)
+# android.backup_rules =
+
+# (str) If you need to insert variables into your AndroidManifest.xml file,
+# you can do so with the manifestPlaceholders property.
+# This property takes a map of key-value pairs. (via a string)
+# Usage example : android.manifest_placeholders = [myCustomUrl:\"org.kivy.customurl\"]
+# android.manifest_placeholders = [:]
+
+# (bool) Skip byte compile for .py files
+# android.no-byte-compile-python = False
+
+# (str) The format used to package the app for release mode (aab or apk or aar) - For Google play store, switch to aab
+android.release_artifact = apk
+
+# (str) The format used to package the app for debug mode (apk or aar).
+android.debug_artifact = apk
+
+#
+# Python for android (p4a) specific
+#
+
+# (str) python-for-android URL to use for checkout
+#p4a.url =
+
+# (str) python-for-android fork to use in case if p4a.url is not specified, defaults to upstream (kivy)
+#p4a.fork = kivy
+
+# (str) python-for-android branch to use, defaults to master.
+p4a.branch = master
+
+# (str) python-for-android specific commit to use, defaults to HEAD, must be within p4a.branch
+#p4a.commit = HEAD
+
+# (str) python-for-android git clone directory (if empty, it will be automatically cloned from github)
+#p4a.source_dir =
+
+# (str) The directory in which python-for-android should look for your own build recipes (if any)
+#p4a.local_recipes =
+
+# (str) Filename to the hook for p4a
+#p4a.hook = psycopg2_ndk
+
+# (str) Bootstrap to use for android builds
+# p4a.bootstrap = sdl2
+
+# (int) port number to specify an explicit --port= p4a argument (eg for bootstrap flask)
+#p4a.port =
+
+# Control passing the --use-setup-py vs --ignore-setup-py to p4a
+# "in the future" --use-setup-py is going to be the default behaviour in p4a, right now it is not
+# Setting this to false will pass --ignore-setup-py, true will pass --use-setup-py
+# NOTE: this is general setuptools integration, having pyproject.toml is enough, no need to generate
+# setup.py if you're using Poetry, but you need to add "toml" to source.include_exts.
+#p4a.setup_py = false
+
+# (str) extra command line arguments to pass when invoking pythonforandroid.toolchain
+#p4a.extra_args =
+
+
+
+#
+# iOS specific
+#
+
+# (str) Path to a custom kivy-ios folder
+#ios.kivy_ios_dir = ../kivy-ios
+# Alternately, specify the URL and branch of a git checkout:
+ios.kivy_ios_url = https://github.com/kivy/kivy-ios
+ios.kivy_ios_branch = master
+
+# Another platform dependency: ios-deploy
+# Uncomment to use a custom checkout
+#ios.ios_deploy_dir = ../ios_deploy
+# Or specify URL and branch
+ios.ios_deploy_url = https://github.com/phonegap/ios-deploy
+ios.ios_deploy_branch = 1.10.0
+
+# (bool) Whether or not to sign the code
+ios.codesign.allowed = false
+
+# (str) Name of the certificate to use for signing the debug version
+# Get a list of available identities: buildozer ios list_identities
+#ios.codesign.debug = "iPhone Developer: "
+
+# (str) The development team to use for signing the debug version
+#ios.codesign.development_team.debug = 
+
+# (str) Name of the certificate to use for signing the release version
+#ios.codesign.release = %(ios.codesign.debug)s
+
+# (str) The development team to use for signing the release version
+#ios.codesign.development_team.release = 
+
+# (str) URL pointing to .ipa file to be installed
+# This option should be defined along with `display_image_url` and `full_size_image_url` options.
+#ios.manifest.app_url =
+
+# (str) URL pointing to an icon (57x57px) to be displayed during download
+# This option should be defined along with `app_url` and `full_size_image_url` options.
+#ios.manifest.display_image_url =
+
+# (str) URL pointing to a large icon (512x512px) to be used by iTunes
+# This option should be defined along with `app_url` and `display_image_url` options.
+#ios.manifest.full_size_image_url =
+
+
+[buildozer]
+
+# (int) Log level (0 = error only, 1 = info, 2 = debug (with command output))
+log_level = 2
+
+# (int) Display warning if buildozer is run as root (0 = False, 1 = True)
+warn_on_root = 1
+
+# (str) Path to build artifact storage, absolute or relative to spec file
+# build_dir = ./.buildozer
+
+# (str) Path to build output (i.e. .apk, .aab, .ipa) storage
+# bin_dir = ./bin
+
+#    -----------------------------------------------------------------------------
+#    List as sections
+#
+#    You can define all the "list" as [section:key].
+#    Each line will be considered as a option to the list.
+#    Let's take [app] / source.exclude_patterns.
+#    Instead of doing:
+#
+#[app]
+#source.exclude_patterns = license,data/audio/*.wav,data/images/original/*
+#
+#    This can be translated into:
+#
+#[app:source.exclude_patterns]
+#license
+#data/audio/*.wav
+#data/images/original/*
+#
+
+
+#    -----------------------------------------------------------------------------
+#    Profiles
+#
+#    You can extend section / key with a profile
+#    For example, you want to deploy a demo version of your application without
+#    HD content. You could first change the title to add "(demo)" in the name
+#    and extend the excluded directories to remove the HD content.
+#
+#[app@demo]
+#title = My Application (demo)
+#
+#[app:source.exclude_patterns@demo]
+#images/hd/*
+#
+#    Then, invoke the command line with the "demo" profile:
+#
+#buildozer --profile demo android debug
+			
+				</code></pre>
+        	</div>
+    	</div>
+
+		<div class="section-container">
+		    <div class="title-with-logo-h1">
+		        <h1>Testing Your APK</h1>
+		    </div>
+		    
+		    <p>You've successfully built an <code>.apk</code> file! Now it's time to test it thoroughly before publishing.</p>
+		
+		    <!-- Appetize.io Section -->
+		    <div class="testing-method">
+		        <div class="method-header">
+		            <h2>Cloud Testing with Appetize.io</h2>
+		            <a href="https://appetize.io/" target="_blank" class="method-link">
+		                <i class="fas fa-external-link-alt"></i> Visit Appetize.io
+		            </a>
+		        </div>
+		        
+		        <div class="method-content">
+		            <div class="method-description">
+		                <p><strong>Appetize.io</strong> is a cloud-based platform that allows you to test your Android APK directly in a web browser. It's perfect for quick testing and debugging without needing physical devices.</p>
+		                
+		                <div class="feature-grid">
+		                    <div class="feature-item">
+		                        <i class="fas fa-bolt"></i>
+		                        <h4>Instant Testing</h4>
+		                        <p>Upload your APK and test immediately in the browser</p>
+		                    </div>
+		                    <div class="feature-item">
+		                        <i class="fas fa-bug"></i>
+		                        <h4>Debug Logs</h4>
+		                        <p>Access real-time console logs for error identification</p>
+		                    </div>
+		                    <div class="feature-item">
+		                        <i class="fas fa-mobile-alt"></i>
+		                        <h4>Multiple Devices</h4>
+		                        <p>Test on various Android versions and screen sizes</p>
+		                    </div>
+		                    <div class="feature-item">
+		                        <i class="fas fa-dollar-sign"></i>
+		                        <h4>Free Tier</h4>
+		                        <p>Generous free plan for individual developers</p>
+		                    </div>
+		                </div>
+		            </div>
+		            
+		            <div class="method-steps">
+		                <h4>How to Use Appetize.io:</h4>
+		                <div class="step-by-step">
+		                    <div class="step">
+		                        <span class="step-icon">1</span>
+		                        <div class="step-content">
+		                            <h5>Create Account</h5>
+		                            <p>Sign up at <a href="https://appetize.io/" target="_blank" style="color:#ffffff;">appetize.io</a> - the free tier is sufficient for most testing needs</p>
+		                        </div>
+		                    </div>
+		                    <div class="step">
+		                        <span class="step-icon">2</span>
+		                        <div class="step-content">
+		                            <h5>Upload APK</h5>
+		                            <p>Drag and drop your <code>.apk</code> file or select it from your computer</p>
+		                        </div>
+		                    </div>
+		                    <div class="step">
+		                        <span class="step-icon">3</span>
+		                        <div class="step-content">
+		                            <h5>Configure Settings</h5>
+		                            <p>Choose device type, Android version, and orientation</p>
+		                        </div>
+		                    </div>
+		                    <div class="step">
+		                        <span class="step-icon">4</span>
+		                        <div class="step-content">
+		                            <h5>Test & Debug</h5>
+		                            <p>Interact with your app and monitor the debug console for errors</p>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            
+		            <div class="appetize-demo">
+		                <h4>Appetize.io Interface Overview</h4>
+		                <div class="demo-images">
+		                    <div class="demo-item">
+		                        <img src="../images/appetize-upload.png" alt="Appetize.io Upload Interface" class="demo-img" />
+		                        <p class="demo-caption">Upload your APK file directly to the platform</p>
+		                    </div>
+		                    <div class="demo-item">
+		                        <img src="../images/appetize-debug.png" alt="Appetize.io Debug Console" class="demo-img" />
+		                        <p class="demo-caption">Real-time debug console for error tracking</p>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		
+		    <!-- Real Device Testing Section -->
+		    <div class="testing-method">
+		        <div class="method-header">
+		            <h2>Real Device Testing</h2>
+		        </div>
+		        
+		        <div class="method-content">
+		            <div class="method-description">
+		                <p>While cloud testing is convenient, <strong>nothing replaces testing on actual Android devices</strong>. Real devices reveal performance issues, touch responsiveness problems, and device-specific bugs that emulators might miss.</p>
+		                
+		                <div class="benefits-list">
+		                    <h4>Why Test on Real Devices:</h4>
+		                    <ul>
+		                        <li><strong>Accurate Performance:</strong> Real CPU, GPU, and memory usage</li>
+		                        <li><strong>Hardware Integration:</strong> Camera, GPS, sensors work authentically</li>
+		                        <li><strong>Touch Experience:</strong> Real multi-touch and gesture testing</li>
+		                        <li><strong>Network Conditions:</strong> Real-world connectivity scenarios</li>
+		                        <li><strong>Battery Impact:</strong> Actual power consumption measurement</li>
+		                    </ul>
+		                </div>
+		            </div>
+		            
+		            <div class="method-steps">
+		                <h4>Installing APK on Android Devices:</h4>
+		                <div class="step-by-step">
+		                    <div class="step">
+		                        <span class="step-icon">1</span>
+		                        <div class="step-content">
+		                            <h5>Enable Unknown Sources</h5>
+		                            <p>Go to <strong>Settings → Security → Unknown sources</strong> and enable installation from unknown sources</p>
+		                            <div class="note">
+		                                <i class="fas fa-info-circle"></i>
+		                                <span>On newer Android versions, you'll be prompted during installation instead</span>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="step">
+		                        <span class="step-icon">2</span>
+		                        <div class="step-content">
+		                            <h5>Transfer APK to Device</h5>
+		                            <p>Transfer the <code>.apk</code> file to your device via:</p>
+		                            <ul>
+		                                <li>USB cable and file transfer</li>
+		                                <li>Cloud storage (Google Drive, Dropbox)</li>
+		                                <li>Email attachment</li>
+		                                <li>Direct download</li>
+		                            </ul>
+		                        </div>
+		                    </div>
+		                    <div class="step">
+		                        <span class="step-icon">3</span>
+		                        <div class="step-content">
+		                            <h5>Install the APK</h5>
+		                            <p>Use a file manager app to locate and tap on the <code>.apk</code> file, then follow the installation prompts</p>
+		                        </div>
+		                    </div>
+		                    <div class="step">
+		                        <span class="step-icon">4</span>
+		                        <div class="step-content">
+		                            <h5>Test Thoroughly</h5>
+		                            <p>Test all app features, including:</p>
+		                            <ul>
+		                                <li>User interface and navigation</li>
+		                                <li>All buttons and interactions</li>
+		                                <li>Network-dependent features</li>
+		                                <li>Hardware features (if applicable)</li>
+		                                <li>App lifecycle (minimize, restore, close)</li>
+		                            </ul>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		
+		    <div class="testing-method">
+		        <div class="method-header">
+		            <h2>Play Store Internal Testing</h2>
+		        </div>
+		        <div class="method-content">
+		            <div class="method-description">
+		                <p>Once your app is uploaded to the Play Store, you can leverage Google's built-in testing tracks for comprehensive testing before public release. This provides the most realistic testing environment as users install your app directly from the Play Store.</p>
+		            </div>
+		            
+		            <div class="playstore-demo">
+		                <div class="demo-item">
+		                    <img src="../images/playstore-internal-testing.png" alt="Play Store Internal Testing Interface" class="demo-img" />
+		                    <p class="demo-caption">Google Play Console Internal Testing interface</p>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		        
+		    <!-- Testing Strategy Section -->
+		    <div class="testing-strategy">
+		        <h3>Recommended Testing Strategy</h3>
+		        <div class="strategy-flow">
+		            <div class="strategy-step">
+		                <div class="strategy-icon">
+		                    <i class="fas fa-cloud-upload-alt"></i>
+		                </div>
+		                <h5>Cloud Test</h5>
+		                <p>Start with Appetize.io for initial functionality check</p>
+		            </div>
+		            <div class="strategy-arrow">→</div>
+		            <div class="strategy-step">
+		                <div class="strategy-icon">
+		                    <i class="fas fa-mobile-alt"></i>
+		                </div>
+		                <h5>Primary Device</h5>
+		                <p>Test on your main development device. Either by uploading the <code>.apk</code> or through PlayStore internal testing</p>
+		            </div>
+		            <div class="strategy-arrow">→</div>
+		            <div class="strategy-step">
+		                <div class="strategy-icon">
+		                    <i class="fas fa-tablet-alt"></i>
+		                </div>
+		                <h5>Multiple Devices</h5>
+		                <p>Test on different screen sizes and Android versions</p>
+		            </div>
+		        </div>
+		        
+		        <div class="testing-checklist">
+		            <h4>Essential Testing Checklist:</h4>
+		            <div class="checklist-grid">
+		                <div class="checklist-column">
+		                    <div class="checklist-item">
+		                        <i class="fas fa-check"></i>
+		                        <span>App installs and launches successfully</span>
+		                    </div>
+		                    <div class="checklist-item">
+		                        <i class="fas fa-check"></i>
+		                        <span>All screens display correctly</span>
+		                    </div>
+		                    <div class="checklist-item">
+		                        <i class="fas fa-check"></i>
+		                        <span>Navigation works smoothly</span>
+		                    </div>
+		                    <div class="checklist-item">
+		                        <i class="fas fa-check"></i>
+		                        <span>No crashes during normal use</span>
+		                    </div>
+		                </div>
+		                <div class="checklist-column">
+		                    <div class="checklist-item">
+		                        <i class="fas fa-check"></i>
+		                        <span>Network requests work properly</span>
+		                    </div>
+		                    <div class="checklist-item">
+		                        <i class="fas fa-check"></i>
+		                        <span>Memory usage is reasonable</span>
+		                    </div>
+		                    <div class="checklist-item">
+		                        <i class="fas fa-check"></i>
+		                        <span>Battery consumption is acceptable</span>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		
+		<div class="section-container">
+		    <div class="title-with-logo-h1">
+		        <h1>Publishing to Google Play Store</h1>
+		        <img src="../images/google-play.png" alt="Google Play Store" class="logo" />
+		    </div>
+		    
+		    <div class="playstore-method">
+		        <div class="method-header">
+		            <h2>Generating Your App Bundle</h2>
+		            <div class="method-badge">Buildozer</div>
+		        </div>
+		        
+		        <div class="method-content">
+		            <div class="method-description">
+						<p>Google Play no longer accepts APK files for new apps. You must use Android App Bundles (AAB) for publishing. The good news is Buildozer handles this seamlessly!</p>
+		                <p>Converting your APK build to an App Bundle requires just one simple configuration change in your <code>buildozer.spec</code> file.</p>
+		            </div>
+		            
+		            <div class="method-steps">
+		                <h4>Configuration Update:</h4>
+		                <div class="step-by-step">
+		                    <div class="step">
+		                        <span class="step-icon-playstore">1</span>
+		                        <div class="step-content">
+		                            <h5>Find Release Artifact</h5>
+		                            <p>Look for the line: <code>android.release_artifact = apk</code></p>
+		                        </div>
+		                    </div>
+		                    <div class="step">
+		                        <span class="step-icon-playstore">2</span>
+		                        <div class="step-content">
+		                            <h5>Change to AAB</h5>
+		                            <p>Update the line to: <code>android.release_artifact = aab</code></p>
+		                            <div class="note">
+		                                <i class="fas fa-code"></i>
+		                                <span>This tells Buildozer to generate an Android App Bundle instead of APK</span>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="step">
+		                        <span class="step-icon-playstore">3</span>
+		                        <div class="step-content">
+		                            <h5>Rebuild Your App</h5>
+		                            <p>Run <code>buildozer android release</code> to generate the new AAB file</p>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            
+		            <div class="code-example">
+		                <h4>Updated buildozer.spec Configuration:</h4>
+		                <div class="code-header">
+		                    <span class="code-filename">buildozer.spec (AAB configuration)</span>
+		                    <button class="copy-btn" onclick="copyCode(this)">
+		                        <i class="fas fa-copy"></i> Copy
+		                    </button>
+		                </div>
+		                <div class="code-scroll-container">
+		                    <pre class="line-numbers"><code class="language-ini">[app]
+		# Your existing app configuration...
+		title = My Amazing App
+		package.name = myapp
+		package.domain = com.example
+		
+		# ... other configurations ...
+		
+		#
+		# Android specific
+		#
+		
+		# (str) The format used to package the app for release mode (aab or apk or aar)
+		# For Google Play Store, use 'aab'
+		android.release_artifact = aab
+		
+		# (str) The format used to package the app for debug mode (apk or aar)
+		android.debug_artifact = apk
+		
+		# ... rest of your configuration ...</code></pre>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+
+			<!-- Sign your app bundle -->
+		    <div class="playstore-method">
+			    <div class="method-header">
+			        <h2>Sign Your App Bundle</h2>
+			        <div class="playstore-badge">Security Required</div>
+			    </div>
+			    
+			    <div class="method-content">
+			        <div class="method-description">
+			            <p>Google requires your release to be digitally signed. This creates an upload key certificate that Play Store uses to verify your app's authenticity and ensure updates come from the original developer.</p>
+			        </div>
+			
+			        <!-- Method 1: Without Android Studio -->
+			        <div class="method-steps">
+			            <h3>Method 1: Manual Signing (Without Android Studio)</h3>
+						<div class="resource-links">
+			                <a href="https://github.com/kivy/kivy/wiki/creating-a-release-apk" target="_blank" class="resource-link">
+			                    <i class="fab fa-github"></i> Kivy Release APK Guide
+			                </a>
+			                <a href="https://developer.android.com/studio/publish/app-signing" target="_blank" class="resource-link">
+			                    <i class="fas fa-book"></i> Official Android Documentation
+			                </a>
+			            </div>
+						
+			            <p>This method uses command-line tools to generate and apply your signing key.</p>
+			            
+			            <div class="step-by-step">
+			                <div class="step">
+			                    <span class="step-icon-playstore">1</span>
+			                    <div class="step-content">
+			                        <h5>Create Keystore Directory</h5>
+			                        <p>First, create a dedicated directory for your keystore files:</p>
+			                        <div class="code-header">
+			                            <span class="code-filename">Terminal Command</span>
+			                            <button class="copy-btn" onclick="copyCode(this)">
+			                                <i class="fas fa-copy"></i> Copy
+			                            </button>
+			                        </div>
+			                        <div class="code-scroll-container">
+										<pre class="line-numbers"><code class="language-bash">mkdir -p ~/keystores/</code></pre>
+			                        </div>
+			                    </div>
+			                </div>
+			                
+			                <div class="step">
+			                    <span class="step-icon-playstore">2</span>
+			                    <div class="step-content">
+			                        <h5>Generate Keystore</h5>
+			                        <p>Create a new keystore using the keytool command:</p>
+			                        <div class="code-header">
+			                            <span class="code-filename">Terminal Command</span>
+			                            <button class="copy-btn" onclick="copyCode(this)">
+			                                <i class="fas fa-copy"></i> Copy
+			                            </button>
+			                        </div>
+			                        <div class="code-scroll-container">
+										<pre class="line-numbers"><code class="language-bash">keytool -genkey -v -keystore ~/keystores/&lt;your-new-key&gt;.keystore -alias &lt;your-key-alias&gt; -keyalg RSA -keysize 2048 -validity 10000</code></pre>
+			                        </div>
+			                        <div class="note">
+			                            <i class="fas fa-key"></i>
+			                            <span><strong>Replace placeholders:</strong> Use actual names for <code>&lt;your-new-key&gt;</code> and <code>&lt;your-key-alias&gt;</code></span>
+			                        </div>
+			                        <div class="note">
+			                            <i class="fas fa-shield-alt"></i>
+			                            <span><strong>Remember your passwords!</strong> You'll need the keystore password and key password for future updates.</span>
+			                        </div>
+			                    </div>
+			                </div>
+			                
+			                <div class="step">
+			                    <span class="step-icon-playstore">3</span>
+			                    <div class="step-content">
+			                        <h5>Export variables</h5>
+			                        <div class="code-header">
+			                            <span class="code-filename">Terminal Command</span>
+			                            <button class="copy-btn" onclick="copyCode(this)">
+			                                <i class="fas fa-copy"></i> Copy
+			                            </button>
+			                        </div>
+			                        <div class="code-scroll-container">
+										<pre class="line-numbers"><code class="language-bash">$ export P4A_RELEASE_KEYSTORE=~/keystores/&lt;your-new-key&gt;.keystore
+$ export P4A_RELEASE_KEYSTORE_PASSWD=&lt;your-keystore-password&gt;
+$ export P4A_RELEASE_KEYALIAS_PASSWD=&lt;your-key-alias-password&gt;
+$ export P4A_RELEASE_KEYALIAS=&lt;your-key-alias&gt;</code></pre>
+									</div>
+			                    </div>
+			                </div>
+			                
+			                <div class="step">
+			                    <span class="step-icon-playstore">4</span>
+			                    <div class="step-content">
+			                        <h5>Launch buildozer in release mode</h5>
+			                        <p>Your AAB will be signed automatically</p>
+			                        <div class="code-header">
+			                            <span class="code-filename">Terminal Command</span>
+			                            <button class="copy-btn" onclick="copyCode(this)">
+			                                <i class="fas fa-copy"></i> Copy
+			                            </button>
+			                        </div>
+			                        <div class="code-scroll-container">
+			                            <div class="code-horizontal-scroll">
+			                                <pre class="line-numbers"><code class="language-bash">keytool -printcert -jarfile your_app.aab</code></pre>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+							<div class="step">
+			                    <span class="step-icon-playstore">5</span>
+			                    <div class="step-content">
+			                        <h5>Verify Signature</h5>
+			                        <p>Check that your AAB is properly signed:</p>
+			                        <div class="code-header">
+			                            <span class="code-filename">Terminal Command</span>
+			                            <button class="copy-btn" onclick="copyCode(this)">
+			                                <i class="fas fa-copy"></i> Copy
+			                            </button>
+			                        </div>
+			                        <div class="code-scroll-container">
+			                            <div class="code-horizontal-scroll">
+			                                <pre class="line-numbers"><code class="language-bash">keytool -printcert -jarfile your_app.aab</code></pre>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+			            </div>
+			            
+			            <div class="video-container">
+			                <iframe width="560" height="315" src="https://www.youtube.com/embed/su7sxZVpcAE?si=myJ9nuJnG1gSWO3r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			            </div>
+			        </div>
+					<p></p>
+					
+			        <!-- Method 2: With Android Studio -->
+			        <div class="method-steps">
+			            <h3>Method 2: Using Android Studio</h3>
+			            <p>Android Studio provides a graphical interface for generating and managing signing keys.</p>
+			            
+			            <div class="step-by-step">
+			                <div class="step">
+			                    <span class="step-icon-playstore">1</span>
+			                    <div class="step-content">
+			                        <h5>Generate Keystore in Android Studio</h5>
+			                        <p>Follow these steps in Android Studio:</p>
+			                        <ul>
+			                            <li>Go to <strong>Build → Generate Signed Bundle / APK</strong></li>
+			                            <li>Select <strong>"Android App Bundle"</strong> and click Next</li>
+			                            <li>Click <strong>"Create new..."</strong> under "Key store path"</li>
+			                            <li>Fill in the required information:
+			                                <ul>
+			                                    <li><strong>Key store path:</strong> Choose location for your .jks file</li>
+			                                    <li><strong>Password:</strong> Create strong keystore password</li>
+			                                    <li><strong>Alias:</strong> Name for your key (e.g., "upload_key")</li>
+			                                    <li><strong>Password:</strong> Create strong key password</li>
+			                                    <li><strong>Validity:</strong> 25 years recommended (9125 days)</li>
+			                                    <li><strong>Certificate:</strong> Fill in your developer information</li>
+			                                </ul>
+			                            </li>
+			                        </ul>
+			                        <div class="note">
+			                            <i class="fas fa-shield-alt"></i>
+			                            <span><strong>Backup your .jks file securely!</strong> You cannot recover it if lost.</span>
+			                        </div>
+			                    </div>
+			                </div>
+			                
+			                <div class="step">
+			                    <span class="step-icon-playstore">2</span>
+			                    <div class="step-content">
+			                        <h5>Build Signed AAB</h5>
+			                        <p>Complete the signing process in Android Studio:</p>
+			                        <ul>
+			                            <li>Select <strong>"Release"</strong> build variant</li>
+			                            <li>Choose signature versions: <strong>V1 (Jar Signature)</strong> and <strong>V2 (Full APK Signature)</strong></li>
+			                            <li>Click <strong>"Finish"</strong> to generate your signed AAB</li>
+			                        </ul>
+			                    </div>
+			                </div>
+			                
+			                <div class="step">
+			                    <span class="step-icon-playstore">3</span>
+			                    <div class="step-content">
+			                        <h5>Alternative: Command Line Signing</h5>
+			                        <p>If you have a .jks file, you can sign your AAB using apksigner:</p>
+			                        <div class="code-header">
+			                            <span class="code-filename">Terminal Command</span>
+			                            <button class="copy-btn" onclick="copyCode(this)">
+			                                <i class="fas fa-copy"></i> Copy
+			                            </button>
+			                        </div>
+			                        <div class="code-scroll-container">
+									    <pre class="line-numbers"><code class="language-bash">apksigner sign --ks my-release-key.jks --min-sdk-version 22 --v1-signing-enabled true --v2-signing-enabled true release_signed.aab</code></pre>
+									</div>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			
+			        <!-- Important Notes -->
+			        <div class="info-box">
+			            <h3>🔐 Critical Security Information</h3>
+			            <div class="key-points">
+			                <div class="key-point">
+			                    <i class="fas fa-key"></i>
+			                    <span><strong>Store Passwords Securely:</strong> You'll need them for every app update</span>
+			                </div>
+			                <div class="key-point">
+			                    <i class="fas fa-backup"></i>
+			                    <span><strong>Backup Your Keystore:</strong> Loss means you cannot update your app</span>
+			                </div>
+			                <div class="key-point">
+			                    <i class="fas fa-shield-alt"></i>
+			                    <span><strong>Don't Share:</strong> Your signing key identifies you as the app owner</span>
+			                </div>
+			                <div class="key-point">
+			                    <i class="fas fa-sync-alt"></i>
+			                    <span><strong>Long Validity:</strong> Use 25+ years to avoid expiration issues</span>
+			                </div>
+			            </div>
+			            
+			            <div class="warning-note">
+			                <strong>⚠️ Warning:</strong> If you lose your signing key and passwords, you will not be able to publish updates to your existing app. You would need to create a completely new app listing with a new package name.
+			            </div>
+			        </div>
+			    </div>
+			</div>
+
+		    <!-- Create Your Company Section -->
+			<div class="playstore-method">
+			    <div class="method-header">
+			        <h2>Create Your Company</h2>
+			        <div class="playstore-badge">Business Setup</div>
+			    </div>
+			    
+			    <div class="method-content">
+			        <div class="method-description">
+			            <p>Google requires developers to have a registered business entity to publish apps on the Play Store. You'll need to create a company and obtain a D-U-N-S number for your Google Play Console account setup.</p>
+			        </div>
+			
+			        <!-- D-U-N-S Number Section -->
+			        <div class="method-steps">
+			            <h3>Obtain D-U-N-S Number</h3>
+			            <div class="step">
+			                <div class="step-content">
+			                    <p>Once your company is registered, obtain your free D-U-N-S number:</p>
+			                    <div class="info-box">
+			                        <h4>🌐 D-U-N-S Number Registration</h4>
+			                        <p>Visit the official D&B website to register your business:</p>
+			                        <div class="resource-links">
+			                            <a href="https://www.dnb.com/de-de/upik-en.html" target="_blank" class="playstore-link">
+			                                <i class="fas fa-external-link-alt"></i> Get D-U-N-S Number (Free for most countries)
+			                            </a>
+			                        </div>
+			                    </div>
+			                    
+			                    <div class="note">
+			                        <i class="fas fa-clock"></i>
+			                        <span>The D-U-N-S number process can take 1-15 business days depending on your country</span>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			
+			        <!-- Developer Information Display -->
+			        <div class="method-steps">
+			            <h3>Public Developer Information</h3>
+			            <div class="step">
+			                <span class="step-icon-playstore">!</span>
+			                <div class="step-content">
+			                    <p>Your company information will be publicly visible on the Play Store:</p>
+			                    <div class="demo-images">
+			                        <div class="demo-item">
+			                            <img src="../images/about-developer.png" alt="Play Store About Developer Section" class="demo-img" />
+			                            <p class="demo-caption">Example of public developer information displayed on Play Store</p>
+			                        </div>
+			                    </div>
+			                    
+			                    <div class="warning-note">
+			                        <i class="fas fa-eye"></i>
+			                        <strong>Privacy Notice:</strong> Your registered company name and address will be visible to all users. Consider this when choosing your business structure and registered address.
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			
+			        <!-- Website Creation Section -->
+			        <div class="method-steps">
+			            <h3>Create Professional Presence</h3>
+			            <p>Google requires a website and privacy policy for your apps. Follow these steps to establish your professional online presence.</p>
+			            <div class="step-by-step">
+			                    <div class="feature-grid">
+									<div class="feature-item-yellow">
+										<i class="fas fa-globe"></i>
+										<h4>Domain Name</h4>
+										<p>Your professional web address</p>
+									</div>
+									<div class="feature-item-yellow">
+										<i class="fas fa-envelope"></i>
+										<h4>Business Email</h4>
+										<p>Professional communication</p>
+									</div>
+									<div class="feature-item-yellow">
+										<i class="fas fa-file-contract"></i>
+										<h4>Privacy Policy</h4>
+										<p>Required for app submission</p>
+									</div>
+								</div>
+							<h4>Recommended Tutorials by Victor Oyedeji:</h4>
+							<div class="video-grid">
+								<div class="video-item">
+									<div class="video-container">
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/2PTLNBvmMIg?si=DUE-ErcpNohVqeOX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+									</div>
+								</div>
+									
+								<div class="video-item">
+									<div class="video-container">
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/7IXne3wBAlY?si=AjvqqNL19OZQ8s64" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+									</div>
+								</div>
+							</div>
+			                
+							<div class="step">
+								<div class="step-content">
+									<p>Build your professional website using GitHub Pages & Vercel</p>
+									<div class="resource-links">
+										<a href="https://pages.github.com/" target="_blank" class="resource-link">
+											<i class="fab fa-github"></i> GitHub Pages
+										</a>
+										<a href="https://vercel.com/" target="_blank" class="resource-link">
+											<i class="fas fa-cloud"></i> Vercel
+										</a>
+									</div>
+									<div class="video-item">
+										<div class="video-container">
+											<iframe width="560" height="315" src="https://www.youtube.com/embed/grod-PDmoBs?si=SLmGdZYvgUkk4lPS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+										</div>
+										<p class="demo-caption">Complete guide to creating a free professional website</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			
+					<!-- Next Steps -->
+					<div class="next-steps">
+						<h4>Ready for Play Console?</h4>
+						<div class="steps-flow">
+							<div class="step-item">
+								<div class="step-number">✓</div>
+								<h5>Company Registered</h5>
+								<p>Business entity created</p>
+							</div>
+							<div class="step-arrow">→</div>
+							<div class="step-item">
+								<div class="step-number">✓</div>
+								<h5>D-U-N-S Number</h5>
+								<p>Business identifier obtained</p>
+							</div>
+							<div class="step-arrow">→</div>
+							<div class="step-item">
+								<div class="step-number">✓</div>
+								<h5>Website Ready</h5>
+								<p>Online presence established</p>
+							</div>
+							<div class="step-arrow">→</div>
+							<div class="step-item">
+								<div class="step-number">🎯</div>
+								<h5>Play Console</h5>
+								<p>Ready for account setup!</p>
+							</div>
+						</div>
+					
+						<div class="success-tip">
+							<h4>🎉 Great Progress!</h4>
+							<p>You've completed the essential business setup steps. You're now ready to create your Google Play Developer account and start publishing your apps!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+					      
+			<!-- Play Console Setup -->
+			<div class="playstore-method">
+				<div class="method-header">
+					<h2>Setting Up Google Play Console</h2>
+					<div class="method-badge">$25 One-Time Fee</div>
+				</div>
+				
+				<div class="method-content">
+					<div class="method-description">
+						<p>Before you can upload your app, you need a Google Play Developer account. This involves a one-time registration fee and some basic setup.</p>
+						
+						<div class="requirements-list">
+							<h4>What You'll Need:</h4>
+							<ul>
+								<li><strong>Google Account:</strong> Regular Gmail account</li>
+								<li><strong>Developer Fee:</strong> One-time $25 payment</li>
+								<li><strong>DUNS number:</strong>
+								<li><strong>Company content</strong> Email and website</li>
+								<li><strong>Developer Name:</strong> This will be publicly visible (can be your company name)</li>
+								<li><strong>Contact Information:</strong> Email for developer communications (we suggest professionnal email)</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="method-steps">
+						<h4>Account Setup Process:</h4>
+						<div class="step-by-step">
+							<div class="step">
+								<span class="step-icon-playstore">1</span>
+								<div class="step-content">
+									<h5>Visit Play Console</h5>
+									<p>Go to <a href="https://play.google.com/console" target="_blank" style="color:#ffffff;">play.google.com/console</a> and sign in with your Google account</p>
+								</div>
+							</div>
+							<div class="step">
+								<span class="step-icon-playstore">2</span>
+								<div class="step-content">
+									<h5>Pay Developer Fee</h5>
+									<p>Complete the registration and pay the one-time $25 developer fee</p>
+								</div>
+							</div>
+							<div class="step">
+								<span class="step-icon-playstore">3</span>
+								<div class="step-content">
+									<h5>Complete Profile</h5>
+									<p>Fill in your developer information and accept the developer agreement</p>
+								</div>
+							</div>
+							<div class="step">
+								<span class="step-icon-playstore">4</span>
+								<div class="step-content">
+									<h5>Create Your First App</h5>
+									<p>Click "Create app" and enter your app's basic information</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="playstore-demo">
+						<h4>Google Play Console Interface:</h4>
+						<div class="demo-images">
+							<div class="demo-item">
+								<img src="../images/play-console-dashboard.png" alt="Google Play Console Dashboard" class="demo-img" />
+								<p class="demo-caption">Play Console dashboard after account setup</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<!-- App Upload Process -->
+			<div class="playstore-method">
+				<div class="method-header">
+					<h2>Uploading Your App Bundle</h2>
+				</div>
+			
+				<div class="method-content">
+					<div class="method-description">
+						<p>Once your Play Console account is set up and you have your AAB file, you're ready to upload your app to the Play Store.</p>
+					</div>
+					
+					<div class="method-steps">
+						<h4>Upload Process:</h4>
+						<div class="step-by-step">
+							<div class="step">
+								<span class="step-icon-playstore">1</span>
+								<div class="step-content">
+									<h5>Prepare Store Listing</h5>
+									<p>Before uploading, prepare your app's store listing including:</p>
+									<ul>
+										<li>App title and description</li>
+										<li>Screenshots (multiple sizes)</li>
+										<li>App icon (512x512 PNG)</li>
+										<li>Feature graphic (1024x500 PNG)</li>
+										<li>Privacy policy URL (if required)</li>
+									</ul>
+								</div>
+							</div>
+							<div class="step">
+								<span class="step-icon-playstore">2</span>
+								<div class="step-content">
+									<h5>Create Test Release</h5>
+									<p>In Play Console, go to <strong>Test and release → Testing →Internal Testing → Create new release</strong></p>
+								</div>
+							</div>
+							<div class="step">
+								<span class="step-icon-playstore">3</span>
+								<div class="step-content">
+									<h5>Upload AAB File</h5>
+									<p>Drag and drop your AAB file or browse to select it from your computer</p>
+								</div>
+							</div>
+							<div class="step">
+								<span class="step-icon-playstore">4</span>
+								<div class="step-content">
+									<h5>Review and Rollout</h5>
+									<p>Complete the release notes, review all information, and start the rollout</p>
+									<div class="note">
+										<i class="fas fa-shield-alt"></i>
+										<span>Google's review process typically takes 2-7 days</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="upload-tips">
+						<h4>Upload Tips & Best Practices:</h4>
+						<div class="tips-grid">
+							<div class="tip-card">
+								<i class="fas fa-images"></i>
+								<h5>Quality Screenshots</h5>
+								<p>Include screenshots for phone, 7-inch tablet, and 10-inch tablet</p>
+							</div>
+							<div class="tip-card">
+								<i class="fas fa-file-alt"></i>
+								<h5>Clear Description</h5>
+								<p>Write a compelling description that explains your app's value</p>
+							</div>
+							<div class="tip-card">
+								<i class="fas fa-tags"></i>
+								<h5>Appropriate Categories</h5>
+								<p>Choose relevant categories and tags for better discoverability</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Play Store Testing Strategy -->
+			<div class="playstore-method">
+				<div class="method-header">
+					<h2>Testing Your App in Play Store</h2>
+					<div class="playstore-badge">Quality Assurance</div>
+				</div>
+				
+				<div class="method-content">
+					<div class="method-description">
+						<p>Before releasing your app to the public, Google Play provides powerful testing tracks to identify and fix issues. Follow this progressive testing strategy to ensure a smooth launch.</p>
+					</div>
+			
+					<!-- Testing Strategy Flow -->
+					<div class="testing-strategy">
+						<h3>Progressive Testing Strategy</h3>
+						<div class="strategy-flow">
+							<div class="strategy-step">
+								<div class="strategy-icon">
+									<i class="fas fa-users"></i>
+								</div>
+								<h5>Internal Testing</h5>
+								<p>Quick iterations with your team</p>
+							</div>
+							<div class="strategy-arrow">→</div>
+							<div class="strategy-step">
+								<div class="strategy-icon">
+									<i class="fas fa-user-shield"></i>
+								</div>
+								<h5>Closed Testing</h5>
+								<p>Larger group of trusted testers</p>
+							</div>
+							<div class="strategy-arrow">→</div>
+							<div class="strategy-step">
+								<div class="strategy-icon">
+									<i class="fas fa-door-open"></i>
+								</div>
+								<h5>Open Testing</h5>
+								<p>Public testing with wider audience</p>
+							</div>
+							<div class="strategy-arrow">→</div>
+							<div class="strategy-step">
+								<div class="strategy-icon">
+									<i class="fas fa-rocket"></i>
+								</div>
+								<h5>Production</h5>
+								<p>Public release to all users</p>
+							</div>
+						</div>
+					</div>
+			
+					<!-- Internal Testing -->
+					<div class="method-steps">
+						<h3>Step 1: Internal Testing</h3>
+						<div class="step">
+							<span class="step-icon-playstore">1</span>
+							<div class="step-content">
+								<h5>Quick Iterations with Your Team</h5>
+								<p><strong>Internal testing</strong> is designed for rapid development cycles with up to 100 testers. This is your first line of defense against bugs.</p>
+								
+								<div class="feature-grid">
+									<div class="feature-item-yellow">
+										<i class="fas fa-bolt"></i>
+										<h4>Fast Updates</h4>
+										<p>No Google review required</p>
+									</div>
+									<div class="feature-item-yellow">
+										<i class="fas fa-users"></i>
+										<h4>100 Testers</h4>
+										<p>Team members and close friends</p>
+									</div>
+									<div class="feature-item-yellow">
+										<i class="fas fa-bug"></i>
+										<h4>Quick Debugging</h4>
+										<p>Identify critical issues early</p>
+									</div>
+								</div>
+								
+								<div class="info-box">
+									<h4>🚀 Internal Testing Benefits</h4>
+									<ul>
+										<li><strong>No review process</strong> - Updates available to testers in hours</li>
+										<li><strong>Perfect for development</strong> - Test new features quickly</li>
+										<li><strong>Private</strong> - Only invited testers can access</li>
+										<li><strong>Unlimited versions</strong> - Upload as many builds as needed</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+			
+					<!-- Closed Testing -->
+					<div class="method-steps">
+						<h3>Step 2: Closed Testing</h3>
+						<div class="step">
+							<span class="step-icon-playstore">2</span>
+							<div class="step-content">
+								<h5>Expand to Trusted Testers</h5>
+								<p>Once internal testing is stable, move to <strong>closed testing</strong> with a larger group of up to 2,000 testers.</p>
+								
+								<div class="feature-grid">
+									<div class="feature-item-yellow">
+										<i class="fas fa-shield-alt"></i>
+										<h4>Controlled Access</h4>
+										<p>Invite-only testing</p>
+									</div>
+									<div class="feature-item-yellow">
+										<i class="fas fa-chart-line"></i>
+										<h4>Larger Sample</h4>
+										<p>Up to 2,000 testers</p>
+									</div>
+									<div class="feature-item-yellow">
+										<i class="fas fa-search"></i>
+										<h4>Google Review</h4>
+										<p>App goes through review process</p>
+									</div>
+								</div>
+								
+								<div class="note">
+									<i class="fas fa-info-circle"></i>
+									<span><strong>Important:</strong> Closed testing builds require Google review (typically 2-7 days)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+			
+					<!-- Open Testing -->
+					<div class="method-steps">
+						<h3>Step 3: Open Testing</h3>
+						<div class="step">
+							<span class="step-icon-playstore">3</span>
+							<div class="step-content">
+								<h5>Public Testing Phase</h5>
+								<p><strong>Open testing</strong> allows anyone to join and test your app, providing valuable feedback from a diverse user base.</p>
+								
+								<div class="feature-grid">
+									<div class="feature-item-yellow">
+										<i class="fas fa-globe"></i>
+										<h4>Public Access</h4>
+										<p>Anyone can join testing</p>
+									</div>
+									<div class="feature-item-yellow">
+										<i class="fas fa-comments"></i>
+										<h4>Real Feedback</h4>
+										<p>Diverse user opinions</p>
+									</div>
+									<div class="feature-item-yellow">
+										<i class="fas fa-star"></i>
+										<h4>Store Presence</h4>
+										<p>Public store listing</p>
+									</div>
+								</div>
+								
+								<div class="warning-note">
+									<strong>⚠️ Note:</strong> Open testing reviews and ratings are public and will appear on your store listing
+								</div>
+							</div>
+						</div>
+					</div>
+			
+					<!-- Testing Checklist -->
+					<div class="testing-checklist">
+						<h3>Testing Completion Checklist</h3>
+						<p>Before promoting to production, ensure all these areas are thoroughly tested:</p>
+						
+						<div class="checklist-grid">
+							<div class="checklist-column">
+								<div class="checklist-item">
+									<i class="fas fa-check"></i>
+									<span>No crashes during normal use</span>
+								</div>
+								<div class="checklist-item">
+									<i class="fas fa-check"></i>
+									<span>All features work as expected</span>
+								</div>
+								<div class="checklist-item">
+									<i class="fas fa-check"></i>
+									<span>User interface displays correctly on all screen sizes</span>
+								</div>
+								<div class="checklist-item">
+									<i class="fas fa-check"></i>
+									<span>Navigation works smoothly</span>
+								</div>
+							</div>
+							<div class="checklist-column">
+								<div class="checklist-item">
+									<i class="fas fa-check"></i>
+									<span>Network requests work properly</span>
+								</div>
+								<div class="checklist-item">
+									<i class="fas fa-check"></i>
+									<span>App complies with Play Store policies</span>
+								</div>
+								<div class="checklist-item">
+									<i class="fas fa-check"></i>
+									<span>Privacy policy is implemented</span>
+								</div>
+								<div class="checklist-item">
+									<i class="fas fa-check"></i>
+									<span>Positive feedback from testers</span>
+								</div>
+							</div>
+						</div>
+					</div>
+			
+					<!-- Next Steps -->
+					<div class="next-steps">
+						<h3>Ready for Production Release!</h3>
+						<div class="steps-flow">
+							<div class="step-item">
+								<div class="step-number">1</div>
+								<h5>App Review</h5>
+								<p>Google reviews your app (2-7 days)</p>
+							</div>
+							<div class="step-arrow">→</div>
+							<div class="step-item">
+								<div class="step-number">2</div>
+								<h5>Publication</h5>
+								<p>App goes live on Play Store</p>
+							</div>
+							<div class="step-arrow">→</div>
+							<div class="step-item">
+								<div class="step-number">3</div>
+								<h5>Monitor Analytics</h5>
+								<p>Track installs, ratings, and crashes</p>
+							</div>
+							<div class="step-arrow">→</div>
+							<div class="step-item">
+								<div class="step-number">4</div>
+								<h5>Regular Updates</h5>
+								<p>Release updates to improve your app</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<!-- Bonus: Monetize your App with Google AdMob -->
+		<div class="section-container">
+		    <div class="title-with-logo-h1">
+		        <h1>Bonus: Monetize your App with Google AdMob</h1>
+		        <img src="../images/google-ad-mob.png" alt="Google Ad Mob" class="logo" />
+		    </div>
+		    
+		    <div class="method-content">
+		        <div class="method-description">
+		            <p>Now that your app is published, you can start thinking about implementing ads. While advertising is one monetization strategy, it's important to consider all options for your app's revenue model.</p>
+		        </div>
+		
+		        <!-- Monetization Overview -->
+		        <div class="admob-method">
+		            <div class="method-header">
+		                <h2>App Monetization Strategies</h2>
+		                <div class="admob-badge">Revenue</div>
+		            </div>
+		            
+		            <div class="method-content">
+		                <div class="method-description">
+		                    <p>Before diving into AdMob, understand the broader monetization landscape. Advertising is just one way to generate revenue from your app.</p>
+		                    
+		                    <div class="video-container">
+		                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Pwg7VqxM524?si=bCZCXwFaW1WGCnOS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		
+		        <!-- Ad Formats Overview -->
+		        <div class="admob-method">
+		            <div class="method-header">
+		                <h2>Google AdMob Ad Formats</h2>
+		                <div class="admob-badge">Ad Types</div>
+		            </div>
+		            
+		            <div class="method-content">
+		                <div class="method-description">
+		                    <p>AdMob offers several ad formats with different revenue potential and user experience impacts. Choose the right mix for your app.</p>
+		                    
+		                    <div class="ads-table-container">
+							    <table class="ads-comparison-table">
+							        <thead>
+							            <tr>
+							                <th>Ad Format</th>
+							                <th>Average eCPM (USD)</th>
+							                <th>Description & Profitability</th>
+							                <th>User Experience Impact</th>
+							                <th>KivMob Compatibility</th>
+							            </tr>
+							        </thead>
+							        <tbody>
+							            <tr>
+							                <td><strong>Rewarded Video</strong></td>
+							                <td>$10 - $15<br><em>(up to $50 in some contexts)</em></td>
+							                <td>Most profitable format. Users watch videos in exchange for in-app rewards. Highly engaging.</td>
+							                <td class="positive">Very Positive: Voluntary and appreciated, increases retention</td>
+							                <td class="compatible"><i class="fas fa-check-circle"></i> Fully Supported</td>
+							            </tr>
+							            <tr>
+							                <td><strong>Interstitial</strong></td>
+							                <td>$4 - $10</td>
+							                <td>Full-screen ads placed at natural transitions. High user attention, good click-through rate.</td>
+							                <td class="neutral">Can be intrusive if misused, use in moderation</td>
+							                <td class="compatible"><i class="fas fa-check-circle"></i> Fully Supported</td>
+							            </tr>
+							            <tr>
+							                <td><strong>App Open Ads</strong></td>
+							                <td>From $7<br><em>(up to +30% ARPU boost)</em></td>
+							                <td>Full-screen ads shown when opening the app. Increases revenue without disturbing users too much.</td>
+							                <td class="neutral">Relatively neutral, well integrated, minimally intrusive</td>
+							                <td class="not-compatible"><i class="fas fa-times-circle"></i> Not Supported</td>
+							            </tr>
+							            <tr>
+							                <td><strong>Native Ads</strong></td>
+							                <td>$2 - $6</td>
+							                <td>Ads integrated into content. Less intrusive, effective in social/lifestyle/news apps.</td>
+							                <td class="positive">Minimally intrusive, good user experience</td>
+							                <td class="not-compatible"><i class="fas fa-times-circle"></i> Not Supported</td>
+							            </tr>
+							            <tr>
+							                <td><strong>Banner Ads</strong></td>
+							                <td>$0.5 - $1.5</td>
+							                <td>Ads visible at top/bottom of screen. Low engagement, limited but stable revenue with sufficient traffic.</td>
+							                <td class="neutral">Low impact, unengaging, often ignored ("banner blindness")</td>
+							                <td class="compatible"><i class="fas fa-check-circle"></i> Fully Supported</td>
+							            </tr>
+							        </tbody>
+							    </table>
+							</div>
+		                </div>
+		            </div>
+		        </div>
+		
+		        <!-- KivMob Implementation -->
+				<div class="admob-method">
+				    <div class="method-header">
+				        <h2>Implementing Ads with KivMob (Updated Method)</h2>
+				        <div class="admob-badge">Kivy Integration</div>
+				    </div>
+				    
+				    <div class="method-content">
+				        <div class="method-description">
+				            <p>For Kivy and KivyMD apps, AdMob integration requires custom Java callbacks. The traditional KivMob approach needs updates for current AdMob APIs. Here's the working solution:</p>
+				            
+				            <div class="warning-note">
+				                <strong>⚠️ Important Update:</strong> The original KivMob library may not work with current AdMob APIs. Use this updated approach with custom Java files.
+				            </div>
+				        </div>
+				
+				        <!-- Project Structure -->
+				        <div class="method-steps">
+				            <h3>Step 1: Project Structure Setup</h3>
+				            
+				            <div class="step">
+				                <span class="step-icon-admob">1</span>
+				                <div class="step-content">
+				                    <h5>Create Source Directory Structure</h5>
+				                    <p>Set up the following folder structure in your project:</p>
+				                    
+				                    <div class="code-header">
+				                        <span class="code-filename">Project Structure</span>
+				                    </div>
+				                    <div class="code-scroll-container">
+				                        <pre class="line-numbers"><code class="language-bash">your_project/
+├── main.py
+├── main.kv (if needed)
+├── kivmob_mod.py
+├── buildozer.spec
+└── src/
+    └── org/
+        └── yourdomain/
+            └── yourappname/
+                ├── InterstitialAdLoadCallback4kivy.java
+                └── RewardedAdLoadCallback4kivy.java</code></pre>
+                    				</div>
+                    
+				                    <div class="note">
+				                        <i class="fas fa-info-circle"></i>
+				                        <span>Replace <code>org.yourdomain.yourappname</code> with your actual package name from buildozer.spec</span>
+				                    </div>
+				                </div>
+				            </div>
+
+					        <!-- Java Files -->
+					        <div class="method-steps">
+					            <h3>Step 2: Add Custom Java Callback Files</h3>
+					            
+					            <div class="step">
+					                <span class="step-icon-admob">2</span>
+					                <div class="step-content">
+					                    <h5>Interstitial Ad Callback</h5>
+					                    <p>Create <code>InterstitialAdLoadCallback4kivy.java</code>:</p>
+					                    
+					                    <div class="code-header">
+					                        <span class="code-filename">src/org/yourdomain/yourappname/InterstitialAdLoadCallback4kivy.java</span>
+					                        <button class="copy-btn" onclick="copyCode(this)">
+					                            <i class="fas fa-copy"></i> Copy
+					                        </button>
+					                    </div>
+					                    <div class="code-scroll-container">
+					                        <pre class="line-numbers"><code class="language-java">package org.yourdomain.yourappname;
+
+import android.util.Log;
+import androidx.annotation.NonNull;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.AdError;
+
+public class InterstitialAdLoadCallback4kivy extends InterstitialAdLoadCallback {
+
+    private static final String TAG = "InterstitialAdLoadCallback4kivy";
+    private InterstitialAd mInterstitialAd;
+
+    @Override
+    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+        mInterstitialAd = interstitialAd;
+        Log.d(TAG, "Interstitial Ad loaded.");
+
+        mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
+            @Override
+            public void onAdClicked() {
+              Log.d(TAG, "Interstitial Ad was clicked.");
+            }
+
+            @Override
+            public void onAdDismissedFullScreenContent() {
+              Log.d(TAG, "Interstitial Ad dismissed fullscreen content.");
+              mInterstitialAd = null;
+            }
+
+            @Override
+            public void onAdFailedToShowFullScreenContent(AdError adError) {
+              Log.e(TAG, "Interstitial Ad failed to show fullscreen content.");
+              mInterstitialAd = null;
+            }
+
+            @Override
+            public void onAdImpression() {
+              Log.d(TAG, "Interstitial Ad recorded an impression.");
+            }
+
+            @Override
+            public void onAdShowedFullScreenContent() {
+              Log.d(TAG, "Interstitial Ad showed fullscreen content.");
+            }
+          });
+    }
+
+    @Override
+    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+        Log.d(TAG, "Failed to load Interstitial ad: " + loadAdError.getMessage());
+        mInterstitialAd = null;
+    }
+}</code></pre>
+		                    			</div>
+					                </div>
+					            </div>
+		            
+					            <div class="step">
+					                <span class="step-icon-admob">3</span>
+					                <div class="step-content">
+					                    <h5>Rewarded Ad Callback</h5>
+					                    <p>Create <code>RewardedAdLoadCallback4kivy.java</code>:</p>
+					                    
+					                    <div class="code-header">
+					                        <span class="code-filename">src/org/yourdomain/yourappname/RewardedAdLoadCallback4kivy.java</span>
+					                        <button class="copy-btn" onclick="copyCode(this)">
+					                            <i class="fas fa-copy"></i> Copy
+					                        </button>
+					                    </div>
+					                    <div class="code-scroll-container">
+					                        <pre class="line-numbers"><code class="language-java">package org.yourdomain.yourappname;
+
+import android.util.Log;
+import androidx.annotation.NonNull;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.AdError;
+
+public class RewardedAdLoadCallback4kivy extends RewardedAdLoadCallback {
+
+    private static final String TAG = "RewardedAdLoadCallback4kivy";
+    private RewardedAd mRewardedAd;
+
+    @Override
+    public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+        mRewardedAd = rewardedAd;
+        Log.d(TAG, "Rewarded Ad was loaded.");
+        mRewardedAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+            @Override
+            public void onAdClicked() {
+              Log.d(TAG, "Rewarded Ad was clicked.");
+            }
+
+             @Override
+            public void onAdDismissedFullScreenContent() {
+              Log.d(TAG, "Rewarded Ad dismissed fullscreen content.");
+              mRewardedAd = null;
+            }
+
+            @Override
+            public void onAdFailedToShowFullScreenContent(AdError adError) {
+              Log.e(TAG, "Rewarded Ad failed to show fullscreen content.");
+              mRewardedAd = null;
+            }
+
+            @Override
+            public void onAdImpression() {
+              Log.d(TAG, "Rewarded Ad recorded an impression.");
+            }
+
+            @Override
+            public void onAdShowedFullScreenContent() {
+              Log.d(TAG, "Rewarded Ad showed fullscreen content.");
+            }
+          });
+    }
+
+    @Override
+    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+        Log.d(TAG, loadAdError.toString());
+        mRewardedAd = null;
+    }
+}</code></pre>
+		                    			</div>
+		                    
+					                    <div class="note">
+					                        <i class="fas fa-edit"></i>
+					                        <span><strong>Important:</strong> Replace <code>org.yourdomain.yourappname</code> with your actual package name from buildozer.spec</span>
+					                    </div>
+					                </div>
+					            </div>
+					        </div>
+
+					        <!-- Buildozer Configuration -->
+					        <div class="method-steps">
+					            <h3>Step 3: Update Buildozer Configuration</h3>
+					            
+					            <div class="step">
+					                <span class="step-icon-admob">4</span>
+					                <div class="step-content">
+					                    <h5>Modify buildozer.spec</h5>
+					                    <p>Add these essential configurations to your buildozer.spec file:</p>
+					                    
+					                    <div class="code-header">
+					                        <span class="code-filename">buildozer.spec</span>
+					                        <button class="copy-btn" onclick="copyCode(this)">
+					                            <i class="fas fa-copy"></i> Copy
+					                        </button>
+					                    </div>
+					                    <div class="code-scroll-container">
+					                        <pre class="line-numbers"><code class="language-ini"># Permissions for AdMob
+android.permissions = INTERNET, ACCESS_NETWORK_STATE
+
+# Add Java source files
+android.add_src = ./src
+
+# Gradle dependencies for AdMob
+android.gradle_dependencies = com.google.firebase:firebase-ads:21.4.0, androidx.appcompat:appcompat:1.6.1, androidx.activity:activity:1.6.1
+
+# Enable AndroidX
+android.enable_androidx = True
+
+# Test AdMob application ID (replace with yours later)
+android.meta_data = com.google.android.gms.ads.APPLICATION_ID=ca-app-pub-3940256099942544~3347511713</code></pre>
+		                    			</div>
+					                    <div class="info-box">
+					                        <h4>🔧 Buildozer Configuration Notes</h4>
+					                        <ul>
+					                            <li><strong>Permissions:</strong> INTERNET and ACCESS_NETWORK_STATE are required for ads</li>
+					                            <li><strong>Source Files:</strong> Points to your custom Java callback files</li>
+					                            <li><strong>Gradle Dependencies:</strong> Latest AdMob SDK and AndroidX compatibility</li>
+					                            <li><strong>Application ID:</strong> Use test ID during development, replace with real ID for production</li>
+					                        </ul>
+					                    </div>
+					                </div>
+					            </div>
+					        </div>
+
+					        <!-- Python Implementation -->
+					        <div class="method-steps">
+					            <h3>Step 4: Python Implementation</h3>
+					            
+					            <div class="step">
+					                <span class="step-icon-admob">5</span>
+					                <div class="step-content">
+					                    <h5>Basic AdMob Implementation in Python</h5>
+					                    <p>Use KivMob in your main Python file:</p>
+					                    
+					                    <div class="code-header">
+										    <span class="code-filename">main.py</span>
+										    <button class="copy-btn" onclick="copyCode(this)">
+										        <i class="fas fa-copy"></i> Copy
+										    </button>
+										</div>
+										<div class="code-scroll-container">
+										    <pre class="line-numbers"><code class="language-python">from kivmob import KivMob
+from kivy.app import App
+from kivy.utils import platform
+from kivy.logger import Logger
+if platform == 'android':
+    from kivmob_mod import KivMob, TestIds, RewardedListenerInterface
+
+# Real Ad Unit IDs (for production - replace with yours)
+REAL_APP_ID = "ca-app-pub-XXXXXXXXXXXXXXXX~REPLACE_WITH_REAL_ID"
+REAL_BANNER_ID = "ca-app-pub-XXXXXXXXXXXXXXXX/REPLACE_WITH_REAL_ID"
+REAL_INTERSTITIAL_ID = "ca-app-pub-XXXXXXXXXXXXXXXX/REPLACE_WITH_REAL_ID"
+REAL_REWARDED_ID = "ca-app-pub-XXXXXXXXXXXXXXXX/REPLACE_WITH_REAL_ID"
+
+class RewardsHandler(RewardedListenerInterface):
+    def on_rewarded(self, reward_type, reward_amount):
+        print("User rewarded", "Type; ", reward_type, "Amount; ", reward_amount)
+        #load rewarded_ads
+        App.get_running_app().ads.load_rewarded_ad(TestIds.REWARDED_VIDEO)
+
+class AdMobApp(App):
+    def build(self):
+        # Initialize KivMob with Test App ID (use REAL_APP_ID for production)
+        self.ads = KivMob(TestIds.APP)
+        # self.ads = KivMob(REAL_APP_ID)  # Uncomment for production
+        
+        # Setup banner ad
+        self.ads.new_banner(TestIds.BANNER, top_pos=False)
+        # self.ads.new_banner(REAL_BANNER_ID, top_pos=False)  # Uncomment for production
+        
+        # Setup interstitial ad
+        self.ads.new_interstitial(TestIds.INTERSTITIAL)
+        # self.ads.new_interstitial(REAL_INTERSTITIAL_ID)  # Uncomment for production
+        
+        # Setup rewarded ad with listener
+        self.ads.new_rewarded_ad(TestIds.REWARDED_VIDEO)
+        # self.ads.new_rewarded_ad(REAL_REWARDED_ID)  # Uncomment for production
+        self.ads.set_rewarded_ad_listener(RewardsHandler())
+
+    def on_start(self):
+        """Called when the app starts"""
+        if platform == 'android':
+            Logger.info("AdMobApp: Loading ads on app start")
+            self.load_ads()
+
+    def load_ads(self):
+        """Load all ads"""
+        if platform == 'android':
+            Logger.info("AdMobApp: Loading all ads")
+            
+            # Load banner
+            self.ads.request_banner()
+            self.ads.show_banner()  # Show banner immediately or hide initially
+            
+            # Load interstitial
+            self.ads.load_interstitial()
+            
+            # Load rewarded ad
+            self.ads.load_rewarded_ad()
+
+    def show_banner(self):
+        """Show banner ad"""
+        if platform == 'android':
+            Logger.info("AdMobApp: Showing banner")
+            self.ads.show_banner()
+
+    def hide_banner(self):
+        """Hide banner ad"""
+        if platform == 'android':
+            Logger.info("AdMobApp: Hiding banner")
+            self.ads.hide_banner()
+
+    def load_interstitial(self):
+        """Load interstitial ad"""
+        if platform == 'android':
+            Logger.info("AdMobApp: Loading interstitial")
+            self.ads.load_interstitial()
+
+    def show_interstitial(self):
+        """Show interstitial ad"""
+        if platform == 'android':
+            Logger.info("AdMobApp: Showing interstitial")
+            self.ads.show_interstitial()
+
+    def load_rewarded_ad(self):
+        """Load rewarded ad"""
+        if platform == 'android':
+            Logger.info("AdMobApp: Loading rewarded ad")
+            self.ads.load_rewarded_ad()
+
+    def show_rewarded_ad(self):
+        """Show rewarded ad"""
+        if platform == 'android':
+            Logger.info("AdMobApp: Showing rewarded ad")
+            self.ads.show_rewarded_ad()
+
+if __name__ == '__main__':
+    AdMobApp().run()</code></pre>
+										</div>    
+					                    <div class="note">
+					                        <i class="fas fa-vial"></i>
+					                        <span><strong>Test IDs:</strong> Use Google's test Ad Unit IDs during development to avoid policy violations</span>
+					                    </div>
+					                </div>
+					            </div>
+					        </div>
+
+					        <!-- Resource Links -->
+					        <div class="resource-links">
+					            <a href="https://github.com/Sahil-pixel/Youtube-Kivy-Kivymd/blob/main/ADMOB_KIVY_UPDATED/" target="_blank" class="admob-link">
+					                <i class="fab fa-github"></i> Updated KivMob Implementation
+					            </a>
+					            <a href="https://developers.google.com/admob/android/test-ads" target="_blank" class="admob-link">
+					                <i class="fas fa-vial"></i> AdMob Test Ads Guide
+					            </a>
+								<a href="http://kivmob.com/" target="_blank" class="admob-link">
+					                <i class="fab fa-github"></i> KivMob Documentation
+					            </a>
+					            <a href="https://github.com/MichaelStott/KivMob" target="_blank" class="admob-link">
+					                <i class="fab fa-github"></i> Original KivMob Repository
+					            </a>
+					        </div>
+						</div>
+					</div>
+				</div>
+				<!-- Create AdMob Account -->
+				<div class="admob-method">
+				    <div class="method-header">
+				        <h2>Create AdMob Account</h2>
+				        <div class="admob-badge">Account Setup</div>
+				    </div>
+				    
+				    <div class="method-content">
+				        <div class="method-description">
+				            <p>Before implementing ads in your app, you need to set up your AdMob account and create ad units. This process will give you the App ID and Ad Unit IDs needed for your Python code and buildozer.spec file.</p>
+				        </div>
+				
+				        <!-- Account Creation Steps -->
+				        <div class="method-steps">
+				            <h3>Step 1: Create AdMob Account</h3>
+				            
+				            <div class="step-by-step">
+				                <div class="step">
+				                    <span class="step-icon-admob">1</span>
+				                    <div class="step-content">
+				                        <h5>Sign Up for AdMob</h5>
+				                        <p>Visit the AdMob website and create your account:</p>
+				                        
+				                        <div class="resource-links">
+				                            <a href="https://admob.google.com/" target="_blank" class="admob-link">
+				                                <i class="fas fa-external-link-alt"></i> Go to AdMob Website
+				                            </a>
+				                        </div>
+				                        
+				                        <ul>
+				                            <li>Use the same Google account as your Play Console</li>
+				                            <li>Complete the registration process</li>
+				                            <li>Accept the AdMob terms and conditions</li>
+				                        </ul>
+				                    </div>
+				                </div>
+				                
+				                <div class="step">
+				                    <span class="step-icon-admob">2</span>
+				                    <div class="step-content">
+				                        <h5>Add Your App to AdMob</h5>
+				                        <p>Connect your published Play Store app to AdMob:</p>
+				                        
+				                        <ul>
+				                            <li>Click "Add app" in your AdMob dashboard</li>
+				                            <li>Select "Yes, it's listed on a supported app store"</li>
+				                            <li>Search for and select your published app</li>
+				                            <li>Follow the setup wizard</li>
+				                        </ul>
+				                        
+				                        <div class="note">
+				                            <i class="fas fa-info-circle"></i>
+				                            <span>Your app must be published on Play Store before you can add it to AdMob</span>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				
+				        <!-- Get App ID -->
+				        <div class="step">
+						    <span class="step-icon-admob">3</span>
+						    <div class="step-content">
+						        <h5>Find Your App ID</h5>
+						        <p>After adding your app, AdMob will generate a unique App ID:</p>
+						        
+						        <div class="feature-grid">
+						            <div class="feature-item-admob">
+						                <i class="fas fa-id-card"></i>
+						                <h4>Format</h4>
+						                <p>ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy</p>
+						            </div>
+						            <div class="feature-item-admob">
+						                <i class="fas fa-code"></i>
+						                <h4>buildozer.spec</h4>
+						                <p>Used in Android metadata</p>
+						            </div>
+						            <div class="feature-item-admob">
+						                <i class="fas fa-python"></i>
+						                <h4>Python Code</h4>
+						                <p>Used in KivMob initialization</p>
+						            </div>
+						        </div>
+						        
+						        <p><strong>Where to find it:</strong> In your AdMob dashboard, go to your app → App settings → App ID</p>
+						        
+						        <!-- AdMob Dashboard Image -->
+						        <div class="demo-images">
+						            <div class="demo-item">
+						                <img src="../images/google-ad-unit.png" alt="AdMob Dashboard showing App ID location" class="demo-img" />
+						                <p class="demo-caption">Locating your App ID in the AdMob dashboard</p>
+						            </div>
+						        </div>
+						        
+						        <div class="code-header">
+						            <span class="code-filename">Update buildozer.spec</span>
+						            <button class="copy-btn" onclick="copyCode(this)">
+						                <i class="fas fa-copy"></i> Copy
+						            </button>
+						        </div>
+						        <div class="code-scroll-container">
+						            <pre class="line-numbers"><code class="language-ini"># Replace test ID with your real App ID
+						android.meta_data = com.google.android.gms.ads.APPLICATION_ID=ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX</code></pre>
+						        </div>
+						        
+						        <div class="code-header">
+						            <span class="code-filename">Update main.py</span>
+						            <button class="copy-btn" onclick="copyCode(this)">
+						                <i class="fas fa-copy"></i> Copy
+						            </button>
+						        </div>
+						        <div class="code-scroll-container">
+						            <pre class="line-numbers"><code class="language-python"># Replace test ID with your real App ID
+						REAL_APP_ID = "ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX"
+						
+						# In your app initialization
+						self.ads = KivMob(REAL_APP_ID)</code></pre>
+						        </div>
+						    </div>
+						</div>
+
+				        <!-- Create Ad Units -->
+				        <div class="method-steps">
+				            <h3>Step 3: Create Ad Units</h3>
+				            <p>Create ad units for each type of ad you want to display in your app.</p>
+				            
+				            <div class="step-by-step">
+				                <div class="step">
+				                    <span class="step-icon-admob">4</span>
+				                    <div class="step-content">
+				                        <h5>Create Banner Ad Unit</h5>
+				                        <p>Set up a banner ad unit for your app:</p>
+				                        
+				                        <ul>
+				                            <li>In AdMob, go to your app → Ad units</li>
+				                            <li>Click "Create ad unit"</li>
+				                            <li>Select "Banner"</li>
+				                            <li>Name it (e.g., "Main Banner")</li>
+				                            <li>Configure ad size (recommended: Smart Banner)</li>
+				                            <li>Click "Create ad unit"</li>
+											<li>After creation, copy your Banner Ad Unit ID:</li>
+										</ul>
+				                        
+				                        <div class="code-header">
+				                            <span class="code-filename">Update main.py with real Banner ID</span>
+				                            <button class="copy-btn" onclick="copyCode(this)">
+				                                <i class="fas fa-copy"></i> Copy
+				                            </button>
+				                        </div>
+				                        <div class="code-scroll-container">
+				                            <pre class="line-numbers"><code class="language-python"># Replace test ID with your real Banner Ad Unit ID
+REAL_BANNER_ID = "ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX"
+
+# In your banner setup
+self.ads.new_banner(REAL_BANNER_ID, top_pos=False)</code></pre>
+				                        </div>
+				                    </div>
+				                </div>
+				                
+
+				                <div class="step">
+				                    <span class="step-icon-admob">6</span>
+				                    <div class="step-content">
+				                        <h5>Create Interstitial Ad Unit</h5>
+				                        <p>Set up an interstitial ad unit:</p>
+				                        
+				                        <ul>
+				                            <li>Click "Create ad unit" again</li>
+				                            <li>Select "Interstitial"</li>
+				                            <li>Name it (e.g., "Main Interstitial")</li>
+				                            <li>Click "Create ad unit"</li>
+				                        </ul>
+				                        
+				                        <div class="code-header">
+				                            <span class="code-filename">Update main.py with real Interstitial ID</span>
+				                            <button class="copy-btn" onclick="copyCode(this)">
+				                                <i class="fas fa-copy"></i> Copy
+				                            </button>
+				                        </div>
+				                        <div class="code-scroll-container">
+				                            <pre class="line-numbers"><code class="language-python"># Replace test ID with your real Interstitial Ad Unit ID
+REAL_INTERSTITIAL_ID = "ca-app-pub-ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX"
+
+# In your interstitial setup
+self.ads.new_interstitial(REAL_INTERSTITIAL_ID)</code></pre>
+				                        </div>
+				                    </div>
+				                </div>
+                
+				                <div class="step">
+				                    <span class="step-icon-admob">7</span>
+				                    <div class="step-content">
+				                        <h5>Create Rewarded Ad Unit</h5>
+				                        <p>Set up a rewarded ad unit:</p>
+				                        
+				                        <ul>
+				                            <li>Click "Create ad unit"</li>
+				                            <li>Select "Rewarded"</li>
+				                            <li>Name it (e.g., "Video Rewards")</li>
+				                            <li>Configure reward amount and type</li>
+				                            <li>Click "Create ad unit"</li>
+				                        </ul>
+				                        
+				                        <div class="code-header">
+				                            <span class="code-filename">Update main.py with real Rewarded ID</span>
+				                            <button class="copy-btn" onclick="copyCode(this)">
+				                                <i class="fas fa-copy"></i> Copy
+				                            </button>
+				                        </div>
+				                        <div class="code-scroll-container">
+				                            <pre class="line-numbers"><code class="language-python"># Replace test ID with your real Rewarded Ad Unit ID
+REAL_REWARDED_ID = "ca-app-pub-ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX"
+
+# In your rewarded ad setup
+self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+				
+				        <!-- Next Steps -->
+				        <div class="next-steps">
+				            <h4>AdMob Setup Complete!</h4>
+				            <div class="steps-flow">
+				                <div class="step-item">
+				                    <div class="step-number">✓</div>
+				                    <h5>Account Created</h5>
+				                    <p>AdMob account set up</p>
+				                </div>
+				                <div class="step-arrow">→</div>
+				                <div class="step-item">
+				                    <div class="step-number">✓</div>
+				                    <h5>App Added</h5>
+				                    <p>Play Store app connected</p>
+				                </div>
+				                <div class="step-arrow">→</div>
+				                <div class="step-item">
+				                    <div class="step-number">✓</div>
+				                    <h5>Ad Units Created</h5>
+				                    <p>Banner, Interstitial, Rewarded</p>
+				                </div>
+				                <div class="step-arrow">→</div>
+				                <div class="step-item">
+				                    <div class="step-number">🚀</div>
+				                    <h5>Ready to Earn</h5>
+				                    <p>Start generating revenue!</p>
+				                </div>
+				            </div>
+				            
+				            <div class="success-tip">
+				                <h4>💰 Revenue Tips</h4>
+				                <p>For optimal revenue, focus on user experience: use rewarded videos for voluntary engagement, place interstitials at natural breaks, and avoid intrusive banner placements.</p>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+		    </div>
+		</div>
+		<!-- End of Guide -->
+		<div class="section-container">
+		    <div class="title-with-logo-h1">
+		        <h1>Congratulations! 🎉</h1>
+		    </div>
+		    
+		    <div class="method-content">
+		        <div class="method-description">
+		            <p>You've successfully completed the comprehensive journey from Python code to a fully monetized Android app on the Google Play Store !</p>
+		        </div>
+		
+		        <!-- Next Steps -->
+		        <div class="next-steps">
+		            <h3>Continue Your Journey</h3>
+		            <p>Your app development journey doesn't end here. Consider these next steps to grow your skills and apps:</p>
+		            
+		            <div class="tips-grid">
+		                <div class="tip-card">
+		                    <i class="fas fa-rocket"></i>
+		                    <h5>App Updates</h5>
+		                    <p>Regularly update your app with new features and improvements based on user feedback</p>
+		                </div>
+		                <div class="tip-card">
+		                    <i class="fas fa-chart-line"></i>
+		                    <h5>Analytics</h5>
+		                    <p>Implement analytics to understand user behavior and optimize your app</p>
+		                </div>
+		                <div class="tip-card">
+		                    <i class="fas fa-users"></i>
+		                    <h5>User Feedback</h5>
+		                    <p>Listen to your users and continuously improve the user experience</p>
+		                </div>
+		                <div class="tip-card">
+		                    <i class="fas fa-project-diagram"></i>
+		                    <h5>New Projects</h5>
+		                    <p>Start your next app project with the knowledge you've gained</p>
+		                </div>
+		            </div>
+		        </div>
+		
+		        <!-- Contact Section -->
+		        <div class="contact-section">
+		            <div class="author-card">
+		                <div class="author-header">
+		                    <h2>Need Help or Have Questions?</h2>
+		                </div>
+		                <div class="author-content">
+		                    <p>If you encountered any issues during this guide, have questions about advanced topics, or need professional assistance with your app development, don't hesitate to reach out!</p>
+		                    
+		                    <div class="contact-info">
+		                        <div class="contact-item">
+		                            <i class="fas fa-envelope"></i>
+		                            <div>
+		                                <h4>Email Support</h4>
+		                                <a href="mailto:support@pgt-technologies.com" class="website-link">
+		                                    support@pgt-technologies.com
+		                                </a>
+		                            </div>
+		                        </div>
+		                        <div class="contact-item">
+		                            <i class="fas fa-globe"></i>
+		                            <div>
+		                                <h4>Website</h4>
+		                                <a href="https://www.pgt-technologies.com" target="_blank" class="website-link">
+		                                    www.pgt-technologies.com
+		                                </a>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+</div>
+    <script>
+        function copyCode(button) {
+            // Find the code element within the same code block
+            const codeContainer = button.closest('.code-header').nextElementSibling;
+            const codeElement = codeContainer.querySelector('code');
+            const codeText = codeElement.textContent;
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(codeText).then(() => {
+                // Change button text temporarily
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                button.classList.add('copied');
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy code: ', err);
+                button.innerHTML = '<i class="fas fa-times"></i> Failed';
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
