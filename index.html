@@ -3,22 +3,73 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="google-adsense-account" content="ca-pub-8477908674453128">
-    <title>Build with Kivy - Android App Guide</title>
-    <link rel="icon" type="image/png" href="../images/favicon_guide.png" />
-	<!-- Prism.js styles -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
-	<!-- Prism.js library -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-	<!-- Prism.js library -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-	<!-- Add INI language support -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ini.min.js"></script>
-	<!-- Font Awesome for copy icon -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <meta name="google-adsense-account" content="ca-pub-8477908674453128">
+    
+    <!-- Primary Meta Tags -->
+    <title>Build Android Apps with Python - Complete Kivy & KivyMD Guide</title>
+    <meta name="description" content="Step-by-step guide to build and publish Android apps using Python, Kivy, and KivyMD. From development to Play Store publication and AdMob monetization.">
+    <meta name="keywords" content="python, android, kivy, kivymd, buildozer, admob, mobile development, app development">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.buildwithkivy.com/">
+    <meta property="og:title" content="Build Android Apps with Python - Complete Kivy & KivyMD Guide">
+    <meta property="og:description" content="Step-by-step guide to build and publish Android apps using Python, Kivy, and KivyMD. From development to Play Store publication and AdMob monetization.">
+    <meta property="og:image" content="https://www.buildwithkivy.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Build with Kivy">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.buildwithkivy.com/">
+    <meta property="twitter:title" content="Build Android Apps with Python - Complete Kivy & KivyMD Guide">
+    <meta property="twitter:description" content="Step-by-step guide to build and publish Android apps using Python, Kivy, and KivyMD.">
+    <meta property="twitter:image" content="https://www.buildwithkivy.com/images/og-image.jpg">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Build Android Apps with Python - Complete Kivy & KivyMD Guide",
+      "description": "Step-by-step guide to build and publish Android apps using Python, Kivy, and KivyMD. From development to Play Store publication and AdMob monetization.",
+      "image": "https://www.buildwithkivy.com/images/og-image.jpg",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Build with Kivy",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.buildwithkivy.com/images/logo.png"
+        }
+      },
+      "datePublished": "2024-01-01",
+      "dateModified": "2024-01-01"
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon_guide.png">
+    
+    <!-- Additional favicon formats -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.buildwithkivy.com/">
+    
+    <!-- Prism.js styles -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    
+    <!-- Prism.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ini.min.js"></script>
+    
+    <!-- Font Awesome for copy icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
     <style>
     /* ===== BASE STYLES ===== */
     body {
