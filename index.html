@@ -618,13 +618,20 @@
         padding: 8px 12px;
         border-radius: 6px 6px 0 0;
         margin-bottom: 0;
+		gap: 10px; /* Space between filename and button */
+    	min-width: 0; /* Allow flex children to shrink */
     }
     .code-filename {
         font-weight: bold;
         color: #fff;
         font-family: Arial, sans-serif;
         font-size: 14px;
-    }
+		 white-space: nowrap; /* Keep filename on one line */
+	    overflow: hidden; /* Hide overflow */
+	    text-overflow: ellipsis; /* Show ... for long names */
+	    flex: 1; /* Take available space */
+	    min-width: 0; /* Allow truncation */
+	}
     
     .copy-btn {
         background: #555;
@@ -635,6 +642,8 @@
         cursor: pointer;
         font-size: 12px;
         transition: background 0.3s;
+		white-space: nowrap; /* Keep button text on one line */
+    	flex-shrink: 0; /* Don't allow button to shrink */
     }
     .copy-btn:hover { background: #666; }
     .copy-btn.copied { background: #4CAF50; }
