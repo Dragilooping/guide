@@ -129,14 +129,99 @@
         margin-bottom: 30px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
-    .video-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-    iframe {
-        border: none;
-    }
+    /* Make YouTube/video embeds responsive */
+	.video-container {
+	    position: relative;
+	    width: 100%;
+	    height: 0;
+	    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+	    margin: 20px 0;
+	    border-radius: 8px;
+	    overflow: hidden;
+	}
+	
+	.video-container iframe {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    border: none;
+	    border-radius: 8px;
+	}
+	
+	/* Resource links - ensure they wrap properly on mobile */
+	.resource-links {
+	    display: flex;
+	    gap: 15px;
+	    margin: 15px 0;
+	    flex-wrap: wrap; /* Allow links to wrap to new line */
+	}
+	
+	.resource-link {
+	    display: inline-flex;
+	    align-items: center;
+	    gap: 8px;
+	    padding: 8px 15px;
+	    background: #444;
+	    color: #fff;
+	    text-decoration: none;
+	    border-radius: 6px;
+	    transition: background 0.3s;
+	    white-space: nowrap; /* Keep link text on one line */
+	    flex-shrink: 0; /* Prevent links from shrinking too much */
+	}
+	
+	.resource-link:hover {
+	    background: #555;
+	}
+	
+	/* Video item styling */
+	.video-item {
+	    margin: 20px 0;
+	}
+	
+	.demo-caption {
+	    color: #ccc;
+	    margin-top: 10px;
+	    font-style: italic;
+	    text-align: center;
+	    font-size: 0.9em;
+	}
+	
+	/* Mobile-specific improvements */
+	@media (max-width: 768px) {
+	    .resource-links {
+	        gap: 10px;
+	        justify-content: center; /* Center links on mobile */
+	    }
+	    
+	    .resource-link {
+	        padding: 6px 12px;
+	        font-size: 0.9em;
+	    }
+	    
+	    .demo-caption {
+	        font-size: 0.85em;
+	        padding: 0 10px;
+	    }
+	}
+	
+	@media (max-width: 480px) {
+	    .resource-links {
+	        flex-direction: column; /* Stack links vertically on very small screens */
+	        align-items: center;
+	    }
+	    
+	    .resource-link {
+	        width: 200px; /* Fixed width for consistency */
+	        justify-content: center;
+	    }
+	    
+	    .video-container {
+	        margin: 15px 0;
+	    }
+	}
     
     /* ===== LAYOUT COMPONENTS ===== */
     .title-with-logo, .title-with-logo-h1 {
