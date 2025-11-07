@@ -80,18 +80,24 @@
 	    border-radius: 50% !important;
 	}
     .container {
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-    }
-    .main-content {
-        background-color: #222429;
-        padding: 30px;
-        border-radius: 8px;
-        max-width: 960px;
-        flex-grow: 1;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.7);
-    }
+	    display: flex;
+	    justify-content: center;
+	    padding: 20px;
+	    box-sizing: border-box; /* Include padding in width calculation */
+	    max-width: 100%; /* Prevent container from exceeding viewport */
+	    overflow-x: hidden; /* Prevent horizontal scroll */
+	}
+	
+	.main-content {
+	    background-color: #222429;
+	    padding: 30px;
+	    border-radius: 8px;
+	    max-width: min(960px, 100%); /* Use min() to adapt to smaller screens */
+	    width: 100%; /* Take full available width */
+	    flex-grow: 1;
+	    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+	    box-sizing: border-box; /* Include padding in width calculation */
+	}
     
     /* ===== TYPOGRAPHY ===== */
     .main-content h1 {
