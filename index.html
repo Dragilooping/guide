@@ -640,34 +640,62 @@
     .copy-btn.copied { background: #4CAF50; }
     
     /* FIXED: Horizontal scroll for code blocks */
-    .code-scroll-container {
-        white-space: nowrap; /* Changed from pre-wrap to nowrap */
-        overflow-x: auto;    /* Changed from hidden to auto */
-        overflow-y: hidden;  /* Added to prevent vertical scroll */
-        text-align: left;
-        padding: 10px;
-        max-height: none;    /* Removed max-height constraint */
-        background-color: #2d2d2d;
-        border-radius: 0 0 6px 6px;
-        margin-top: 0;
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    }
-    .code-scroll-container pre {
-        margin: 0;
-        padding: 0;
-        display: block;
-        text-align: left;
-        white-space: pre;    /* Changed from pre-wrap to pre */
-        word-wrap: normal;   /* Changed from break-word to normal */
-        font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-    }
-    
-    /* Override any Prism.js padding */
-    .code-scroll-container pre[class*="language-"],
-    .code-scroll-container code[class*="language-"] {
-        padding: 0 !important;
-        margin: 0 !important;
-    }
+	.code-scroll-container {
+	    overflow-x: auto;    /* Allow horizontal scroll */
+	    overflow-y: hidden;  /* Prevent vertical scroll */
+	    text-align: left;
+	    padding: 10px;
+	    max-height: none;
+	    background-color: #2d2d2d;
+	    border-radius: 0 0 6px 6px;
+	    margin-top: 0;
+	    -webkit-overflow-scrolling: touch;
+	    max-width: 100%;
+	    box-sizing: border-box;
+	}
+	
+	/* Default for most code - no wrapping (like Python) */
+	.code-scroll-container pre {
+	    margin: 0;
+	    padding: 0;
+	    display: block;
+	    text-align: left;
+	    white-space: pre;
+	    word-wrap: normal;
+	    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+	}
+	
+	/* SPECIFIC FIX for bash/terminal commands - allow wrapping */
+	.code-scroll-container code.language-bash,
+	.code-scroll-container code.language-shell,
+	.code-scroll-container code.language-ini {
+	    white-space: pre-wrap !important;  /* Allow wrapping for bash */
+	    word-wrap: break-word !important;
+	}
+	
+	/* Also apply to the pre element when it contains bash */
+	.code-scroll-container pre .language-bash,
+	.code-scroll-container pre .language-shell,
+	.code-scroll-container pre .language-ini {
+	    white-space: pre-wrap !important;
+	    word-wrap: break-word !important;
+	}
+	
+	/* Override any Prism.js padding */
+	.code-scroll-container pre[class*="language-"],
+	.code-scroll-container code[class*="language-"] {
+	    padding: 0 !important;
+	    margin: 0 !important;
+	}
+	
+	/* Mobile-specific: allow wrapping for ALL code on small screens */
+	@media (max-width: 768px) {
+	    .code-scroll-container pre,
+	    .code-scroll-container code {
+	        white-space: pre-wrap !important;
+	        word-wrap: break-word !important;
+	    }
+	}
     
     /* Code syntax highlighting */
     .code-scroll-container .token.comment {
