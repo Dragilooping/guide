@@ -680,7 +680,34 @@
 	    white-space: pre-wrap !important;
 	    word-wrap: break-word !important;
 	}
+
+	/* SPECIFIC FIX for Java code - allow wrapping for long class names */
+	.code-scroll-container code.language-java,
+	.code-scroll-container pre .language-java {
+	    white-space: pre-wrap !important;
+	    word-wrap: break-word !important;
+	    word-break: break-word !important;
+	}
 	
+	/* Specifically target long Java import statements and class names */
+	.code-scroll-container code.language-java .token-imports,
+	.code-scroll-container code.language-java .token-class-name {
+	    white-space: pre-wrap !important;
+	    word-wrap: break-word !important;
+	}
+	
+	/* Mobile-specific: More aggressive wrapping for Java on small screens */
+	@media (max-width: 768px) {
+	    .code-scroll-container code.language-java {
+	        font-size: 0.85em; /* Smaller font for Java on mobile */
+	    }
+	    
+	    /* Break long Java package names and class names */
+	    .code-scroll-container code.language-java .token-namespace,
+	    .code-scroll-container code.language-java .token-class-name {
+	        word-break: break-all !important;
+	    }
+	}
 	/* Override any Prism.js padding */
 	.code-scroll-container pre[class*="language-"],
 	.code-scroll-container code[class*="language-"] {
