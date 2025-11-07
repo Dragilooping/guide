@@ -704,6 +704,34 @@
 	    white-space: pre-wrap !important;
 	    word-wrap: break-word !important;
 	}
+
+	/* SPECIFIC FIX for Python code - allow wrapping */
+	.code-scroll-container code.language-python,
+	.code-scroll-container pre .language-python {
+	    white-space: pre-wrap !important;
+	    word-wrap: break-word !important;
+	    word-break: break-word !important;
+	}
+	
+	/* Specifically target long Python strings and comments */
+	.code-scroll-container code.language-python .token-string,
+	.code-scroll-container code.language-python .token-comment {
+	    white-space: pre-wrap !important;
+	    word-wrap: break-word !important;
+	}
+	
+	/* Mobile-specific: More aggressive wrapping for Python */
+	@media (max-width: 768px) {
+	    .code-scroll-container code.language-python {
+	        font-size: 0.85em; /* Smaller font for Python on mobile */
+	    }
+	    
+	    /* Break long Python strings and import statements */
+	    .code-scroll-container code.language-python .token-imports,
+	    .code-scroll-container code.language-python .token-assignment {
+	        word-break: break-all !important;
+	    }
+	}
 	
 	/* Mobile-specific: More aggressive wrapping for Java on small screens */
 	@media (max-width: 768px) {
