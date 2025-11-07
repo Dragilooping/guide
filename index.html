@@ -1429,22 +1429,111 @@ if __name__ == '__main__':
 			</div>
 		
 			<h2>Recommended Tutorials</h2>
-			
+
 			<div class="tutorial-section">
-				<h3>Beginner-Friendly Video Guide</h3>
-				<p>For a visual walkthrough, I recommend Dennis-Immanuel Czogalla's comprehensive tutorial:</p>
-				<div class="video-container">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/pzsvN3fuBA0?si=qPvBZEROq5tLCeXc" 
-							title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-							referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-					</iframe>
-				</div>
-				<p></p>
-				<div class="warning-note">
-					<strong>Important:</strong> This video was created in 2022. Be sure to check the comments section for updates and changes, as the Buildozer ecosystem evolves rapidly.
-				</div>
+			    <h3>Beginner-Friendly Video Guide</h3>
+			    <p>For a visual walkthrough, I recommend Dennis-Immanuel Czogalla's comprehensive tutorial:</p>
+			    <div class="video-container">
+			        <iframe width="560" height="315" src="https://www.youtube.com/embed/pzsvN3fuBA0?si=qPvBZEROq5tLCeXc" 
+			                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+			                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+			        </iframe>
+			    </div>
+			    
+			    <div class="info-box">
+			        <h4>🔄 Important Updates for 2024</h4>
+			        <p>Since this video was created in 2022, here are the essential updates you need to make:</p>
+			        
+			        <div class="step-by-step">
+			            <div class="step">
+			                <span class="step-icon">🔧</span>
+			                <div class="step-content">
+			                    <h5>Critical Package Versions</h5>
+			                    <p>Use these specific versions to avoid compatibility issues:</p>
+			                    
+			                    <div class="code-header">
+			                        <span class="code-filename">Terminal Commands</span>
+			                        <button class="copy-btn" onclick="copyCode(this)">
+			                            <i class="fas fa-copy"></i> Copy
+			                        </button>
+			                    </div>
+			                    <div class="code-scroll-container">
+			                        <pre class="line-numbers"><code class="language-bash"># Install specific Cython version (compatible with Buildozer)
+sudo pip3 install cython==0.29.33
+
+# Upgrade setuptools to latest version
+sudo pip3 install --upgrade setuptools
+
+# Check installed versions
+sudo pip3 list | grep -E "(cython|setuptools)"</code></pre>
+			                    </div>
+			                </div>
+			            </div>
+			            
+			            <div class="step">
+			                <span class="step-icon">☕</span>
+			                <div class="step-content">
+			                    <h5>Java Development Kit Update</h5>
+			                    <p>Use OpenJDK 17 instead of version 8 to avoid Gradle errors:</p>
+			                    
+			                    <div class="code-header">
+			                        <span class="code-filename">Terminal Commands</span>
+			                        <button class="copy-btn" onclick="copyCode(this)">
+			                            <i class="fas fa-copy"></i> Copy
+			                        </button>
+			                    </div>
+			                    <div class="code-scroll-container">
+			                        <pre class="line-numbers"><code class="language-bash"># Install OpenJDK 17 (instead of version 8)
+sudo apt-get install openjdk-17-jdk
+
+# Set Java 17 as default (if multiple versions installed)
+sudo update-alternatives --config java
+
+# Verify installation
+java -version
+javac -version</code></pre>
+			                    </div>
+			                </div>
+			            </div>
+            
+			            <div class="step">
+			                <span class="step-icon">📋</span>
+			                <div class="step-content">
+			                    <h5>Verification Steps</h5>
+			                    <p>Confirm your environment is properly configured:</p>
+			                    
+			                    <div class="code-header">
+			                        <span class="code-filename">Terminal Commands</span>
+			                        <button class="copy-btn" onclick="copyCode(this)">
+			                            <i class="fas fa-copy"></i> Copy
+			                        </button>
+			                    </div>
+			                    <div class="code-scroll-container">
+			                        <pre class="line-numbers"><code class="language-bash"># Check all critical versions
+python3 --version
+pip3 --version
+buildozer --version
+java -version
+javac -version
+
+# Verify specific package versions
+pip3 list | grep -E "(cython|setuptools|buildozer)"</code></pre>
+			                    </div>
+			                    
+			                    <div class="note">
+			                        <i class="fas fa-check-circle"></i>
+			                        <span><strong>Expected Output:</strong> Cython 0.29.33, setuptools 68.2.2+, Java 17.x.x</span>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			    
+			    <div class="warning-note">
+			        <strong>⚠️ Video Disclaimer:</strong> This video was created in 2022. The Buildozer ecosystem evolves rapidly, so always check the comments section for updates and use the package versions specified above.
+			    </div>
 			</div>
-		
+					
 			<h2>Advanced: GitHub Actions for Building</h2>
 			<div class="advanced-section">
 				<p>For better debugging, consider using GitHub Actions:</p>
