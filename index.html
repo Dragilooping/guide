@@ -758,7 +758,60 @@
 	    word-wrap: normal;
 	    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
 	}
+
+	/* Specific fix for folder structure/directory tree */
+	.code-scroll-container code.language-bash .token-tree,
+	.code-scroll-container pre .language-bash {
+	    white-space: pre-wrap !important;
+	    word-wrap: break-word !important;
+	    word-break: break-all !important; /* More aggressive breaking for tree structures */
+	}
 	
+	/* Ensure code containers don't exceed their parents */
+	.step-content {
+	    width: 100%;
+	    min-width: 0; /* Crucial for flex children */
+	    overflow: hidden; /* Contain children */
+	    box-sizing: border-box;
+	}
+	
+	/* Mobile-specific fixes for folder structures */
+	@media (max-width: 768px) {
+	    .code-scroll-container code.language-bash {
+	        font-size: 0.8em; /* Even smaller font for bash on mobile */
+	        font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+	    }
+	    
+	    /* More aggressive wrapping for tree structures */
+	    .code-scroll-container pre.language-bash,
+	    .code-scroll-container code.language-bash {
+	        white-space: pre-wrap !important;
+	        word-wrap: break-word !important;
+	        word-break: break-all !important;
+	        line-height: 1.3; /* Tighter line spacing */
+	    }
+	}
+	
+	@media (max-width: 480px) {
+	    .code-scroll-container code.language-bash {
+	        font-size: 0.75em; /* Smallest readable size */
+	    }
+	    
+	    .step-content h5 {
+	        font-size: 1.1em; /* Smaller heading on mobile */
+	        word-wrap: break-word;
+	    }
+	    
+	    .note {
+	        padding: 8px 10px;
+	        font-size: 0.9em;
+	    }
+	    
+	    .note code {
+	        font-size: 0.85em;
+	        word-break: break-all;
+	    }
+	}
 	/* SPECIFIC FIX for bash/terminal commands - allow wrapping */
 	.code-scroll-container code.language-bash,
 	.code-scroll-container code.language-shell,
