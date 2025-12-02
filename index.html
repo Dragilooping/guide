@@ -1910,21 +1910,28 @@ sudo pip3 list | grep -E "(cython|setuptools)"</code></pre>
 			                    <h5>Java Development Kit Update</h5>
 			                    <p>Use OpenJDK 17 instead of version 8 to avoid Gradle errors:</p>
 			                    
-			                    <div class="code-header">
-			                        <span class="code-filename">Terminal Commands</span>
-			                        <button class="copy-btn" onclick="copyCode(this)">
-			                            <i class="fas fa-copy"></i> Copy
-			                        </button>
-			                    </div>
-			                    <div class="code-scroll-container">
-			                        <pre class="line-numbers"><code class="language-bash"># Install OpenJDK 17 (instead of version 8)
+			                    <div class="code-section">
+									<div class="code-header">
+										<span class="code-filename">Terminal Commands</span>
+										<div class="code-actions">
+									  		<button class="copy-btn" onclick="copyCode(this)">
+												<i class="fas fa-copy"></i> Copy
+									  		</button>
+									  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+												<i class="fas fa-expand-alt"></i> Expand
+									  		</button>
+										</div>
+									</div>
+								    <div class="code-scroll-container">
+										<pre class="line-numbers"><code class="language-bash"># Install OpenJDK 17 (instead of version 8)
 sudo apt-get install openjdk-17-jdk
 
 # Verify installation
 java -version
 javac -version</code></pre>
-			                    </div>
-			                </div>
+								  	</div>
+								</div>
+							</div>
 			            </div>
 			                    
 						<div class="note">
@@ -2019,14 +2026,20 @@ jobs:
 
 			<p>Here's a comprehensive <code>buildozer.spec</code> file: </p>
 			
-			<div class="code-header">
-			    <span class="code-filename">buildozer.spec</span>
-			    <button class="copy-btn" onclick="copyCode(this)">
-			        <i class="fas fa-copy"></i> Copy
-			    </button>
-			</div>
-			<div class="code-scroll-container">
-			    <pre class="line-numbers"><code class="language-ini">[app]
+			<div class="code-section">
+				  <div class="code-header">
+				    <span class="code-filename">build_apk.yml</span>
+				    <div class="code-actions">
+				      <button class="copy-btn" onclick="copyCode(this)">
+				        <i class="fas fa-copy"></i> Copy
+				      </button>
+				      <button class="expand-code-btn" onclick="openCodeModal(this)">
+				        <i class="fas fa-expand-alt"></i> Expand
+				      </button>
+				    </div>
+				  </div>
+				  <div class="code-scroll-container">
+					<pre class="line-numbers"><code class="language-ini">[app]
 
 # (str) Title of your application
 title = Apptitle
@@ -2481,8 +2494,7 @@ warn_on_root = 1
 #    Then, invoke the command line with the "demo" profile:
 #
 #buildozer --profile demo android debug
-			
-				</code></pre>
+</code></pre>
         	</div>
     	</div>
 
