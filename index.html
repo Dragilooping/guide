@@ -2876,14 +2876,21 @@ warn_on_root = 1
 			                    <div class="step-content">
 			                        <h5>Create Keystore Directory</h5>
 			                        <p>First, create a dedicated directory for your keystore files:</p>
-			                        <div class="code-header">
-			                            <span class="code-filename">Terminal Command</span>
-			                            <button class="copy-btn" onclick="copyCode(this)">
-			                                <i class="fas fa-copy"></i> Copy
-			                            </button>
-			                        </div>
-			                        <div class="code-scroll-container">
-										<pre class="line-numbers"><code class="language-bash">mkdir -p ~/keystores/</code></pre>
+			                        <div class="code-section">
+										<div class="code-header">
+											<span class="code-filename">Terminal Command</span>
+											<div class="code-actions">
+										  		<button class="copy-btn" onclick="copyCode(this)">
+													<i class="fas fa-copy"></i> Copy
+										  		</button>
+										  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+													<i class="fas fa-expand-alt"></i> Expand
+										  		</button>
+											</div>
+										</div>
+										<div class="code-scroll-container">
+											<pre class="line-numbers"><code class="language-bash">mkdir -p ~/keystores/</code></pre>
+										</div>
 			                        </div>
 			                    </div>
 			                </div>
