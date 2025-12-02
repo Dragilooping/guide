@@ -3802,15 +3802,21 @@ $ export P4A_RELEASE_KEYALIAS=&lt;your-key-alias&gt;</code></pre>
 					                <div class="step-content">
 					                    <h5>Interstitial Ad Callback</h5>
 					                    <p>Create <code>InterstitialAdLoadCallback4kivy.java</code>:</p>
-					                    
-					                    <div class="code-header">
-					                        <span class="code-filename">src/org/domain/appname/InterstitialAdLoad....4kivy.java</span>
-					                        <button class="copy-btn" onclick="copyCode(this)">
-					                            <i class="fas fa-copy"></i> Copy
-					                        </button>
-					                    </div>
-					                    <div class="code-scroll-container">
-					                        <pre class="line-numbers"><code class="language-java">package org.yourdomain.yourappname;
+
+										<div class="code-section">
+											<div class="code-header">
+												<span class="code-filename">src/org/domain/appname/InterstitialAdLoad....4kivy.java</span>
+												<div class="code-actions">
+											  		<button class="copy-btn" onclick="copyCode(this)">
+														<i class="fas fa-copy"></i> Copy
+											  		</button>
+											  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+														<i class="fas fa-expand-alt"></i> Expand
+											  		</button>
+												</div>
+											</div>
+											<div class="code-scroll-container">
+					                        	<pre class="line-numbers"><code class="language-java">package org.yourdomain.yourappname;
 
 import android.util.Log;
 import androidx.annotation.NonNull;
@@ -3866,6 +3872,7 @@ public class InterstitialAdLoadCallback4kivy extends InterstitialAdLoadCallback 
         mInterstitialAd = null;
     }
 }</code></pre>
+											</div>
 		                    			</div>
 					                </div>
 					            </div>
@@ -3876,14 +3883,20 @@ public class InterstitialAdLoadCallback4kivy extends InterstitialAdLoadCallback 
 					                    <h5>Rewarded Ad Callback</h5>
 					                    <p>Create <code>RewardedAdLoadCallback4kivy.java</code>:</p>
 					                    
-					                    <div class="code-header">
-					                        <span class="code-filename">src/org/domain/appname/RewardedAdLoad...4kivy.java</span>
-					                        <button class="copy-btn" onclick="copyCode(this)">
-					                            <i class="fas fa-copy"></i> Copy
-					                        </button>
-					                    </div>
-					                    <div class="code-scroll-container">
-					                        <pre class="line-numbers"><code class="language-java">package org.yourdomain.yourappname;
+					                    <div class="code-section">
+											<div class="code-header">
+												<span class="code-filename">src/org/domain/appname/RewardedAdLoad....4kivy.java</span>
+												<div class="code-actions">
+											  		<button class="copy-btn" onclick="copyCode(this)">
+														<i class="fas fa-copy"></i> Copy
+											  		</button>
+											  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+														<i class="fas fa-expand-alt"></i> Expand
+											  		</button>
+												</div>
+											</div>
+											<div class="code-scroll-container">
+					                        	<pre class="line-numbers"><code class="language-java">package org.yourdomain.yourappname;
 
 import android.util.Log;
 import androidx.annotation.NonNull;
@@ -3938,6 +3951,7 @@ public class RewardedAdLoadCallback4kivy extends RewardedAdLoadCallback {
         mRewardedAd = null;
     }
 }</code></pre>
+											</div>
 		                    			</div>
 		                    
 					                    <div class="note">
@@ -3958,14 +3972,20 @@ public class RewardedAdLoadCallback4kivy extends RewardedAdLoadCallback {
 					                    <h5>Modify buildozer.spec</h5>
 					                    <p>Add these essential configurations to your buildozer.spec file:</p>
 					                    
-					                    <div class="code-header">
-					                        <span class="code-filename">buildozer.spec</span>
-					                        <button class="copy-btn" onclick="copyCode(this)">
-					                            <i class="fas fa-copy"></i> Copy
-					                        </button>
-					                    </div>
-					                    <div class="code-scroll-container">
-					                        <pre class="line-numbers"><code class="language-ini"># Permissions for AdMob
+					                    <div class="code-section">
+											<div class="code-header">
+												<span class="code-filename">buildozer.spec</span>
+												<div class="code-actions">
+											  		<button class="copy-btn" onclick="copyCode(this)">
+														<i class="fas fa-copy"></i> Copy
+											  		</button>
+											  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+														<i class="fas fa-expand-alt"></i> Expand
+											  		</button>
+												</div>
+											</div>
+											<div class="code-scroll-container">
+					                        	<pre class="line-numbers"><code class="language-ini"># Permissions for AdMob
 android.permissions = INTERNET, ACCESS_NETWORK_STATE
 
 # Add Java source files
@@ -3979,6 +3999,7 @@ android.enable_androidx = True
 
 # Test AdMob application ID (replace with yours later)
 android.meta_data = com.google.android.gms.ads.APPLICATION_ID=ca-app-pub-3940256099942544~3347511713</code></pre>
+											</div>
 		                    			</div>
 					                    <div class="info-box">
 					                        <h4>🔧 Buildozer Configuration Notes</h4>
@@ -4003,14 +4024,20 @@ android.meta_data = com.google.android.gms.ads.APPLICATION_ID=ca-app-pub-3940256
 					                    <h5>Basic AdMob Implementation in Python</h5>
 					                    <p>Use KivMob in your main Python file:</p>
 					                    
-					                    <div class="code-header">
-										    <span class="code-filename">main.py</span>
-										    <button class="copy-btn" onclick="copyCode(this)">
-										        <i class="fas fa-copy"></i> Copy
-										    </button>
-										</div>
-										<div class="code-scroll-container">
-										    <pre class="line-numbers"><code class="language-python">from kivmob import KivMob
+					                    <div class="code-section">
+											<div class="code-header">
+												<span class="code-filename">main.py</span>
+												<div class="code-actions">
+											  		<button class="copy-btn" onclick="copyCode(this)">
+														<i class="fas fa-copy"></i> Copy
+											  		</button>
+											  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+														<i class="fas fa-expand-alt"></i> Expand
+											  		</button>
+												</div>
+											</div>
+											<div class="code-scroll-container">
+										    	<pre class="line-numbers"><code class="language-python">from kivmob import KivMob
 from kivy.app import App
 from kivy.utils import platform
 from kivy.logger import Logger
@@ -4107,6 +4134,7 @@ class AdMobApp(App):
 
 if __name__ == '__main__':
     AdMobApp().run()</code></pre>
+											</div>
 										</div>    
 					                    <div class="note">
 					                        <i class="fas fa-vial"></i>
@@ -4228,29 +4256,43 @@ if __name__ == '__main__':
 						            </div>
 						        </div>
 						        
-						        <div class="code-header">
-						            <span class="code-filename">Update buildozer.spec</span>
-						            <button class="copy-btn" onclick="copyCode(this)">
-						                <i class="fas fa-copy"></i> Copy
-						            </button>
-						        </div>
-						        <div class="code-scroll-container">
-						            <pre class="line-numbers"><code class="language-ini"># Replace test ID with your real App ID
+						        <div class="code-section">
+									<div class="code-header">
+										<span class="code-filename">update buildozer.spec</span>
+										<div class="code-actions">
+											<button class="copy-btn" onclick="copyCode(this)">
+												<i class="fas fa-copy"></i> Copy
+											</button>
+											<button class="expand-code-btn" onclick="openCodeModal(this)">
+												<i class="fas fa-expand-alt"></i> Expand
+											</button>
+										</div>
+									</div>
+									<div class="code-scroll-container">
+						            	<pre class="line-numbers"><code class="language-ini"># Replace test ID with your real App ID
 						android.meta_data = com.google.android.gms.ads.APPLICATION_ID=ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX</code></pre>
+									</div>
 						        </div>
 						        
-						        <div class="code-header">
-						            <span class="code-filename">Update main.py</span>
-						            <button class="copy-btn" onclick="copyCode(this)">
-						                <i class="fas fa-copy"></i> Copy
-						            </button>
-						        </div>
-						        <div class="code-scroll-container">
-						            <pre class="line-numbers"><code class="language-python"># Replace test ID with your real App ID
+						        <div class="code-section">
+									<div class="code-header">
+										<span class="code-filename">Update main.py</span>
+										<div class="code-actions">
+											<button class="copy-btn" onclick="copyCode(this)">
+												<i class="fas fa-copy"></i> Copy
+											</button>
+											<button class="expand-code-btn" onclick="openCodeModal(this)">
+												<i class="fas fa-expand-alt"></i> Expand
+											</button>
+										</div>
+									</div>
+									<div class="code-scroll-container">
+						            	<pre class="line-numbers"><code class="language-python"># Replace test ID with your real App ID
 						REAL_APP_ID = "ca-app-pub-XXXXXXXXXXXXXXXX~XXXXXXXXXX"
 						
 						# In your app initialization
 						self.ads = KivMob(REAL_APP_ID)</code></pre>
+									</div>
 						        </div>
 						    </div>
 						</div>
@@ -4277,18 +4319,25 @@ if __name__ == '__main__':
 											<li>After creation, copy your Banner Ad Unit ID:</li>
 										</ul>
 				                        
-				                        <div class="code-header">
-				                            <span class="code-filename">Update main.py with real Banner ID</span>
-				                            <button class="copy-btn" onclick="copyCode(this)">
-				                                <i class="fas fa-copy"></i> Copy
-				                            </button>
-				                        </div>
-				                        <div class="code-scroll-container">
-				                            <pre class="line-numbers"><code class="language-python"># Replace test ID with your real Banner Ad Unit ID
+				                        <div class="code-section">
+											<div class="code-header">
+												<span class="code-filename">Update main.py with real BannerID</span>
+												<div class="code-actions">
+											  		<button class="copy-btn" onclick="copyCode(this)">
+														<i class="fas fa-copy"></i> Copy
+											  		</button>
+											  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+														<i class="fas fa-expand-alt"></i> Expand
+											  		</button>
+												</div>
+											</div>
+											<div class="code-scroll-container">
+					                            <pre class="line-numbers"><code class="language-python"># Replace test ID with your real Banner Ad Unit ID
 REAL_BANNER_ID = "ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX"
 
 # In your banner setup
 self.ads.new_banner(REAL_BANNER_ID, top_pos=False)</code></pre>
+											</div>
 				                        </div>
 				                    </div>
 				                </div>
@@ -4307,18 +4356,25 @@ self.ads.new_banner(REAL_BANNER_ID, top_pos=False)</code></pre>
 				                            <li>Click "Create ad unit"</li>
 				                        </ul>
 				                        
-				                        <div class="code-header">
-				                            <span class="code-filename">Update main.py with real Interstitial ID</span>
-				                            <button class="copy-btn" onclick="copyCode(this)">
-				                                <i class="fas fa-copy"></i> Copy
-				                            </button>
-				                        </div>
-				                        <div class="code-scroll-container">
-				                            <pre class="line-numbers"><code class="language-python"># Replace test ID with your real Interstitial Ad Unit ID
+				                        <div class="code-section">
+											<div class="code-header">
+												<span class="code-filename">Update main.py with real InterstitialID</span>
+												<div class="code-actions">
+											  		<button class="copy-btn" onclick="copyCode(this)">
+														<i class="fas fa-copy"></i> Copy
+											  		</button>
+											  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+														<i class="fas fa-expand-alt"></i> Expand
+											  		</button>
+												</div>
+											</div>
+											<div class="code-scroll-container">
+				                            	<pre class="line-numbers"><code class="language-python"># Replace test ID with your real Interstitial Ad Unit ID
 REAL_INTERSTITIAL_ID = "ca-app-pub-ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX"
 
 # In your interstitial setup
 self.ads.new_interstitial(REAL_INTERSTITIAL_ID)</code></pre>
+											</div>
 				                        </div>
 				                    </div>
 				                </div>
@@ -4337,18 +4393,25 @@ self.ads.new_interstitial(REAL_INTERSTITIAL_ID)</code></pre>
 				                            <li>Click "Create ad unit"</li>
 				                        </ul>
 				                        
-				                        <div class="code-header">
-				                            <span class="code-filename">Update main.py with real Rewarded ID</span>
-				                            <button class="copy-btn" onclick="copyCode(this)">
-				                                <i class="fas fa-copy"></i> Copy
-				                            </button>
-				                        </div>
-				                        <div class="code-scroll-container">
-				                            <pre class="line-numbers"><code class="language-python"># Replace test ID with your real Rewarded Ad Unit ID
+				                        <div class="code-section">
+											<div class="code-header">
+												<span class="code-filename">Update main.py with real Rewarded ID</span>
+												<div class="code-actions">
+											  		<button class="copy-btn" onclick="copyCode(this)">
+														<i class="fas fa-copy"></i> Copy
+											  		</button>
+											  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+														<i class="fas fa-expand-alt"></i> Expand
+											  		</button>
+												</div>
+											</div>
+											<div class="code-scroll-container">
+				                            	<pre class="line-numbers"><code class="language-python"># Replace test ID with your real Rewarded Ad Unit ID
 REAL_REWARDED_ID = "ca-app-pub-ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX"
 
 # In your rewarded ad setup
 self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
+											</div>
 				                        </div>
 				                    </div>
 				                </div>
