@@ -1747,45 +1747,57 @@ if __name__ == '__main__':
 			    
 			    <p style="margin-top: 15px;">The corresponding <code>.kv</code> file defining the UI:</p>
 			    
-			    <div class="code-header">
-			      <span class="code-filename">myapp.kv</span>
-			      <button class="copy-btn" onclick="copyCode(this)">
-			        <i class="fas fa-copy"></i> Copy
-			      </button>
-			    </div>
-			    <div class="code-scroll-container">
-			      <pre class="line-numbers"><code class="language-python">&lt;RootWidget&gt;:
-    ScrollView:
-        GridLayout:
-            cols: 1
-            size_hint_y: None
-            height: self.minimum_height
-            Label:
-                text: "Item 1"
-                size_hint_y: None
-                height: 40
-            Label:
-                text: "Item 2"
-                size_hint_y: None
-                height: 40
-            Label:
-                text: "Item 3"
-                size_hint_y: None
-                height: 40</code></pre>
-			    </div>
-			  </div>
+			    <div class="code-section">
+				  <div class="code-header">
+				    <span class="code-filename">myapp.kv</span>
+				    <div class="code-actions">
+				      <button class="copy-btn" onclick="copyCode(this)">
+				        <i class="fas fa-copy"></i> Copy
+				      </button>
+				      <button class="expand-code-btn" onclick="openCodeModal(this)">
+				        <i class="fas fa-expand-alt"></i> Expand
+				      </button>
+				    </div>
+				  </div>
+				  <div class="code-scroll-container">
+				    <pre class="line-numbers"><code class="language-python">&lt;RootWidget&gt;:
+ScrollView:
+	GridLayout:
+		cols: 1
+		size_hint_y: None
+		height: self.minimum_height
+		Label:
+			text: "Item 1"
+			size_hint_y: None
+			height: 40
+		Label:
+			text: "Item 2"
+			size_hint_y: None
+			height: 40
+		Label:
+			text: "Item 3"
+			size_hint_y: None
+			height: 40</code></pre>
+				  </div>
+				</div>
 			
 			  <div class="example-box">
 			    <h3>Kivy/KivyMD: Declarative Python Style</h3>
 			    
-			    <div class="code-header">
-			      <span class="code-filename">main.py</span>
-			      <button class="copy-btn" onclick="copyCode(this)">
-			        <i class="fas fa-copy"></i> Copy
-			      </button>
-			    </div>
-			    <div class="code-scroll-container">
-			      <pre class="line-numbers"><code class="language-python">from kivy.app import App
+			    <div class="code-section">
+					<div class="code-header">
+						<span class="code-filename">main.py</span>
+						<div class="code-actions">
+					  	<button class="copy-btn" onclick="copyCode(this)">
+							<i class="fas fa-copy"></i> Copy
+					 	</button>
+					  	<button class="expand-code-btn" onclick="openCodeModal(this)">
+							<i class="fas fa-expand-alt"></i> Expand
+					   	</button>
+					</div>
+				</div>
+  				<div class="code-scroll-container">
+   					<pre class="line-numbers"><code class="language-python">from kivy.app import App
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
@@ -1805,8 +1817,8 @@ class MyApp(App):
 
 if __name__ == '__main__':
     MyApp().run()</code></pre>
-			    </div>
-			  </div>
+				  </div>
+				</div>
 			</div>
 
 			<p>Once you've developed your Kivy/KivyMD application, the next crucial step is packaging it into an Android APK file using <strong>Buildozer</strong> - the primary tool for converting Python applications into Android packages.It supports both declarative KV style and declarative python style.</p>
