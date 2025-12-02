@@ -1724,14 +1724,20 @@
 			  <div class="example-box">
 			    <h3>Kivy/KivyMD: Declarative kv Style</h3>
 			    
-			    <div class="code-header">
-			      <span class="code-filename">main.py</span>
-			      <button class="copy-btn" onclick="copyCode(this)">
-			        <i class="fas fa-copy"></i> Copy
-			      </button>
-			    </div>
-			    <div class="code-scroll-container">
-			      <pre class="line-numbers"><code class="language-python">from kivy.app import App
+			    <div class="code-section">
+				<div class="code-header">
+					<span class="code-filename">main.py</span>
+					<div class="code-actions">
+				  		<button class="copy-btn" onclick="copyCode(this)">
+							<i class="fas fa-copy"></i> Copy
+				  		</button>
+				  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+							<i class="fas fa-expand-alt"></i> Expand
+				  		</button>
+					</div>
+				</div>
+				<div class="code-scroll-container">
+					<pre class="line-numbers"><code class="language-python">from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 
 class RootWidget(BoxLayout):
@@ -1743,7 +1749,8 @@ class MyApp(App):
 
 if __name__ == '__main__':
     MyApp().run()</code></pre>
-			    </div>
+				  </div>
+				</div>
 			    
 			    <p style="margin-top: 15px;">The corresponding <code>.kv</code> file defining the UI:</p>
 			    
