@@ -1721,23 +1721,23 @@
 			<p>As you will learn when going through either Kivy or KivyMD, there are two ways to develop with those libraries: the declarative KV style, where the frontend is handled by a <code>.kv</code> file and the backend by <code>main.py</code>, or the declarative Python style where everything is handled in <code>main.py</code>.</p>
 			
 			<div class="examples-container">
-			  <div class="example-box">
-			    <h3>Kivy/KivyMD: Declarative kv Style</h3>
+			  	<div class="example-box">
+			    	<h3>Kivy/KivyMD: Declarative kv Style</h3>
 			    
-			    <div class="code-section">
-					<div class="code-header">
-						<span class="code-filename">main.py</span>
-						<div class="code-actions">
-				  			<button class="copy-btn" onclick="copyCode(this)">
-								<i class="fas fa-copy"></i> Copy
-				  			</button>
-				  			<button class="expand-code-btn" onclick="openCodeModal(this)">
-								<i class="fas fa-expand-alt"></i> Expand
-				  			</button>
+				    <div class="code-section">
+						<div class="code-header">
+							<span class="code-filename">main.py</span>
+							<div class="code-actions">
+					  			<button class="copy-btn" onclick="copyCode(this)">
+									<i class="fas fa-copy"></i> Copy
+					  			</button>
+					  			<button class="expand-code-btn" onclick="openCodeModal(this)">
+									<i class="fas fa-expand-alt"></i> Expand
+					  			</button>
+							</div>
 						</div>
-					</div>
-					<div class="code-scroll-container">
-						<pre class="line-numbers"><code class="language-python">from kivy.app import App
+						<div class="code-scroll-container">
+							<pre class="line-numbers"><code class="language-python">from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 
 class RootWidget(BoxLayout):
@@ -1749,25 +1749,25 @@ class MyApp(App):
 
 if __name__ == '__main__':
     MyApp().run()</code></pre>
-					</div>
-				</div>
-			    
-			    <p style="margin-top: 15px;">The corresponding <code>.kv</code> file defining the UI:</p>
-			    
-			    <div class="code-section">
-					<div class="code-header">
-				    	<span class="code-filename">myapp.kv</span>
-				    	<div class="code-actions">
-				      		<button class="copy-btn" onclick="copyCode(this)">
-				        		<i class="fas fa-copy"></i> Copy
-				      		</button>
-				      		<button class="expand-code-btn" onclick="openCodeModal(this)">
-				        		<i class="fas fa-expand-alt"></i> Expand
-				      		</button>
 						</div>
 					</div>
-				  	<div class="code-scroll-container">
-				    	<pre class="line-numbers"><code class="language-python">&lt;RootWidget&gt;:
+			    
+				    <p style="margin-top: 15px;">The corresponding <code>.kv</code> file defining the UI:</p>
+				    
+				    <div class="code-section">
+						<div class="code-header">
+					    	<span class="code-filename">myapp.kv</span>
+					    	<div class="code-actions">
+					      		<button class="copy-btn" onclick="copyCode(this)">
+					        		<i class="fas fa-copy"></i> Copy
+					      		</button>
+					      		<button class="expand-code-btn" onclick="openCodeModal(this)">
+					        		<i class="fas fa-expand-alt"></i> Expand
+					      		</button>
+							</div>
+						</div>
+					  	<div class="code-scroll-container">
+					    	<pre class="line-numbers"><code class="language-python">&lt;RootWidget&gt;:
 ScrollView:
 	GridLayout:
 		cols: 1
@@ -1785,27 +1785,27 @@ ScrollView:
 			text: "Item 3"
 			size_hint_y: None
 			height: 40</code></pre>
-				  	</div>
-				</div>
-			</div>
-			
-			<div class="example-box">
-			    <h3>Kivy/KivyMD: Declarative Python Style</h3>
-			    
-			    <div class="code-section">
-					<div class="code-header">
-						<span class="code-filename">main.py</span>
-						<div class="code-actions">
-					  		<button class="copy-btn" onclick="copyCode(this)">
-								<i class="fas fa-copy"></i> Copy
-					 		</button>
-					  		<button class="expand-code-btn" onclick="openCodeModal(this)">
-								<i class="fas fa-expand-alt"></i> Expand
-					   		</button>
-						</div>
+					  	</div>
 					</div>
-  					<div class="code-scroll-container">
-   						<pre class="line-numbers"><code class="language-python">from kivy.app import App
+				</div>
+			
+				<div class="example-box">
+				    <h3>Kivy/KivyMD: Declarative Python Style</h3>
+				    
+				    <div class="code-section">
+						<div class="code-header">
+							<span class="code-filename">main.py</span>
+							<div class="code-actions">
+						  		<button class="copy-btn" onclick="copyCode(this)">
+									<i class="fas fa-copy"></i> Copy
+						 		</button>
+						  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+									<i class="fas fa-expand-alt"></i> Expand
+						   		</button>
+							</div>
+						</div>
+	  					<div class="code-scroll-container">
+	   						<pre class="line-numbers"><code class="language-python">from kivy.app import App
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
@@ -1825,6 +1825,7 @@ class MyApp(App):
 
 if __name__ == '__main__':
     MyApp().run()</code></pre>
+						</div>
 					</div>
 				</div>
 			</div>
