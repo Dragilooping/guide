@@ -4400,53 +4400,93 @@ self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
 </div>
     <script>
         function copyCode(button) {
-            // Find the code element within the same code block
-            const codeContainer = button.closest('.code-header').nextElementSibling;
-            const codeElement = codeContainer.querySelector('code');
-            const codeText = codeElement.textContent;
-            
-            // Copy to clipboard
-            navigator.clipboard.writeText(codeText).then(() => {
-                // Change button text temporarily
-                const originalText = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                button.classList.add('copied');
-                
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.classList.remove('copied');
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy code: ', err);
-                button.innerHTML = '<i class="fas fa-times"></i> Failed';
-                setTimeout(() => {
-                    button.innerHTML = '<i class="fas fa-copy"></i> Copy';
-                }, 2000);
-            });
-        }
-		function openCodeModal(button) {
-			// Get the code from the clicked button's parent container
-			const codeContainer = button.closest('.code-scroll-container');
-			const codeElement = codeContainer.querySelector('code');
-			
-			// Get the language class
-			const languageClass = codeElement.className.match(/language-\w+/);
-			
-			// Set modal title and code
-			document.getElementById('modalCode').textContent = codeElement.textContent;
-			document.getElementById('modalCode').className = languageClass ? languageClass[0] : '';
-			
-			// Highlight syntax (if using Prism.js)
-			if (window.Prism) {
-			Prism.highlightElement(document.getElementById('modalCode'));
-			}
-		  
-		  // Show modal
-		  document.getElementById('codeModal').style.display = 'block';
-		  
-		  // Update copy button
-		  document.querySelector('.copy-btn').setAttribute('data-code', codeElement.textContent);
+		    // Find the code element - go up to code-section then down to code
+		    const codeSection = button.closest('.code-section');
+		    const codeElement = codeSection.querySelector('code');
+		    const codeText = codeElement.textContent;
+		    
+		    // Copy to clipboard
+		    navigator.clipboard.writeText(codeText).then(() => {
+		        // Change button text temporarily
+		        const originalText = button.innerHTML;
+		        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+		        button.classList.add('copied');
+		        
+		        setTimeout(() => {
+		            button.innerHTML = originalText;
+		            button.classList.remove('copied');
+		        }, 2000);
+		    }).catch(err => {
+		        console.error('Failed to copy code: ', err);
+		        button.innerHTML = '<i class="fas fa-times"></i> Failed';
+		        setTimeout(() => {
+		            button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+		        }, 2000);
+		    });
 		}
+		
+		function openCodeModal(button) {
+		    // Get the code section first
+		    const codeSection = button.closest('.code-section');
+		    const codeElement = codeSection.querySelector('code');
+		    const fileName = codeSection.querySelector('.code-filename').textContent;
+		    
+		    // Get the language class
+		    const languageClass = codeElement.className.match(/language-\w+/);
+		    
+		    // Set modal title and code
+		    document.getElementById('modalCode').textContent = codeElement.textContent;
+		    document.getElementById('modalCode').className = languageClass ? languageClass[0] : '';
+		    document.querySelector('.modal-title').textContent = fileName || 'Code Snippet';
+		    
+		    // Highlight syntax (if using Prism.js)
+		    if (window.Prism) {
+		        Prism.highlightElement(document.getElementById('modalCode'));
+		    }
+		    
+		    // Show modal
+		    document.getElementById('codeModal').style.display = 'block';
+		    
+		    // Update modal copy button
+		    const modalCopyBtn = document.querySelector('.modal-copy-btn');
+		    modalCopyBtn.setAttribute('data-code', codeElement.textContent);
+		}
+		
+		// Close modal functions (add these if not already present)
+		document.addEventListener('DOMContentLoaded', function() {
+		    // Close modal when clicking X
+		    document.querySelector('.modal-close').addEventListener('click', function() {
+		        document.getElementById('codeModal').style.display = 'none';
+		    });
+		    
+		    // Close modal when clicking outside
+		    window.addEventListener('click', function(event) {
+		        const modal = document.getElementById('codeModal');
+		        if (event.target === modal) {
+		            modal.style.display = 'none';
+		        }
+		    });
+		    
+		    // Close modal with Escape key
+		    document.addEventListener('keydown', function(event) {
+		        if (event.key === 'Escape') {
+		            document.getElementById('codeModal').style.display = 'none';
+		        }
+		    });
+		    
+		    // Modal copy button functionality
+		    document.querySelector('.modal-copy-btn').addEventListener('click', function() {
+		        const code = this.getAttribute('data-code');
+		        navigator.clipboard.writeText(code).then(() => {
+		            const originalText = this.textContent;
+		            this.textContent = 'Copied!';
+		            this.style.background = '#2E7D32';
+		            setTimeout(() => {
+		                this.textContent = originalText;
+		                this.style.background = '';
+		            }, 2000);
+		        });
+		    });
 		});
     </script>
 </body>
