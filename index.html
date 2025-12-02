@@ -826,8 +826,92 @@
 	    max-height: 95vh;
 	  }
 	}
-    /* FIXED: Horizontal scroll for code blocks */
+
+	/* FIXED: Horizontal scroll for code blocks */
 	.code-scroll-container {
+	    overflow-x: auto;    /* Allow horizontal scroll */
+	    overflow-y: hidden;  /* Prevent vertical scroll initially */
+	    text-align: left;
+	    padding: 10px;
+	    max-height: 300px;   /* LIMIT HEIGHT - Triggers need for modal */
+	    background-color: #2d2d2d;
+	    border-radius: 0 0 6px 6px;
+	    margin-top: 0;
+	    -webkit-overflow-scrolling: touch;
+	    max-width: 100%;
+	    box-sizing: border-box;
+	    position: relative;  /* For gradient overlay */
+	}
+	
+	/* Add a subtle fade effect at the bottom to indicate more content */
+	.code-scroll-container::after {
+	    content: '';
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    right: 0;
+	    height: 40px;
+	    background: linear-gradient(to bottom, transparent, #2d2d2d);
+	    pointer-events: none; /* Allows clicking through */
+	    border-radius: 0 0 6px 6px;
+	}
+	
+	/* Default for most code - no wrapping (like Python) */
+	.code-scroll-container pre {
+	    margin: 0;
+	    padding: 0;
+	    display: block;
+	    text-align: left;
+	    white-space: pre;
+	    word-wrap: normal;
+	    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+	    max-height: 280px; /* Slightly less than container for scroll */
+	}
+	
+	/* Show scrollbar only when needed */
+	.code-scroll-container::-webkit-scrollbar {
+	    height: 8px;
+	    width: 8px;
+	}
+	
+	.code-scroll-container::-webkit-scrollbar-track {
+	    background: #1e1e1e;
+	    border-radius: 4px;
+	}
+	
+	.code-scroll-container::-webkit-scrollbar-thumb {
+	    background: #555;
+	    border-radius: 4px;
+	}
+	
+	.code-scroll-container::-webkit-scrollbar-thumb:hover {
+	    background: #777;
+	}
+	
+	/* Alternative: Different max-heights for different code lengths */
+	.code-short .code-scroll-container {
+	    max-height: 200px; /* For shorter snippets */
+	}
+	
+	.code-medium .code-scroll-container {
+	    max-height: 300px; /* For medium snippets */
+	}
+	
+	.code-long .code-scroll-container {
+	    max-height: 400px; /* For longer snippets */
+	}
+	
+	/* Remove the fade when expanded in modal */
+	.modal .code-scroll-container {
+	    max-height: none;
+	    overflow-y: auto;
+	}
+	
+	.modal .code-scroll-container::after {
+	    display: none;
+	}
+    /* FIXED: Horizontal scroll for code blocks */
+	/* .code-scroll-container {
 	    overflow-x: auto;    /* Allow horizontal scroll */
 	    overflow-y: hidden;  /* Prevent vertical scroll */
 	    text-align: left;
@@ -850,7 +934,7 @@
 	    white-space: pre;
 	    word-wrap: normal;
 	    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-	}
+	} */
 
 	/* Specific fix for folder structure/directory tree */
 	.code-scroll-container code.language-bash .token-tree,
