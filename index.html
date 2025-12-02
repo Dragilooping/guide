@@ -2900,14 +2900,21 @@ warn_on_root = 1
 			                    <div class="step-content">
 			                        <h5>Generate Keystore</h5>
 			                        <p>Create a new keystore using the keytool command:</p>
-			                        <div class="code-header">
-			                            <span class="code-filename">Terminal Command</span>
-			                            <button class="copy-btn" onclick="copyCode(this)">
-			                                <i class="fas fa-copy"></i> Copy
-			                            </button>
-			                        </div>
-			                        <div class="code-scroll-container">
-										<pre class="line-numbers"><code class="language-bash">keytool -genkey -v -keystore ~/keystores/&lt;your-new-key&gt;.keystore -alias &lt;your-key-alias&gt; -keyalg RSA -keysize 2048 -validity 10000</code></pre>
+			                        <div class="code-section">
+										<div class="code-header">
+											<span class="code-filename">Terminal Commands</span>
+											<div class="code-actions">
+										  		<button class="copy-btn" onclick="copyCode(this)">
+													<i class="fas fa-copy"></i> Copy
+										  		</button>
+										  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+													<i class="fas fa-expand-alt"></i> Expand
+										  		</button>
+											</div>
+										</div>
+										<div class="code-scroll-container">
+											<pre class="line-numbers"><code class="language-bash">keytool -genkey -v -keystore ~/keystores/&lt;your-new-key&gt;.keystore -alias &lt;your-key-alias&gt; -keyalg RSA -keysize 2048 -validity 10000</code></pre>
+										</div>
 			                        </div>
 			                        <div class="note">
 			                            <i class="fas fa-key"></i>
@@ -2924,17 +2931,24 @@ warn_on_root = 1
 			                    <span class="step-icon-playstore">3</span>
 			                    <div class="step-content">
 			                        <h5>Export variables</h5>
-			                        <div class="code-header">
-			                            <span class="code-filename">Terminal Command</span>
-			                            <button class="copy-btn" onclick="copyCode(this)">
-			                                <i class="fas fa-copy"></i> Copy
-			                            </button>
-			                        </div>
-			                        <div class="code-scroll-container">
-										<pre class="line-numbers"><code class="language-bash">$ export P4A_RELEASE_KEYSTORE=~/keystores/&lt;your-new-key&gt;.keystore
+			                        <div class="code-section">
+										<div class="code-header">
+											<span class="code-filename">Terminal Commands</span>
+											<div class="code-actions">
+										  		<button class="copy-btn" onclick="copyCode(this)">
+													<i class="fas fa-copy"></i> Copy
+										  		</button>
+										  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+													<i class="fas fa-expand-alt"></i> Expand
+										  		</button>
+											</div>
+										</div>
+										<div class="code-scroll-container">
+											<pre class="line-numbers"><code class="language-bash">$ export P4A_RELEASE_KEYSTORE=~/keystores/&lt;your-new-key&gt;.keystore
 $ export P4A_RELEASE_KEYSTORE_PASSWD=&lt;your-keystore-password&gt;
 $ export P4A_RELEASE_KEYALIAS_PASSWD=&lt;your-key-alias-password&gt;
 $ export P4A_RELEASE_KEYALIAS=&lt;your-key-alias&gt;</code></pre>
+										</div>
 									</div>
 			                    </div>
 			                </div>
@@ -2944,16 +2958,21 @@ $ export P4A_RELEASE_KEYALIAS=&lt;your-key-alias&gt;</code></pre>
 			                    <div class="step-content">
 			                        <h5>Launch buildozer in release mode</h5>
 			                        <p>Your AAB will be signed automatically</p>
-			                        <div class="code-header">
-			                            <span class="code-filename">Terminal Command</span>
-			                            <button class="copy-btn" onclick="copyCode(this)">
-			                                <i class="fas fa-copy"></i> Copy
-			                            </button>
-			                        </div>
-			                        <div class="code-scroll-container">
-			                            <div class="code-horizontal-scroll">
+			                        <div class="code-section">
+										<div class="code-header">
+											<span class="code-filename">Terminal Commands</span>
+											<div class="code-actions">
+									  			<button class="copy-btn" onclick="copyCode(this)">
+													<i class="fas fa-copy"></i> Copy
+									  			</button>
+									  			<button class="expand-code-btn" onclick="openCodeModal(this)">
+													<i class="fas fa-expand-alt"></i> Expand
+									  			</button>
+											</div>
+										</div>
+										<div class="code-scroll-container">
 			                                <pre class="line-numbers"><code class="language-bash">keytool -printcert -jarfile your_app.aab</code></pre>
-			                            </div>
+										</div>
 			                        </div>
 			                    </div>
 			                </div>
@@ -2962,14 +2981,19 @@ $ export P4A_RELEASE_KEYALIAS=&lt;your-key-alias&gt;</code></pre>
 			                    <div class="step-content">
 			                        <h5>Verify Signature</h5>
 			                        <p>Check that your AAB is properly signed:</p>
-			                        <div class="code-header">
-			                            <span class="code-filename">Terminal Command</span>
-			                            <button class="copy-btn" onclick="copyCode(this)">
-			                                <i class="fas fa-copy"></i> Copy
-			                            </button>
-			                        </div>
-			                        <div class="code-scroll-container">
-			                            <div class="code-horizontal-scroll">
+			                        <div class="code-section">
+										<div class="code-header">
+											<span class="code-filename">Terminal Commands</span>
+											<div class="code-actions">
+										  		<button class="copy-btn" onclick="copyCode(this)">
+													<i class="fas fa-copy"></i> Copy
+										  		</button>
+										  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+													<i class="fas fa-expand-alt"></i> Expand
+										  		</button>
+											</div>
+										</div>
+										<div class="code-scroll-container">
 			                                <pre class="line-numbers"><code class="language-bash">keytool -printcert -jarfile your_app.aab</code></pre>
 			                            </div>
 			                        </div>
