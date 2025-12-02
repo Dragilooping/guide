@@ -747,7 +747,85 @@
     }
     .copy-btn:hover { background: #666; }
     .copy-btn.copied { background: #4CAF50; }
-    
+
+	/* Modal Styles */
+	.modal {
+	  display: none;
+	  position: fixed;
+	  z-index: 1000;
+	  left: 0;
+	  top: 0;
+	  width: 100%;
+	  height: 100%;
+	  background-color: rgba(0, 0, 0, 0.9);
+	  overflow: auto;
+	}
+	
+	.modal-content {
+	  background-color: #2d2d2d;
+	  margin: 5% auto;
+	  padding: 0;
+	  width: 90%;
+	  max-width: 1200px;
+	  border-radius: 8px;
+	  max-height: 85vh;
+	  display: flex;
+	  flex-direction: column;
+	}
+	
+	.modal-header {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  padding: 15px 20px;
+	  background: #1e1e1e;
+	  border-bottom: 1px solid #444;
+	}
+	
+	.modal-body {
+	  flex: 1;
+	  overflow: auto;
+	  padding: 20px;
+	}
+	
+	.modal-body pre {
+	  margin: 0;
+	  background: transparent !important;
+	}
+	
+	.modal-close {
+	  color: #aaa;
+	  font-size: 28px;
+	  font-weight: bold;
+	  cursor: pointer;
+	}
+	
+	.modal-close:hover {
+	  color: white;
+	}
+	
+	.expand-code-btn {
+	  background: #3a3a3a;
+	  color: white;
+	  border: 1px solid #555;
+	  padding: 8px 15px;
+	  border-radius: 4px;
+	  cursor: pointer;
+	  font-size: 14px;
+	  margin-bottom: 10px;
+	}
+	
+	.expand-code-btn:hover {
+	  background: #4a4a4a;
+	}
+	
+	@media (max-width: 768px) {
+	  .modal-content {
+	    width: 95%;
+	    margin: 2% auto;
+	    max-height: 95vh;
+	  }
+	}
     /* FIXED: Horizontal scroll for code blocks */
 	.code-scroll-container {
 	    overflow-x: auto;    /* Allow horizontal scroll */
@@ -1694,15 +1772,21 @@ if __name__ == '__main__':
 			                    <h5>Critical Package Versions</h5>
 			                    <p>Use these specific versions to avoid compatibility issues:</p>
 			                    
-			                    <div class="code-header">
-			                        <span class="code-filename">Terminal Commands</span>
-			                        <button class="copy-btn" onclick="copyCode(this)">
-			                            <i class="fas fa-copy"></i> Copy
-			                        </button>
-			                    </div>
-			                    <div class="code-scroll-container">
-			                        <pre class="line-numbers"><code class="language-bash"># Install specific Cython version (compatible with Buildozer)
-Do not upgrade and scpefically use cython version 0.29, which is compatible with python-for-android package
+			                    <div class="code-section">
+								  <div class="code-header">
+								    <span class="code-filename">Terminal Commands</span>
+								    <div class="code-actions">
+								      <button class="copy-btn" onclick="copyCode(this)">
+								        <i class="fas fa-copy"></i> Copy
+								      </button>
+								      <button class="expand-code-btn" onclick="openCodeModal(this)">
+								        <i class="fas fa-expand-alt"></i> Expand
+								      </button>
+								    </div>
+								  </div>
+								  <div class="code-scroll-container">
+								    <pre class="line-numbers"><code class="language-bash"># Install specific Cython version (compatible with Buildozer)
+Do not upgrade and specifically use cython version 0.29, which is compatible with python-for-android package
 sudo pip3 install cython==0.29.33
 
 # Upgrade setuptools to latest version (80.9.0)
@@ -1710,7 +1794,8 @@ sudo pip3 install --upgrade setuptools
 
 # Check installed versions
 sudo pip3 list | grep -E "(cython|setuptools)"</code></pre>
-			                    </div>
+								  </div>
+								</div>
 			                </div>
 			            </div>
 			            
@@ -4250,6 +4335,30 @@ self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
                 }, 2000);
             });
         }
+		function openCodeModal(button) {
+			// Get the code from the clicked button's parent container
+			const codeContainer = button.closest('.code-scroll-container');
+			const codeElement = codeContainer.querySelector('code');
+			
+			// Get the language class
+			const languageClass = codeElement.className.match(/language-\w+/);
+			
+			// Set modal title and code
+			document.getElementById('modalCode').textContent = codeElement.textContent;
+			document.getElementById('modalCode').className = languageClass ? languageClass[0] : '';
+			
+			// Highlight syntax (if using Prism.js)
+			if (window.Prism) {
+			Prism.highlightElement(document.getElementById('modalCode'));
+			}
+		  
+		  // Show modal
+		  document.getElementById('codeModal').style.display = 'block';
+		  
+		  // Update copy button
+		  document.querySelector('.copy-btn').setAttribute('data-code', codeElement.textContent);
+		}
+		});
     </script>
 </body>
 </html>
