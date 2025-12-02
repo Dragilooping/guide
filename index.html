@@ -3058,14 +3058,21 @@ $ export P4A_RELEASE_KEYALIAS=&lt;your-key-alias&gt;</code></pre>
 			                    <div class="step-content">
 			                        <h5>Alternative: Command Line Signing</h5>
 			                        <p>If you have a .jks file, you can sign your AAB using apksigner:</p>
-			                        <div class="code-header">
-			                            <span class="code-filename">Terminal Command</span>
-			                            <button class="copy-btn" onclick="copyCode(this)">
-			                                <i class="fas fa-copy"></i> Copy
-			                            </button>
-			                        </div>
-			                        <div class="code-scroll-container">
-									    <pre class="line-numbers"><code class="language-bash">apksigner sign --ks my-release-key.jks --min-sdk-version 22 --v1-signing-enabled true --v2-signing-enabled true release_signed.aab</code></pre>
+			                        <div class="code-section">
+										<div class="code-header">
+											<span class="code-filename">Terminal Commands</span>
+											<div class="code-actions">
+										  		<button class="copy-btn" onclick="copyCode(this)">
+													<i class="fas fa-copy"></i> Copy
+										  		</button>
+										  		<button class="expand-code-btn" onclick="openCodeModal(this)">
+													<i class="fas fa-expand-alt"></i> Expand
+										 		</button>
+											</div>
+										</div>
+										<div class="code-scroll-container">
+									    	<pre class="line-numbers"><code class="language-bash">apksigner sign --ks my-release-key.jks --min-sdk-version 22 --v1-signing-enabled true --v2-signing-enabled true release_signed.aab</code></pre>
+										</div>
 									</div>
 			                    </div>
 			                </div>
