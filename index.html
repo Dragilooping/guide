@@ -1635,6 +1635,38 @@
 		    width: 100%;
 		}
 		
+		/* RESET ALL LINK COLORS IN FOOTER */
+		.site-footer a,
+		.site-footer a:link,
+		.site-footer a:visited,
+		.site-footer a:hover,
+		.site-footer a:active,
+		.site-footer a:focus {
+		    color: #e0e0e0 !important; /* Same as your page text color */
+		    text-decoration: none !important;
+		}
+		
+		/* Specific hover color */
+		.site-footer a:hover,
+		.site-footer a:active,
+		.site-footer a:focus {
+		    color: #4CAF50 !important;
+		    text-decoration: underline !important;
+		}
+		
+		/* Brand name stays green */
+		.footer-brand {
+		    color: #4CAF50 !important;
+		}
+		
+		.footer-brand:hover {
+		    color: #45a049 !important;
+		}
+		
+		/* Make sure separator is also white */
+		.footer-separator {
+		    color: #e0e0e0 !important;
+		}
 		.footer-container {
 		    max-width: 1200px;
 		    margin: 0 auto;
