@@ -1626,6 +1626,83 @@
 	    .site-title {
 	        font-size: 1.3rem;
 	    }
+		
+		/* ===== FOOTER STYLES ===== */
+		.site-footer {
+		    background-color: #1a1a1a;
+		    border-top: 1px solid #333;
+		    padding: 25px 0;
+		    margin-top: 50px;
+		}
+		
+		.footer-container {
+		    max-width: 1200px;
+		    margin: 0 auto;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    padding: 0 20px;
+		    flex-wrap: wrap;
+		    gap: 20px;
+		}
+		
+		.footer-left p {
+		    color: #888;
+		    margin: 0;
+		    font-size: 0.95rem;
+		}
+		
+		.footer-brand {
+		    color: #4CAF50;
+		    text-decoration: none;
+		    font-weight: 600;
+		}
+		
+		.footer-brand:hover {
+		    color: #45a049;
+		    text-decoration: underline;
+		}
+		
+		.footer-right {
+		    display: flex;
+		    align-items: center;
+		    gap: 15px;
+		}
+		
+		.footer-link {
+		    color: #aaa;
+		    text-decoration: none;
+		    font-size: 0.95rem;
+		    transition: color 0.3s;
+		}
+		
+		.footer-link:hover {
+		    color: #4CAF50;
+		}
+		
+		.footer-separator {
+		    color: #555;
+		    font-size: 0.9rem;
+		}
+		
+		/* Responsive Footer */
+		@media (max-width: 768px) {
+		    .footer-container {
+		        flex-direction: column;
+		        text-align: center;
+		        gap: 15px;
+		    }
+		    
+		    .footer-right {
+		        flex-wrap: wrap;
+		        justify-content: center;
+		    }
+		    
+		    .site-footer {
+		        padding: 20px 0;
+		        margin-top: 30px;
+		    }
+		}
 	}
 	</style>
 </head>
