@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Same head -->
+    <title>Terms & Conditions - Build With Kivy</title>
+    <meta name="description" content="Terms and Conditions for Build With Kivy">
+</head>
+<body>
+    <nav class="top-app-bar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="../images/logo.png" alt="Build With Kivy Logo" class="nav-logo">
+                    <span class="site-title">Build With Kivy</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="main-content">
+            <div class="page-header">
+                <h1>Terms & Conditions</h1>
+                <p class="page-subtitle">Last updated: <span id="terms-date"></span></p>
+            </div>
+            
+            <div class="section-container">
+                <div class="terms-content">
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By accessing and using Build With Kivy, you accept and agree to be bound by these Terms and Conditions.</p>
+                    
+                    <h2>2. Educational Content</h2>
+                    <p>All content on Build With Kivy is provided for educational purposes only. We make no guarantees about the accuracy or completeness of the information.</p>
+                    
+                    <h2>3. Code Usage</h2>
+                    <p>Code examples provided on this website are free to use in your projects. Attribution is appreciated but not required.</p>
+                    
+                    <h2>4. Limitation of Liability</h2>
+                    <p>Build With Kivy and its authors are not liable for any damages resulting from the use of information on this website.</p>
+                    
+                    <h2>5. External Links</h2>
+                    <p>Our website may contain links to external sites. We are not responsible for the content or privacy practices of these sites.</p>
+                    
+                    <h2>6. Changes to Terms</h2>
+                    <p>We reserve the right to modify these terms at any time. Continued use of the site constitutes acceptance of updated terms.</p>
+                    
+                    <h2>7. Contact</h2>
+                    <p>For questions about these Terms & Conditions, contact us at:</p>
+                    <p><a href="mailto:support@pgt-technologies.com">support@pgt-technologies.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Same Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>&copy; <span id="current-year"></span> 
+                   <a href="index.html" class="footer-brand">BuildWithKivy</a>. 
+                   All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="privacy_policy.html" class="footer-link">Privacy Policy</a>
+                <span class="footer-separator">|</span>
+                <a href="terms_conditions.html" class="footer-link active">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Set terms date
+        document.getElementById('terms-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>
