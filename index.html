@@ -1506,9 +1506,153 @@
         }
 
     }
+	/* Top Navigation Bar */
+	.top-app-bar {
+	    background-color: #1a1a1a;
+	    border-bottom: 1px solid #333;
+	    position: sticky;
+	    top: 0;
+	    z-index: 1000;
+	    padding: 0 20px;
+	}
+	
+	.nav-container {
+	    max-width: 1200px;
+	    margin: 0 auto;
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	    height: 64px;
+	}
+	
+	.nav-brand {
+	    display: flex;
+	    align-items: center;
+	}
+	
+	.logo-link {
+	    display: flex;
+	    align-items: center;
+	    text-decoration: none;
+	    color: white;
+	    gap: 12px;
+	}
+	
+	.nav-logo {
+	    height: 40px;
+	    width: 40px;
+	    border-radius: 6px;
+	}
+	
+	.site-title {
+	    font-size: 1.5rem;
+	    font-weight: 600;
+	    color: white;
+	}
+	
+	.nav-links {
+	    display: flex;
+	    gap: 30px;
+	}
+	
+	.nav-link {
+	    color: #ccc;
+	    text-decoration: none;
+	    font-size: 1rem;
+	    font-weight: 500;
+	    padding: 8px 0;
+	    position: relative;
+	    transition: color 0.3s;
+	}
+	
+	.nav-link:hover {
+	    color: white;
+	}
+	
+	.nav-link::after {
+	    content: '';
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    width: 0;
+	    height: 2px;
+	    background-color: #4CAF50;
+	    transition: width 0.3s;
+	}
+	
+	.nav-link:hover::after {
+	    width: 100%;
+	}
+	
+	/* Mobile menu button (hidden on desktop) */
+	.mobile-menu-btn {
+	    display: none;
+	    background: none;
+	    border: none;
+	    color: white;
+	    font-size: 1.5rem;
+	    cursor: pointer;
+	    padding: 8px;
+	}
+	
+	/* Responsive design */
+	@media (max-width: 768px) {
+	    .top-app-bar {
+	        padding: 0 15px;
+	    }
+	    
+	    .nav-links {
+	        display: none;
+	        position: absolute;
+	        top: 64px;
+	        left: 0;
+	        right: 0;
+	        background-color: #1a1a1a;
+	        flex-direction: column;
+	        padding: 20px;
+	        gap: 15px;
+	        border-top: 1px solid #333;
+	    }
+	    
+	    .nav-links.active {
+	        display: flex;
+	    }
+	    
+	    .mobile-menu-btn {
+	        display: block;
+	    }
+	    
+	    .site-title {
+	        font-size: 1.3rem;
+	    }
+	}
 </style>
 </head>
 <body>
+	<!-- Top Navigation Bar -->
+    <nav class="top-app-bar">
+        <div class="nav-container">
+            <!-- Left side: Logo and Site Name -->
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="../images/logo.png" alt="Build With Kivy Logo" class="nav-logo">
+                    <span class="site-title">Build With Kivy</span>
+                </a>
+            </div>
+            
+            <!-- Right side: Navigation Links -->
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            
+            <!-- Mobile menu button (optional) -->
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
     <div class="container">
         <div class="main-content">
 		<img src="../images/Python_Android_PlayStore.jpg" alt="Python Android Play Store" class="header-image" />
