@@ -4856,6 +4856,17 @@ self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
 		    modalCopyBtn.setAttribute('data-code', codeElement.textContent);
 		}
 		
+		// Set current year in footer
+		function updateCurrentYear() {
+		    const yearElement = document.getElementById('current-year');
+		    if (yearElement) {
+		        yearElement.textContent = new Date().getFullYear();
+		    }
+		}
+		
+		// Call it when page loads
+		document.addEventListener('DOMContentLoaded', updateCurrentYear);
+		
 		// Close modal functions (add these if not already present)
 		document.addEventListener('DOMContentLoaded', function() {
 		    // Close modal when clicking X
