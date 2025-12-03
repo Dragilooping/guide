@@ -2,10 +2,279 @@
 <html lang="en">
 <head>
     <!-- Same head as index.html -->
+    <style>
+    /* ===== SHARED STYLES FOR ALL PAGES ===== */
+    /* Page Header */
+    .page-header {
+        text-align: center;
+        padding: 40px 20px 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #333;
+    }
+    
+    .page-header h1 {
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 15px;
+    }
+    
+    .page-subtitle {
+        font-size: 1.2rem;
+        color: #4CAF50;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.5;
+    }
+    
+    /* Section Container (from your main page) */
+    .section-container {
+        background: #2d2d2d;
+        border-radius: 8px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    
+    .section-container h2 {
+        color: white;
+        margin-top: 0;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #4CAF50;
+        font-size: 1.8rem;
+    }
+    
+    .section-container h3 {
+        color: #e0e0e0;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+    }
+    
+    .section-container h4 {
+        color: #e0e0e0;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    
+    /* Author Card (from your main page) */
+    .author-card {
+        background: #222429;
+        border-radius: 8px;
+        padding: 25px;
+        margin: 0;
+    }
+    
+    .title-with-logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .title-with-logo h2,
+    .title-with-logo h3 {
+        margin: 0;
+        color: white;
+    }
+    
+    .author-content {
+        color: #ccc;
+        line-height: 1.6;
+    }
+    
+    .author-content p {
+        margin-bottom: 20px;
+    }
+    
+    /* Feature List */
+    .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+    }
+    
+    .feature-list li {
+        padding: 10px 0;
+        padding-left: 30px;
+        position: relative;
+        color: #ccc;
+    }
+    
+    .feature-list li i {
+        color: #4CAF50;
+        position: absolute;
+        left: 0;
+        top: 12px;
+    }
+    
+    /* Website Link */
+    .website-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #4CAF50;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 10px 0;
+        transition: color 0.3s;
+    }
+    
+    .website-link:hover {
+        color: #45a049;
+        text-decoration: underline;
+    }
+    
+    /* Contact Section Styles */
+    .contact-info {
+        margin: 30px 0;
+    }
+    
+    .contact-item {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #444;
+    }
+    
+    .contact-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .contact-item i {
+        color: #4CAF50;
+        font-size: 1.5rem;
+        margin-top: 5px;
+        min-width: 24px;
+    }
+    
+    .contact-item h4 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        color: white;
+    }
+    
+    .contact-note {
+        color: #888;
+        font-size: 0.9rem;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+        margin-top: 40px;
+        padding-top: 40px;
+        border-top: 1px solid #444;
+    }
+    
+    .faq-item {
+        margin-bottom: 25px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+        border-left: 3px solid #4CAF50;
+    }
+    
+    .faq-item h4 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #4CAF50;
+    }
+    
+    .faq-item p {
+        margin-bottom: 0;
+        color: #ccc;
+    }
+    
+    /* Privacy Policy Link */
+    .privacy-policy-link {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid #444;
+        text-align: center;
+    }
+    
+    .privacy-link {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s;
+    }
+    
+    .privacy-link:hover {
+        color: #4CAF50;
+        text-decoration: underline;
+    }
+    
+    /* ===== ACTIVE NAV LINK STYLES ===== */
+    .nav-link.active {
+        color: white;
+    }
+    
+    .nav-link.active::after {
+        width: 100% !important;
+    }
+    
+    /* ===== RESPONSIVE STYLES ===== */
+    @media (max-width: 768px) {
+        .page-header {
+            padding: 30px 15px 20px;
+        }
+        
+        .page-header h1 {
+            font-size: 2rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+        }
+        
+        .section-container {
+            padding: 20px;
+        }
+        
+        .author-card {
+            padding: 20px;
+        }
+        
+        .contact-item {
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .contact-item i {
+            align-self: flex-start;
+        }
+    }
+    </style>
 </head>
 <body>
-    <!-- Same TopAppBar -->
-    <nav class="top-app-bar">...</nav>
+    <!-- TopAppBar with active link -->
+    <nav class="top-app-bar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="../images/logo.png" alt="Build With Kivy Logo" class="nav-logo">
+                    <span class="site-title">Build With Kivy</span>
+                </a>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
     
     <div class="container">
         <div class="main-content">
@@ -58,7 +327,7 @@
                                 </div>
                             </div>
                             
-                            <!-- FAQ Section (Optional) -->
+                            <!-- FAQ Section -->
                             <div class="faq-section">
                                 <h3>Frequently Asked Questions</h3>
                                 <div class="faq-item">
@@ -68,6 +337,10 @@
                                 <div class="faq-item">
                                     <h4>Do you offer consulting services?</h4>
                                     <p>Yes, through P&amp;GT Technologies we offer professional app development and consulting services. Contact us for custom solutions.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <h4>Can I contribute to this guide?</h4>
+                                    <p>Absolutely! We welcome contributions, corrections, and suggestions. Feel free to reach out or submit pull requests on GitHub.</p>
                                 </div>
                             </div>
                             
@@ -81,7 +354,36 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Optional: Add a quick contact form -->
+            <div class="section-container">
+                <h2>Quick Message</h2>
+                <p>Send us a quick message and we'll get back to you as soon as possible.</p>
+                
+                <form class="simple-contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="How can we help you?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
+    
+    <script src="js/script.js"></script>
 </body>
 </html>
