@@ -1635,38 +1635,6 @@
 		    width: 100%;
 		}
 		
-		/* RESET ALL LINK COLORS IN FOOTER */
-		.site-footer a,
-		.site-footer a:link,
-		.site-footer a:visited,
-		.site-footer a:hover,
-		.site-footer a:active,
-		.site-footer a:focus {
-		    color: #e0e0e0 !important; /* Same as your page text color */
-		    text-decoration: none !important;
-		}
-		
-		/* Specific hover color */
-		.site-footer a:hover,
-		.site-footer a:active,
-		.site-footer a:focus {
-		    color: #4CAF50 !important;
-		    text-decoration: underline !important;
-		}
-		
-		/* Brand name stays green */
-		.footer-brand {
-		    color: #4CAF50 !important;
-		}
-		
-		.footer-brand:hover {
-		    color: #45a049 !important;
-		}
-		
-		/* Make sure separator is also white */
-		.footer-separator {
-		    color: #e0e0e0 !important;
-		}
 		.footer-container {
 		    max-width: 1200px;
 		    margin: 0 auto;
@@ -1684,34 +1652,41 @@
 		    font-size: 0.95rem;
 		}
 		
-		/* FIX: Force link colors */
+		/* FIX: Force white color for all link states */
 		.footer-brand,
-		.footer-link {
-		    color: #aaa !important; /* Force color */
-		    text-decoration: none !important; /* Remove underline */
+		.footer-link,
+		.footer-link:link,
+		.footer-link:visited,
+		.footer-link:hover,
+		.footer-link:active,
+		.footer-link:focus {
+		    color: #e0e0e0 !important; /* YOUR PAGE TEXT COLOR */
+		    text-decoration: none !important;
 		    font-size: 0.95rem;
 		    transition: color 0.3s;
 		}
 		
-		.footer-brand {
-		    color: #4CAF50 !important; /* Brand color */
+		/* Brand name exception - stays green */
+		.footer-brand,
+		.footer-brand:link,
+		.footer-brand:visited {
+		    color: #4CAF50 !important;
 		    font-weight: 600;
 		}
 		
-		.footer-brand:hover,
-		.footer-link:hover {
+		/* Hover states */
+		.footer-link:hover,
+		.footer-link:active,
+		.footer-link:focus {
 		    color: #4CAF50 !important;
 		    text-decoration: underline !important;
 		}
 		
-		/* Reset any browser defaults */
-		.footer-brand:link,
-		.footer-brand:visited,
+		.footer-brand:hover,
 		.footer-brand:active,
-		.footer-link:link,
-		.footer-link:visited,
-		.footer-link:active {
-		    color: #aaa !important;
+		.footer-brand:focus {
+		    color: #45a049 !important;
+		    text-decoration: underline !important;
 		}
 		
 		.footer-right {
@@ -1721,14 +1696,28 @@
 		}
 		
 		.footer-separator {
-		    color: #555;
+		    color: #e0e0e0; /* Match text color */
 		    font-size: 0.9rem;
 		}
 		
-		/* Active footer link */
+		/* Active footer link (for privacy/terms pages) */
 		.footer-link.active {
 		    color: #4CAF50 !important;
 		    font-weight: 600;
+		}
+		
+		/* Responsive */
+		@media (max-width: 768px) {
+		    .footer-container {
+		        flex-direction: column;
+		        text-align: center;
+		        gap: 15px;
+		    }
+		    
+		    .footer-right {
+		        flex-wrap: wrap;
+		        justify-content: center;
+		    }
 		}
 	}
 </style>
