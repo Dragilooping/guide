@@ -1813,6 +1813,16 @@
             month: 'long',
             day: 'numeric'
         });
+		// Set current year in footer
+		function updateCurrentYear() {
+		    const yearElement = document.getElementById('current-year');
+		    if (yearElement) {
+		        yearElement.textContent = new Date().getFullYear();
+		    }
+		}
+		
+		// Call it when page loads
+		document.addEventListener('DOMContentLoaded', updateCurrentYear);
     </script>
 </body>
 </html>
