@@ -4688,6 +4688,28 @@ self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
   </div>
 </div>
     <script>
+		// Mobile menu toggle
+		document.addEventListener('DOMContentLoaded', function() {
+		    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+		    const navLinks = document.querySelector('.nav-links');
+		    
+		    if (mobileMenuBtn && navLinks) {
+		        mobileMenuBtn.addEventListener('click', function() {
+		            navLinks.classList.toggle('active');
+		            this.innerHTML = navLinks.classList.contains('active') 
+		                ? '<i class="fas fa-times"></i>' 
+		                : '<i class="fas fa-bars"></i>';
+		        });
+		        
+		        // Close menu when clicking a link
+		        document.querySelectorAll('.nav-link').forEach(link => {
+		            link.addEventListener('click', () => {
+		                navLinks.classList.remove('active');
+		                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+		            });
+		        });
+		    }
+		});
         function copyCode(button) {
 		    // Find the code element - go up to code-section then down to code
 		    const codeSection = button.closest('.code-section');
