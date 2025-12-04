@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.buildwithkivy.com/</loc>
-    <lastmod>2025-11-25</lastmod>
+    <lastmod>2025-12-04</lastmod>
   </url>
   <url>
     <loc>https://www.buildwithkivy.com/privacy_policy/</loc>
-    <lastmod>2025-11-25</lastmod>
+    <lastmod>2025-12-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.buildwithkivy.com/terms_and_conditions/</loc>
+    <lastmod>2025-12-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.buildwithkivy.com/about/</loc>
+    <lastmod>2025-12-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.buildwithkivy.com/contact/</loc>
+    <lastmod>2025-12-04</lastmod>
   </url>
 </urlset>
