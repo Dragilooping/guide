@@ -2264,7 +2264,7 @@ jobs:
 				  </div>
 				  <div class="code-scroll-container">
 					<pre class="line-numbers"><code class="language-ini">[app]
-
+						
 # (str) Title of your application
 title = Apptitle
 
@@ -2413,11 +2413,11 @@ android.ndk_api = 24
 # use that parameter together with android.entrypoint to set custom Java class instead of PythonActivity
 #android.activity_class_name = org.kivy.android.PythonActivity
 
-# (str) Extra xml to write directly inside the "<manifest>" element of AndroidManifest.xml
+<pre><code class="language-ini"># (str) Extra xml to write directly inside the "&lt;manifest&gt;" element of AndroidManifest.xml
 # use that parameter to provide a filename from where to load your custom XML code
 #android.extra_manifest_xml = %(source.dir)s/extramanifest.xml
 
-# (str) Extra xml to write directly inside the "<manifest><application>" tag of AndroidManifest.xml
+# (str) Extra xml to write directly inside the "&lt;manifest&gt;&lt;application&gt;" tag of AndroidManifest.xml
 # use that parameter to provide a filename from where to load your custom XML arguments:
 #android.extra_manifest_application_arguments = ./src/android/extra_manifest_application_arguments.xml
 
@@ -2502,8 +2502,8 @@ android.ndk_api = 24
 
 # (str) Filename of OUYA Console icon. It must be a 732x412 png image.
 #android.ouya.icon.filename = %(source.dir)s/data/ouya_icon.png
-
-# (str) XML file to include as an intent filters in "<activity>" tag
+	
+# (str) XML file to include as an intent filters in "&lt;activity&gt;" tag
 #android.manifest.intent_filters = %(source.dir)s/intent_filter.xml
 
 # (list) Copy these files to src/main/res/xml/ (used for example with intent-filters)
@@ -2534,7 +2534,7 @@ android.ndk_api = 24
 # project.properties automatically.)
 #android.library_references =
 
-# (list) Android shared libraries which will be added to AndroidManifest.xml using "<uses-library>" tag
+# (list) Android shared libraries which will be added to AndroidManifest.xml using "&lt;uses-library&gt;" tag
 #android.uses_library =
 
 # (str) Android logcat filters to use
