@@ -4909,11 +4909,11 @@ self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
   </div>
 </div>
     <script>
-
-		// Generate navigation from h2, h3 headings
+		
+		// Generate navigation from h2 headings only
 		document.addEventListener('DOMContentLoaded', function() {
 		    const railNav = document.getElementById('rail-nav');
-		    const headings = document.querySelectorAll('h2, h3');
+		    const headings = document.querySelectorAll('h2'); // Only h2
 		    
 		    if (headings.length === 0 || !railNav) return;
 		    
@@ -4938,13 +4938,6 @@ self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
 		        link.textContent = heading.textContent;
 		        link.className = 'rail-link';
 		        
-		        // Add level class for styling
-		        if (heading.tagName === 'H3') {
-		            link.classList.add('level-2');
-		        } else if (heading.tagName === 'H4') {
-		            link.classList.add('level-3');
-		        }
-		        
 		        // Smooth scroll with offset for fixed header
 		        link.addEventListener('click', function(e) {
 		            e.preventDefault();
@@ -4961,6 +4954,16 @@ self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
 		                
 		                // Update URL without jumping
 		                history.pushState(null, null, `#${id}`);
+		                
+		                // Close rail on mobile after clicking
+		                if (window.innerWidth <= 992) {
+		                    const navRail = document.querySelector('.nav-rail');
+		                    const railToggle = document.querySelector('.rail-toggle');
+		                    if (navRail && railToggle) {
+		                        navRail.classList.remove('active');
+		                        railToggle.innerHTML = '<i class="fas fa-chevron-right"></i>';
+		                    }
+		                }
 		            }
 		        });
 		        
@@ -4974,7 +4977,7 @@ self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
 		        
 		        let currentActive = null;
 		        
-		        // Find current active heading
+		        // Find current active h2 heading
 		        headings.forEach(heading => {
 		            const headingTop = heading.offsetTop;
 		            if (scrollPos >= headingTop) {
@@ -4993,9 +4996,17 @@ self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
 		        });
 		    }
 		    
-		    // Listen for scroll events
-		    window.addEventListener('scroll', highlightActiveSection);
-		    highlightActiveSection(); // Initial call
+		    // Listen for scroll events (throttled for performance)
+		    let scrollTimeout;
+		    window.addEventListener('scroll', function() {
+		        if (scrollTimeout) {
+		            clearTimeout(scrollTimeout);
+		        }
+		        scrollTimeout = setTimeout(highlightActiveSection, 50);
+		    });
+		    
+		    // Initial call
+		    highlightActiveSection();
 		    
 		    // Mobile toggle functionality
 		    const railToggle = document.querySelector('.rail-toggle');
