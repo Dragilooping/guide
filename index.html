@@ -1722,7 +1722,8 @@
 		/* ===== NAVIGATION RAIL ===== */
 		.main-wrapper {
 		    display: flex;
-		    min-height: calc(100vh - 64px); /* Subtract header height */
+		    min-height: calc(100vh - 64px);
+		    width: 100%;
 		}
 		
 		.nav-rail {
@@ -1736,6 +1737,19 @@
 		    overflow-y: auto;
 		    flex-shrink: 0;
 		    transition: transform 0.3s ease;
+		    z-index: 100;
+		    /* Ensure it's visible */
+		    display: block !important;
+		    visibility: visible !important;
+		    opacity: 1 !important;
+		}
+		
+		/* Make sure container doesn't hide rail */
+		.container {
+		    flex: 1;
+		    max-width: calc(100% - 280px); /* Account for rail width */
+		    padding: 20px;
+		    overflow-x: hidden;
 		}
 		
 		.rail-header {
@@ -1781,6 +1795,9 @@
 		    border-radius: 4px;
 		    transition: all 0.2s;
 		    position: relative;
+		    display: block;
+		    white-space: normal;
+		    word-wrap: break-word;
 		}
 		
 		.rail-link:hover {
@@ -1805,7 +1822,8 @@
 		    border-radius: 0 2px 2px 0;
 		}
 		
-		/* Indentation for nested items */
+		/* Remove level classes since we're only using h2 */
+		/*
 		.rail-link.level-2 {
 		    padding-left: 24px;
 		    font-size: 0.85rem;
@@ -1815,11 +1833,15 @@
 		    padding-left: 36px;
 		    font-size: 0.8rem;
 		}
+		*/
 		
 		/* Responsive Design */
 		@media (max-width: 1200px) {
 		    .nav-rail {
 		        width: 240px;
+		    }
+		    .container {
+		        max-width: calc(100% - 240px);
 		    }
 		}
 		
@@ -1832,6 +1854,7 @@
 		        transform: translateX(-100%);
 		        width: 280px;
 		        box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+		        height: calc(100vh - 64px);
 		    }
 		    
 		    .nav-rail.active {
@@ -1840,10 +1863,20 @@
 		    
 		    .rail-toggle {
 		        display: block;
+		        position: fixed;
+		        left: 10px;
+		        top: 74px;
+		        z-index: 950;
+		        background: #1a1a1a;
+		        border: 1px solid #333;
+		        border-radius: 4px;
+		        padding: 8px;
 		    }
 		    
-		    .main-wrapper {
-		        padding-left: 0;
+		    .container {
+		        max-width: 100%;
+		        padding-left: 20px;
+		        padding-right: 20px;
 		    }
 		}
 		
