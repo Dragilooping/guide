@@ -1594,132 +1594,7 @@
 	    cursor: pointer;
 	    padding: 8px;
 	}
-	
-	/* Responsive design */
-	@media (max-width: 768px) {
-	    .top-app-bar {
-	        padding: 0 15px;
-	    }
-	    
-	    .nav-links {
-	        display: none;
-	        position: absolute;
-	        top: 64px;
-	        left: 0;
-	        right: 0;
-	        background-color: #1a1a1a;
-	        flex-direction: column;
-	        padding: 20px;
-	        gap: 15px;
-	        border-top: 1px solid #333;
-	    }
-	    
-	    .nav-links.active {
-	        display: flex;
-	    }
-	    
-	    .mobile-menu-btn {
-	        display: block;
-	    }
-	    
-	    .site-title {
-	        font-size: 1.3rem;
-	    }
-	}
-		
-	/* ===== FOOTER STYLES ===== */
-	.site-footer {
-		background-color: #e0e0e0;
-		border-top: 1px solid #333;
-		padding: 25px 0;
-		margin-top: 50px;
-		width: 100%;
-	}
-	
-	.footer-container {
-		max-width: 1200px;
-		margin: 0 auto;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0 20px;
-		flex-wrap: wrap;
-		gap: 20px;
-	}
-	
-	.footer-left p {
-		color: #e0e0e0;
-		margin: 0;
-		font-size: 0.95rem;
-	}
-	
-	/* FIX: Force white color for all link states */
-	.footer-brand,
-	.footer-link,
-	.footer-link:link,
-	.footer-link:visited,
-	.footer-link:hover,
-	.footer-link:active,
-	.footer-link:focus {
-		color: #e0e0e0 !important; /* YOUR PAGE TEXT COLOR */
-		text-decoration: none !important;
-		font-size: 0.95rem;
-		transition: color 0.3s;
-	}
-	
-	.footer-brand,
-	.footer-brand:link,
-	.footer-brand:visited {
-		color: #e0e0e0 !important;
-		font-weight: 600;
-	}
-	
-	/* Hover states */
-	.footer-link:hover,
-	.footer-link:active,
-	.footer-link:focus {
-		color: #e0e0e0 !important;
-		text-decoration: underline !important;
-	}
-	
-	.footer-brand:hover,
-	.footer-brand:active,
-	.footer-brand:focus {
-		color: #e0e0e0 !important;
-		text-decoration: underline !important;
-	}
-	
-	.footer-right {
-		display: flex;
-		align-items: center;
-		gap: 15px;
-	}
-	
-	.footer-separator {
-		color: #e0e0e0; /* Match text color */
-		font-size: 0.9rem;
-	}
-	
-	/* Active footer link (for privacy/terms pages) */
-	.footer-link.active {
-		color: #e0e0e0 !important;
-		font-weight: 600;
-	}
-	
-	/* Responsive */
-	@media (max-width: 768px) {
-		.footer-container {
-			flex-direction: column;
-			text-align: center;
-			gap: 15px;
-		}
-		
-		.footer-right {
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-	}
-	
+
 	/* ===== NAVIGATION RAIL ===== */
 	.main-wrapper {
 		display: flex;
@@ -1872,6 +1747,131 @@
 		.nav-rail {
 			width: 100%;
 			max-width: 280px;
+		}
+	}
+		
+	/* Responsive design */
+	@media (max-width: 768px) {
+	    .top-app-bar {
+	        padding: 0 15px;
+	    }
+	    
+	    .nav-links {
+	        display: none;
+	        position: absolute;
+	        top: 64px;
+	        left: 0;
+	        right: 0;
+	        background-color: #1a1a1a;
+	        flex-direction: column;
+	        padding: 20px;
+	        gap: 15px;
+	        border-top: 1px solid #333;
+	    }
+	    
+	    .nav-links.active {
+	        display: flex;
+	    }
+	    
+	    .mobile-menu-btn {
+	        display: block;
+	    }
+	    
+	    .site-title {
+	        font-size: 1.3rem;
+	    }
+		
+		/* ===== FOOTER STYLES ===== */
+		.site-footer {
+		    background-color: #e0e0e0;
+		    border-top: 1px solid #333;
+		    padding: 25px 0;
+		    margin-top: 50px;
+		    width: 100%;
+		}
+		
+		.footer-container {
+		    max-width: 1200px;
+		    margin: 0 auto;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    padding: 0 20px;
+		    flex-wrap: wrap;
+		    gap: 20px;
+		}
+		
+		.footer-left p {
+		    color: #e0e0e0;
+		    margin: 0;
+		    font-size: 0.95rem;
+		}
+		
+		/* FIX: Force white color for all link states */
+		.footer-brand,
+		.footer-link,
+		.footer-link:link,
+		.footer-link:visited,
+		.footer-link:hover,
+		.footer-link:active,
+		.footer-link:focus {
+		    color: #e0e0e0 !important; /* YOUR PAGE TEXT COLOR */
+		    text-decoration: none !important;
+		    font-size: 0.95rem;
+		    transition: color 0.3s;
+		}
+		
+		.footer-brand,
+		.footer-brand:link,
+		.footer-brand:visited {
+		    color: #e0e0e0 !important;
+		    font-weight: 600;
+		}
+		
+		/* Hover states */
+		.footer-link:hover,
+		.footer-link:active,
+		.footer-link:focus {
+		    color: #e0e0e0 !important;
+		    text-decoration: underline !important;
+		}
+		
+		.footer-brand:hover,
+		.footer-brand:active,
+		.footer-brand:focus {
+		    color: #e0e0e0 !important;
+		    text-decoration: underline !important;
+		}
+		
+		.footer-right {
+		    display: flex;
+		    align-items: center;
+		    gap: 15px;
+		}
+		
+		.footer-separator {
+		    color: #e0e0e0; /* Match text color */
+		    font-size: 0.9rem;
+		}
+		
+		/* Active footer link (for privacy/terms pages) */
+		.footer-link.active {
+		    color: #e0e0e0 !important;
+		    font-weight: 600;
+		}
+		
+		/* Responsive */
+		@media (max-width: 768px) {
+		    .footer-container {
+		        flex-direction: column;
+		        text-align: center;
+		        gap: 15px;
+		    }
+		    
+		    .footer-right {
+		        flex-wrap: wrap;
+		        justify-content: center;
+		    }
 		}
 	}
 </style>
