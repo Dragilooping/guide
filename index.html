@@ -1780,98 +1780,117 @@
 	    .site-title {
 	        font-size: 1.3rem;
 	    }
-		
-		/* ===== FOOTER STYLES ===== */
-		.site-footer {
-		    background-color: #e0e0e0;
-		    border-top: 1px solid #333;
-		    padding: 25px 0;
-		    margin-top: 50px;
-		    width: 100%;
-		}
-		
+	}
+
+	/* ===== FOOTER STYLES ===== */
+	.site-footer {
+		background-color: #1a1a1a;
+		border-top: 1px solid #333;
+		padding: 25px 0;
+		width: 100%;
+		margin-top: auto; /* Pushes footer to bottom */
+	}
+	
+	/* Desktop: Footer spans full width (including nav rail area) */
+	.footer-full-width {
+		width: 100vw;
+		position: relative;
+		left: 50%;
+		right: 50%;
+		margin-left: -50vw;
+		margin-right: -50vw;
+	}
+	
+	.footer-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 20px;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+	
+	.footer-left p {
+		color: #888;
+		margin: 0;
+		font-size: 0.95rem;
+	}
+	
+	/* Reset all footer link states */
+	.site-footer a,
+	.site-footer a:link,
+	.site-footer a:visited,
+	.site-footer a:hover,
+	.site-footer a:active,
+	.site-footer a:focus {
+		color: #e0e0e0 !important;
+		text-decoration: none !important;
+		font-size: 0.95rem;
+		transition: color 0.3s;
+	}
+	
+	.footer-brand {
+		color: #4CAF50 !important;
+		font-weight: 600;
+	}
+	
+	.footer-brand:hover {
+		color: #45a049 !important;
+		text-decoration: underline !important;
+	}
+	
+	.footer-link:hover,
+	.footer-link:active,
+	.footer-link:focus {
+		color: #4CAF50 !important;
+		text-decoration: underline !important;
+	}
+	
+	.footer-right {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+	
+	.footer-separator {
+		color: #555;
+		font-size: 0.9rem;
+	}
+	
+	/* Active footer link */
+	.footer-link.active {
+		color: #4CAF50 !important;
+		font-weight: 600;
+	}
+	
+	/* Responsive for mobile */
+	@media (max-width: 768px) {
 		.footer-container {
-		    max-width: 1200px;
-		    margin: 0 auto;
-		    display: flex;
-		    justify-content: space-between;
-		    align-items: center;
-		    padding: 0 20px;
-		    flex-wrap: wrap;
-		    gap: 20px;
-		}
-		
-		.footer-left p {
-		    color: #e0e0e0;
-		    margin: 0;
-		    font-size: 0.95rem;
-		}
-		
-		/* FIX: Force white color for all link states */
-		.footer-brand,
-		.footer-link,
-		.footer-link:link,
-		.footer-link:visited,
-		.footer-link:hover,
-		.footer-link:active,
-		.footer-link:focus {
-		    color: #e0e0e0 !important; /* YOUR PAGE TEXT COLOR */
-		    text-decoration: none !important;
-		    font-size: 0.95rem;
-		    transition: color 0.3s;
-		}
-		
-		.footer-brand,
-		.footer-brand:link,
-		.footer-brand:visited {
-		    color: #e0e0e0 !important;
-		    font-weight: 600;
-		}
-		
-		/* Hover states */
-		.footer-link:hover,
-		.footer-link:active,
-		.footer-link:focus {
-		    color: #e0e0e0 !important;
-		    text-decoration: underline !important;
-		}
-		
-		.footer-brand:hover,
-		.footer-brand:active,
-		.footer-brand:focus {
-		    color: #e0e0e0 !important;
-		    text-decoration: underline !important;
+			flex-direction: column;
+			text-align: center;
+			gap: 15px;
 		}
 		
 		.footer-right {
-		    display: flex;
-		    align-items: center;
-		    gap: 15px;
+			flex-wrap: wrap;
+			justify-content: center;
 		}
-		
-		.footer-separator {
-		    color: #e0e0e0; /* Match text color */
-		    font-size: 0.9rem;
+	}
+	
+	/* Adjust footer for desktop with nav rail */
+	@media (min-width: 993px) {
+		.site-footer {
+			margin-left: 280px; /* Match nav rail width */
+			width: calc(100% - 280px);
 		}
-		
-		/* Active footer link (for privacy/terms pages) */
-		.footer-link.active {
-		    color: #e0e0e0 !important;
-		    font-weight: 600;
-		}
-		
-		/* Responsive */
-		@media (max-width: 768px) {
-		    .footer-container {
-		        flex-direction: column;
-		        text-align: center;
-		        gap: 15px;
-		    }
-		    
-		    .footer-right {
-		        flex-wrap: wrap;
-		        justify-content: center;
-		    }
+	}
+	
+	@media (min-width: 1201px) {
+		.site-footer {
+			margin-left: 240px; /* Match responsive nav rail width */
+			width: calc(100% - 240px);
 		}
 	}
 </style>
