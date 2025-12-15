@@ -2197,19 +2197,19 @@ javac -version</code></pre>
 				<p>Here's an advance <code>build_apk.yml</code> file, to put into the .github/workflows/ repository: </p>
 	
 				<div class="code-section">
-				  <div class="code-header">
-				    <span class="code-filename">build_apk.yml</span>
-				    <div class="code-actions">
-				      <button class="copy-btn" onclick="copyCode(this)">
-				        <i class="fas fa-copy"></i> Copy
-				      </button>
-				      <button class="expand-code-btn" onclick="openCodeModal(this)">
-				        <i class="fas fa-expand-alt"></i> Expand
-				      </button>
-				    </div>
-				  </div>
-				  <div class="code-scroll-container">
-				    <pre class="line-numbers"><code class="language-yaml">name: Build Kivy APK
+					<div class="code-header">
+				    	<span class="code-filename">build_apk.yml</span>
+				    	<div class="code-actions">
+				      		<button class="copy-btn" onclick="copyCode(this)">
+				        		<i class="fas fa-copy"></i> Copy
+				      		</button>
+				      		<button class="expand-code-btn" onclick="openCodeModal(this)">
+				        		<i class="fas fa-expand-alt"></i> Expand
+				      		</button>
+						</div>
+				  	</div>
+				  	<div class="code-scroll-container">
+				    	<pre class="line-numbers"><code class="language-yaml">name: Build Kivy APK
 on:
   workflow_dispatch:
 jobs:
@@ -2244,6 +2244,7 @@ jobs:
         with:
           name: package
           path: ./bin/*.apk</code></pre>
+					</div>
   				</div>
 			</div>
 			<h3>Complete Buildozer Configuration</h3>
