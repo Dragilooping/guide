@@ -1792,22 +1792,28 @@
 		// Call it when page loads
 		document.addEventListener('DOMContentLoaded', updateCurrentYear);
 		
-        // Set policy date
-        document.getElementById('policy-date').textContent = new Date().toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-		// Set current year in footer
-		function updateCurrentYear() {
-		    const yearElement = document.getElementById('current-year');
-		    if (yearElement) {
-		        yearElement.textContent = new Date().getFullYear();
+		// Mobile menu toggle
+		document.addEventListener('DOMContentLoaded', function() {
+		    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+		    const navLinks = document.querySelector('.nav-links');
+		    
+		    if (mobileMenuBtn && navLinks) {
+		        mobileMenuBtn.addEventListener('click', function() {
+		            navLinks.classList.toggle('active');
+		            this.innerHTML = navLinks.classList.contains('active') 
+		                ? '<i class="fas fa-times"></i>' 
+		                : '<i class="fas fa-bars"></i>';
+		        });
+		        
+		        // Close menu when clicking a link
+		        document.querySelectorAll('.nav-link').forEach(link => {
+		            link.addEventListener('click', () => {
+		                navLinks.classList.remove('active');
+		                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+		            });
+		        });
 		    }
-		}
-		
-		// Call it when page loads
-		document.addEventListener('DOMContentLoaded', updateCurrentYear);
+		});
     </script>
 </body>
 </html>
