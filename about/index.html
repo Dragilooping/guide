@@ -1793,7 +1793,6 @@
         </div>
     </div>
 </div>
-    
     <script>
 		// Set current year in footer
 		function updateCurrentYear() {
@@ -1805,38 +1804,28 @@
 		
 		// Call it when page loads
 		document.addEventListener('DOMContentLoaded', updateCurrentYear);
+		
 		// Mobile menu toggle
-		// Enhanced active page detection
 		document.addEventListener('DOMContentLoaded', function() {
-		    const navLinks = document.querySelectorAll('.nav-link');
+		    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+		    const navLinks = document.querySelector('.nav-links');
 		    
-		    // Get current page URL
-		    const currentPath = window.location.pathname;
-		    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-		    
-		    // Remove .html extension and handle index page
-		    let pageName = currentPage.replace('.html', '');
-		    if (pageName === '' || pageName === 'index') {
-		        pageName = 'index';
+		    if (mobileMenuBtn && navLinks) {
+		        mobileMenuBtn.addEventListener('click', function() {
+		            navLinks.classList.toggle('active');
+		            this.innerHTML = navLinks.classList.contains('active') 
+		                ? '<i class="fas fa-times"></i>' 
+		                : '<i class="fas fa-bars"></i>';
+		        });
+		        
+		        // Close menu when clicking a link
+		        document.querySelectorAll('.nav-link').forEach(link => {
+		            link.addEventListener('click', () => {
+		                navLinks.classList.remove('active');
+		                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+		            });
+		        });
 		    }
-		    
-		    // Highlight the active link
-		    navLinks.forEach(link => {
-		        const linkHref = link.getAttribute('href');
-		        let linkPage = linkHref.substring(linkHref.lastIndexOf('/') + 1).replace('.html', '');
-		        
-		        if (linkPage === '' || linkPage === 'index') {
-		            linkPage = 'index';
-		        }
-		        
-		        if (pageName === linkPage) {
-		            link.classList.add('active');
-		        } else {
-		            link.classList.remove('active');
-		        }
-		    });
-		    
-		    console.log('Current page:', pageName, 'Links updated');
 		});
     </script>
 </body>
