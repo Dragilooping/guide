@@ -1789,6 +1789,13 @@
 		        yearElement.textContent = new Date().getFullYear();
 		    }
 		}
+
+		// Set terms date
+        document.getElementById('terms-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
 		
 		// Call it when page loads
 		document.addEventListener('DOMContentLoaded', updateCurrentYear);
