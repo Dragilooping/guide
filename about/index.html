@@ -1629,11 +1629,10 @@
 		
 		/* ===== FOOTER STYLES ===== */
 		.site-footer {
-		    background-color: #e0e0e0;
+		    background-color: #1a1a1a;
 		    border-top: 1px solid #333;
 		    padding: 25px 0;
 		    margin-top: 50px;
-		    width: 100%;
 		}
 		
 		.footer-container {
@@ -1648,45 +1647,20 @@
 		}
 		
 		.footer-left p {
-		    color: #e0e0e0;
+		    color: #888;
 		    margin: 0;
 		    font-size: 0.95rem;
 		}
 		
-		/* FIX: Force white color for all link states */
-		.footer-brand,
-		.footer-link,
-		.footer-link:link,
-		.footer-link:visited,
-		.footer-link:hover,
-		.footer-link:active,
-		.footer-link:focus {
-		    color: #e0e0e0 !important; /* YOUR PAGE TEXT COLOR */
-		    text-decoration: none !important;
-		    font-size: 0.95rem;
-		    transition: color 0.3s;
-		}
-		
-		.footer-brand,
-		.footer-brand:link,
-		.footer-brand:visited {
-		    color: #e0e0e0 !important;
+		.footer-brand {
+		    color: #4CAF50;
+		    text-decoration: none;
 		    font-weight: 600;
 		}
 		
-		/* Hover states */
-		.footer-link:hover,
-		.footer-link:active,
-		.footer-link:focus {
-		    color: #e0e0e0 !important;
-		    text-decoration: underline !important;
-		}
-		
-		.footer-brand:hover,
-		.footer-brand:active,
-		.footer-brand:focus {
-		    color: #e0e0e0 !important;
-		    text-decoration: underline !important;
+		.footer-brand:hover {
+		    color: #45a049;
+		    text-decoration: underline;
 		}
 		
 		.footer-right {
@@ -1695,18 +1669,23 @@
 		    gap: 15px;
 		}
 		
+		.footer-link {
+		    color: #aaa;
+		    text-decoration: none;
+		    font-size: 0.95rem;
+		    transition: color 0.3s;
+		}
+		
+		.footer-link:hover {
+		    color: #4CAF50;
+		}
+		
 		.footer-separator {
-		    color: #e0e0e0; /* Match text color */
+		    color: #555;
 		    font-size: 0.9rem;
 		}
 		
-		/* Active footer link (for privacy/terms pages) */
-		.footer-link.active {
-		    color: #e0e0e0 !important;
-		    font-weight: 600;
-		}
-		
-		/* Responsive */
+		/* Responsive Footer */
 		@media (max-width: 768px) {
 		    .footer-container {
 		        flex-direction: column;
@@ -1717,6 +1696,11 @@
 		    .footer-right {
 		        flex-wrap: wrap;
 		        justify-content: center;
+		    }
+		    
+		    .site-footer {
+		        padding: 20px 0;
+		        margin-top: 30px;
 		    }
 		}
 	}
