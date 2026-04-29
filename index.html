@@ -4934,23 +4934,23 @@ self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
 			
 			        <!-- Google Cloud Console Setup (CRITICAL) -->
 			        <div style="padding: 25px; margin: 20px 0; border-radius: 12px; color: white;">
-			            <h3 style="color: white; margin-bottom: 15px;">
+			            <h3 style="margin-bottom: 15px;">
 			                <i class="fab fa-google"></i> 
 			                ⚠️ CRITICAL: Google Cloud Console Setup
 			            </h3>
-			            <p style="color: white; font-weight: bold;">Without these steps, Google Sign-In WILL NOT work on Android devices!</p>
+			            <p style="font-weight: bold;">Without these steps, Google Sign-In WILL NOT work on Android devices!</p>
 			            
 			            <div style="margin-top: 20px;">
-			                <h4 style="color: white;">📋 Step-by-Step Configuration:</h4>
+			                <h4>📋 Step-by-Step Configuration:</h4>
 			                <ol style="margin-left: 20px; line-height: 1.8; color: white;">
 			                    <li>Go to <a href="https://console.cloud.google.com/" target="_blank" style="color: #FFD700; text-decoration: underline;">Google Cloud Console</a></li>
 			                    <li>Create a new project or select existing one</li>
-			                    <li>Enable <strong>Google Sign-In API</strong> (formerly Google+ API)</li>
-			                    <li>Go to <strong>APIs & Services → Credentials</strong></li>
-			                    <li>Click <strong>Create Credentials → OAuth 2.0 Client IDs</strong></li>
-			                    <li>Application type: <strong>Android</strong></li>
-			                    <li><strong>Package name:</strong> Enter your app's package name (e.g., <code style="background: rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 4px;">org.mycompany.myapp</code>)</li>
-			                    <li><strong>SHA-1 certificate fingerprint:</strong> Add your SHA-1 key (see importance below ⬇️)</li>
+			                    <li>Enable Google Sign-In API (formerly Google+ API)</li>
+			                    <li>Go to APIs & Services → Credentials</li>
+			                    <li>Click Create Credentials → OAuth 2.0 Client IDs</li>
+			                    <li>Application type: Android</li>
+			                    <li>Package name:Enter your app's package name (e.g., <code style="background: rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 4px;">org.mycompany.myapp</code>)</li>
+			                    <li>SHA-1 certificate fingerprint: Add your SHA-1 key (see importance below ⬇️)</li>
 			                </ol>
 			            </div>
 			        </div>
@@ -4975,7 +4975,7 @@ self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
 			
 			        <!-- Troubleshooting Section -->
 			        <div style="padding: 25px; border-radius: 12px; margin: 20px 0; color: white;">
-			            <h3 style="color: white;"><i class="fas fa-bug"></i> Common Troubleshooting Tips:</h3>
+			            <h3><i class="fas fa-bug"></i> Common Troubleshooting Tips:</h3>
 			            <ul style="margin-left: 20px; line-height: 1.8;">
 			                <li><strong>✅</strong> Make sure to add BOTH debug and release SHA-1 keys in Google Cloud Console</li>
 			                <li><strong>✅</strong> Wait 5-10 minutes after adding SHA-1 for Google's servers to propagate</li>
