@@ -4916,20 +4916,80 @@ self.ads.new_rewarded_ad(REAL_REWARDED_ID)</code></pre>
 			            </ul>
 			        </div>
 			
+			        <!-- Google Cloud Console Setup (CRITICAL) -->
+			        <div class="next-steps" style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 8px;">
+			            <h3 style="color: #856404; margin-bottom: 15px;">
+			                <i class="fab fa-google" style="color: #4285F4;"></i> 
+			                ⚠️ CRITICAL: Google Cloud Console Setup
+			            </h3>
+			            <p style="color: #856404; font-weight: bold;">Without these steps, Google Sign-In WILL NOT work on Android devices!</p>
+			            
+			            <div style="margin-top: 20px;">
+			                <h4>📋 Step-by-Step Configuration:</h4>
+			                <ol style="margin-left: 20px; line-height: 1.8;">
+			                    <li>Go to <a href="https://console.cloud.google.com/" target="_blank" style="color: #0066cc;">Google Cloud Console</a></li>
+			                    <li>Create a new project or select existing one</li>
+			                    <li>Enable <strong>Google Sign-In API</strong> (formerly Google+ API)</li>
+			                    <li>Go to <strong>APIs & Services → Credentials</strong></li>
+			                    <li>Click <strong>Create Credentials → OAuth 2.0 Client IDs</strong></li>
+			                    <li>Application type: <strong>Android</strong></li>
+			                    <li><strong>Package name:</strong> Enter your app's package name (e.g., <code>org.mycompany.myapp</code>)</li>
+			                    <li><strong>SHA-1 certificate fingerprint:</strong> Add your SHA-1 key (see importance below ⬇️)</li>
+			                </ol>
+			            </div>
+			        </div>
+			
+			        <!-- SHA-1 Importance Section -->
+			        <div class="tip-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin: 20px 0; padding: 25px; border-radius: 12px;">
+			            <i class="fas fa-shield-alt" style="font-size: 2.5em; margin-bottom: 15px;"></i>
+			            <h3 style="color: white;">🔐 Why SHA-1 is CRUCIAL for Google Sign-In</h3>
+			            <p style="margin-top: 10px;">SHA-1 fingerprint uniquely identifies your signed Android app. Google uses it to verify that authentication requests come from YOUR app, not a fake/unauthorized one.</p>
+			            
+			            <div style="background: rgba(255,255,255,0.2); border-radius: 8px; padding: 15px; margin: 15px 0;">
+			                <h4 style="color: white;">📱 How to get your SHA-1 fingerprint:</h4>
+			                <pre style="background: rgba(0,0,0,0.3); color: #fff; padding: 12px; border-radius: 6px; overflow-x: auto; margin: 10px 0;">
+			<strong>For Debug Build (Development):</strong>
+			keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+			
+			<strong>For Release Build (Play Store):</strong>
+			keytool -list -v -keystore your-keystore.jks -alias your-alias</pre>
+			                <p style="font-size: 0.9em; margin-top: 10px;">💡 <strong>Pro tip:</strong> You can also get SHA-1 from Google Play Console → Release → Setup → App integrity</p>
+			            </div>
+			            
+			            <div style="background: rgba(255,255,255,0.15); border-radius: 8px; padding: 12px; margin-top: 15px;">
+			                <i class="fas fa-exclamation-triangle"></i>
+			                <strong>⚠️ Common issues without SHA-1:</strong>
+			                <ul style="margin-left: 20px; margin-top: 8px;">
+			                    <li><code>10 status code</code> or <code>DEVELOPER_ERROR</code></li>
+			                    <li>Google Sign-In popup closes immediately</li>
+			                    <li><code>12500</code> or <code>12501</code> error codes</li>
+			                    <li>"Google Sign-In failed" with no clear reason</li>
+			                </ul>
+			            </div>
+			        </div>
+			
+			        <!-- Troubleshooting Section -->
+			        <div class="next-steps" style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+			            <h3><i class="fas fa-bug"></i> Common Troubleshooting Tips:</h3>
+			            <ul style="margin-left: 20px; line-height: 1.8;">
+			                <li><strong>✅</strong> Make sure to add BOTH debug and release SHA-1 keys in Google Cloud Console</li>
+			                <li><strong>✅</strong> Wait 5-10 minutes after adding SHA-1 for Google's servers to propagate</li>
+			                <li><strong>✅</strong> Verify your app's package name matches exactly (case-sensitive)</li>
+			                <li><strong>✅</strong> Ensure OAuth consent screen is properly configured</li>
+			                <li><strong>✅</strong> Test on a real device — emulators sometimes have issues with Google Play Services</li>
+			            </ul>
+			        </div>
+			
 			        <!-- Download Section -->
 			        <div class="download-section" style="text-align: center; margin: 30px 0;">
 			            <a href="/downloads/google-signin-kivy.zip" download class="download-button">
 			                <i class="fas fa-download"></i> Download GoogleSignIn Package (ZIP)
 			            </a>
 			            <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
-			                🔒 Includes full source code
+			                📦 Includes: main.py | google_auth.py | buildozer.spec | Full documentation
 			            </p>
 			        </div>
 			
-			        <!-- Alternative: Direct file link -->
-			        <div class="alternative-link">
-			            <p>📁 <strong>Direct access:</strong> <a href="/downloads/google-signin-kivy.zip">google-signin-kivy.zip</a></p>
-			        </div>
 			    </div>
 			</div>
 				
